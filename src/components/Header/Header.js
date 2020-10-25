@@ -10,22 +10,22 @@ function Header(props) {
         <img className="header__logo" src={headerLogo} alt="Логотип в виде текста NewsExplorer." />
         {props.loggedIn
           ? (<nav>
-              <Link to="/" className="header__link header__text">Главная</Link>
-              <Link to="/saved-news" className="header__link header__text">Сохранённые статьи</Link>
-              <button className="header__button header__button_logout header__text" type="button" onClick={props.onSignOut}>Грета</button>
+              <Link to="/" className="header__link header__text opacity tab">Главная</Link>
+              <Link to="/saved-news" className="header__link header__text opacity tab">Сохранённые статьи</Link>
+              <button className="header__nav-button header__nav-button_signout header__text opacity tab" type="button" onClick={props.onSignOut}>Грета</button>
             </nav>)
 
           : (<nav>
-              <Link to="/" className="header__link header__text">Главная</Link>
-              <button className="header__button header__button_login header__text" type="button">Авторизоваться</button>
+              <Link to="/" className="header__link header__text opacity tab">Главная</Link>
+              <button className="header__nav-button header__nav-button_signin header__text opacity tab" type="button">Авторизоваться</button>
             </nav>)
         }
       </div>
       <h1 className="header__title">Что творится в&nbsp;мире?</h1>
       <p className="header__subtitle">Находите самые свежие статьи на&nbsp;любую тему и&nbsp;сохраняйте в&nbsp;своём личном кабинете.</p>
-      <form>
-        <input />
-        <button></button>
+      <form className="header__form">
+        <input className="header__input" placeholder="Введите тему новости" />
+        <button className="header__search-button header__text" type="submit">Искать</button>
       </form>
     </header>
   );

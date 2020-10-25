@@ -16,6 +16,19 @@
   -moz-text-size-adjust: 100%;
 }
 
+.opacity {
+  transition: .2s linear;
+}
+
+.opacity:hover {
+  opacity: .5;
+  transition: opacity .2s linear;
+}
+
+.tab:focus {
+  opacity: .5;
+}
+
 @media all and (max-width: 400px) {
 	.root {
     padding: 0 19px;

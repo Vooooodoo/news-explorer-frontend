@@ -15,6 +15,10 @@
   padding: 0 104px;
 }
 
+.header__logo-link {
+  line-height: 0;
+}
+
 .header__text {
   font-weight: 500;
   font-size: 18px;
@@ -96,13 +100,18 @@
   border-radius: 100px;
   cursor: pointer;
   transition: .2s linear;
+  outline: none;
 }
 
 .header__search-button:hover {
   background-color: #347EFF;
-  transition: .2s linear;
 }
 
 .header__search-button:active {
   background-color: #2A65CC;
+}
+
+.header__search-button:focus {
+  border: 3px solid #1A1B22;
+  transition: none;
 }

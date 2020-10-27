@@ -7,7 +7,9 @@ function Header(props) {
   return (
     <header className="header">
       <div className="header__container">
+      <Link to="/" className="header__logo-link">
         <img className="header__logo" src={headerLogo} alt="Логотип в виде текста NewsExplorer." />
+      </Link>
         {props.loggedIn
           ? (<nav>
               <Link to="/" className="header__link header__text opacity tab">Главная</Link>

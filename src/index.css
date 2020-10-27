@@ -22,11 +22,11 @@
 
 .opacity:hover {
   opacity: .5;
-  transition: .2s linear;
 }
 
 .tab:focus {
   opacity: .5;
+  transition: none;
 }
 
 @media all and (max-width: 400px) {

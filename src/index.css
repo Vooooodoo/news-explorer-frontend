@@ -29,8 +29,18 @@
   transition: none;
 }
 
-@media all and (max-width: 400px) {
+.tap-highlight {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media all and (max-width: 1023px) {
 	.root {
-    padding: 0 19px;
+    padding: 0 40px;
+  }
+}
+
+@media all and (max-width: 499px) {
+	.root {
+    padding: 0 16px;
   }
 }

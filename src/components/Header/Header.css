@@ -37,14 +37,31 @@
 }
 
 .header__nav-button {
+  position: relative;
   background-color: transparent;
   border: 1px solid white;
   border-radius: 100px;
-  padding: 0;
-  width: 176px;
   height: 48px;
   cursor: pointer;
   outline: none;
+}
+
+.header__nav-button_signin {
+  padding: 0;
+  width: 176px;
+}
+
+.header__nav-button_signout {
+  text-align: left;
+  padding: 0 45px 0 20px;
+  min-width: 112px;
+}
+
+.header__nav-button_signout::after {
+  content: url(../../images/header__nav-button_signout.svg);
+  position: absolute;
+  top: 13px;
+  right: 15px;
 }
 
 .header__mobile-button {
@@ -139,17 +156,17 @@
   }
 }
 
+@media all and (max-width: 768px) {
+  .header {
+    background-image: url(../../images/header__background_size_tablet.jpg);
+  }
+}
+
 @media all and (max-width: 499px) {
 	.header {
     margin: 0 -16px;
     padding: 0 16px;
     min-height: 536px;
-  }
-}
-
-@media all and (max-width: 768px) {
-	.header {
-    background-image: url(../../images/header__background_size_tablet.jpg);
   }
 }
 
@@ -179,19 +196,28 @@
 	.header__text {
     font-size: 16px;
   }
-}
 
-@media all and (max-width: 1023px) {
-	.header__link {
+  .header__link {
     margin-right: 16px;
     padding-bottom: 21px;
   }
-}
 
-@media all and (max-width: 1023px) {
-	.header__nav-button {
-    width: 152px;
+  .header__nav-button {
     height: 40px;
+  }
+
+  .header__nav-button_signin {
+    width: 152px;
+  }
+
+  .header__nav-button_signout {
+    min-width: 100px;
+    padding: 0 40px 0 15px;
+  }
+
+  .header__nav-button_signout::after {
+    top: 10px;
+    right: 12px;
   }
 }
 
@@ -199,10 +225,8 @@
 	.header__menu {
     display: none;
   }
-}
 
-@media all and (max-width: 767px) {
-	.header__mobile-button {
+  .header__mobile-button {
     display: block;
   }
 }

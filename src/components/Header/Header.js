@@ -11,7 +11,9 @@ function Header(props) {
         onSignOut={props.onSignOut}
       />
       <h1 className="header__title">Что творится в&nbsp;мире?</h1>
-      <p className="header__subtitle">Находите самые свежие статьи на&nbsp;любую тему и&nbsp;сохраняйте в&nbsp;своём личном кабинете.</p>
+      <p className="header__subtitle">
+        Находите самые свежие статьи на&nbsp;любую тему и&nbsp;сохраняйте в&nbsp;своём личном кабинете.
+      </p>
       <SearchForm />
     </header>
   );

@@ -13,6 +13,7 @@ function Footer() {
           <Link to="/" className="footer__link opacity tap-highlight">Главная</Link>
           <a className="footer__link opacity tap-highlight" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
         </div>
+
         <div>
           <a className="footer__logo-link opacity tap-highlight" href="https://github.com/Vooooodoo" target="_blank">
             <img className="footer__logo footer__logo_type_github" src={githubLogo} alt="Логотип Гитхаб." />

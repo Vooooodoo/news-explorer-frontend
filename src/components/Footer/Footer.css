@@ -1,0 +1,46 @@
+.footer {
+  display: flex;
+  min-height: 80px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.footer__copyright {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF;
+  margin: 0;
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  flex-basis: 400px;
+  justify-content: space-between;
+}
+
+.footer__link {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+  text-decoration: none;
+}
+
+.footer__link:first-child {
+  margin-right: 40px;
+}
+
+.footer__logo:first-child {
+  margin-right: 30px;
+}
+
+.footer__logo_type_github {
+  margin-top: 3px;
+}
+
+.footer__logo_type_facebook {
+  margin-top: 4px;
+}

@@ -29,7 +29,7 @@
 }
 
 .footer__link:first-child {
-  margin-right: 40px;
+  margin-right: 30px;
 }
 
 .footer__logo-link:first-child {
@@ -42,4 +42,22 @@
 
 .footer__logo_type_facebook {
   margin-top: 4px;
+}
+
+@media all and (max-width: 850px) {
+  .footer {
+    min-height: 64px;
+  }
+
+  .footer__navigation {
+    flex-basis: 330px;
+  }
+
+  .footer__link:first-child {
+    margin-right: 20px;
+  }
+
+  .footer__logo-link:first-child {
+    margin-right: 20px;
+  }
 }

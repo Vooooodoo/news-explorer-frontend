@@ -104,6 +104,10 @@
 }
 
 @media all and (max-width: 349px) {
+  .footer {
+    min-height: 170px;
+  }
+
   .footer__copyright {
     font-size: 14px;
     line-height: 20px;

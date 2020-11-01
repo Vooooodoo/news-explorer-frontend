@@ -102,3 +102,14 @@
     margin-top: 15px;
   }
 }
+
+@media all and (max-width: 349px) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .footer__navigation {
+    width: 276px;
+  }
+}

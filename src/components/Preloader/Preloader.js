@@ -1,11 +1,10 @@
 import React from 'react';
-import preloaderLogo from '../../images/preloader__logo.svg';
 import './Preloader.css';
 
-function Preloader(props) {
+function Preloader({ component: Component }) {
   return (
     <section className="preloader">
-      {props.children}
+      <Component />
     </section>
   );
 }

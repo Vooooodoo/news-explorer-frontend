@@ -1,0 +1,21 @@
+.not-found__logo {
+  margin-bottom: 24px;
+}
+
+.not-found__title {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 0 0 16px;
+}
+
+.not-found__subtitle {
+  max-width: 356px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  color: #B6BCBF;
+}

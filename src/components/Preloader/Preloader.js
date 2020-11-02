@@ -1,10 +1,10 @@
 import React from 'react';
 import './Preloader.css';
 
-function Preloader({ component: Component }) {
+function Preloader(props) {
   return (
     <section className="preloader">
-      <Component />
+      {props.children}
     </section>
   );
 }

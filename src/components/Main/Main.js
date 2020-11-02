@@ -6,8 +6,8 @@ import Spinner from '../Spinner/Spinner';
 function Main(props) {
   return (
     <main>
-      <Spinner />
-      <NotFound />
+      {/* <Spinner />
+      <NotFound /> */}
       <About />
     </main>
   );

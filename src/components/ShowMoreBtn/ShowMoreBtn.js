@@ -3,7 +3,7 @@ import './ShowMoreBtn.css';
 
 function ShowMoreBtn(props) {
   return (
-    <button className="show-more" type="button" onClick={props.onShowMore}>Показать еще</button>
+    <button className="show-more tap-highlight" type="button" onClick={props.onShowMore}>Показать еще</button>
   );
 }
 

@@ -1,0 +1,25 @@
+.show-more {
+  display: block;
+  width: 288px;
+  height: 64px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 80px;
+  background-color: #FFFFFF;
+  border: none;
+  margin: 0 auto;
+  padding: 0;
+  cursor: pointer;
+  transition: .2s linear;
+  outline: none;
+}
+
+.show-more:hover {
+  background-color: rgb(255, 255, 255, .5);
+}
+
+.show-more:focus {
+  border: 2px solid #1A1B22;
+  transition: none;
+}

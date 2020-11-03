@@ -6,11 +6,13 @@ function NewsCardList(props) {
   return (
     <ul className="news-card-list">
       <NewsCard
-        card={card}
-        key={card._id}
-        onCardSave={props.onCardSave}
-        onCardDelete={props.onCardDelete}
+        // card={card}
+        // key={card._id}
+        // onCardSave={props.onCardSave}
+        // onCardDelete={props.onCardDelete}
       />
+      <NewsCard />
+      <NewsCard />
     </ul>
   );
 }

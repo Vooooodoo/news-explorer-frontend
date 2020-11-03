@@ -1,7 +1,7 @@
 import React from 'react';
 import './NewsCard.css';
 
-function NewsCard() {
+function NewsCard(props) {
   return (
     <li className="news-card">
       <img className="news-card__photo" src={props.photo} alt={`${props.title}.`} />

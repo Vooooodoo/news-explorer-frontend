@@ -1,0 +1,27 @@
+.news-cards {
+  background-color: #F5F6F7;
+  margin: 0 -104px;
+  padding: 80px 104px;
+}
+
+.news-cards__title {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  margin: 0 0 64px;
+}
+
+@media all and (max-width: 1023px) {
+  .news-cards {
+    margin: 0 -40px;
+    padding: 80px 40px;
+  }
+}
+
+@media all and (max-width: 499px) {
+	.news-cards {
+    margin: 0 -16px;
+    padding: 80px 16px;
+  }
+}

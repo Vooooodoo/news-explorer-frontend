@@ -1,0 +1,41 @@
+.news-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.news-card__photo {
+  display: flex;
+  background-color: #1A1B22;
+  width: 100%;
+  height: calc(272 / 400 * (100vw - (100vw - 1440px) - 240px) / 3);
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px 16px 0 0;
+}
+
+.news-card__save-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 0;
+  padding: 0;
+  background-image: url(../../images/news-card__save-btn_state_normal.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s linear;
+  outline: none;
+}
+
+.news-card__save-btn:hover {
+  background-image: url(../../images/news-card__save-btn_state_hover.svg);
+}
+
+.news-card__save-btn:focus {
+  background-image: url(../../images/news-card__save-btn_state_hover.svg);
+  transition: none;
+}

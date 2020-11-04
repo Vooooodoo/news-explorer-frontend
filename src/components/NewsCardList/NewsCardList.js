@@ -10,6 +10,7 @@ function NewsCardList(props) {
         // key={card._id}
         // onCardSave={props.onCardSave}
         // onCardDelete={props.onCardDelete}
+        btnClass="news-card__save-btn"
       />
       <NewsCard />
       <NewsCard />

@@ -3,7 +3,7 @@ import './NewsCard.css';
 
 function NewsCard(props) {
   return (
-    <li className="news-card">
+    <li className="news-card tap-highlight">
       <img className="news-card__photo" src={props.photo} alt={`${props.title}.`} />
       <button className={props.btnClass} type="button" aria-label={props.ariaLabel} onClick={props.onClick}></button>
       <p className="news-card__date">{props.date}</p>

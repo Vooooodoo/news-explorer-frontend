@@ -6,6 +6,7 @@ function NewsCard(props) {
     <li className="news-card tap-highlight">
       <img className="news-card__photo" src={props.photo} alt={`${props.title}.`} />
       <button className={props.btnClass} type="button" aria-label={props.ariaLabel} onClick={props.onClick}></button>
+      <span className="news-card__popup news-card__popup_hidden news-card__popup_shown">Войдите, чтобы сохранять статьи</span>
       <div className="news-card__container">
         <p className="news-card__date">{props.date}</p>
         <h2 className="news-card__title">{props.title}</h2>

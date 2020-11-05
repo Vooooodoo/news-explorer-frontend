@@ -7,9 +7,9 @@ import NotFound from '../NotFound/NotFound';
 function Main(props) {
   return (
     <main>
+      <Spinner />
       <NewsCards />
-      {/* <Spinner />
-      <NotFound /> */}
+      <NotFound />
       <About />
     </main>
   );

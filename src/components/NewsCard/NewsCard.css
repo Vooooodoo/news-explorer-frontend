@@ -48,6 +48,7 @@
 }
 
 .news-card__popup {
+  display: flex;
   position: absolute;
   top: 24px;
   right: 69px;
@@ -66,11 +67,15 @@
 }
 
 .news-card__popup_hidden {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .3s, opacity .3s linear;
 }
 
 .news-card__popup_shown {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity .3s linear;
 }
 
 .news-card__container {

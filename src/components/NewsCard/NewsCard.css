@@ -52,7 +52,6 @@
   position: absolute;
   top: 24px;
   right: 69px;
-  width: 182px;
   height: 40px;
   background-color: white;
   border-radius: 8px;
@@ -63,7 +62,7 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 10px;
+  padding: 0 11px;
 }
 
 .news-card__popup_hidden {
@@ -167,7 +166,7 @@
   }
 
   .news-card__popup {
-    width: 182px;
+    width: auto;
   }
 }
 
@@ -183,7 +182,7 @@
   }
 
   .news-card__popup {
-    width: 182px;
+    width: auto;
   }
 
   .news-card__container {

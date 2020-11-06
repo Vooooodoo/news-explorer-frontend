@@ -9,12 +9,8 @@ function NewsCardList(props) {
   return (
     <ul className="news-card-list">
       <NewsCard
-        // card={card}
-        // key={card._id}
-        // onCardSave={props.onCardSave}
-        // onCardDelete={props.onCardDelete}
         photo={newsCardPhotoFirst}
-        btnClass="news-card__save-btn news-card__save-btn_state_normal news-card__save-btn_state_marked"
+        btnClass="news-card-btn news-card-btn_type_normal-save news-card-btn_type_marked-save news-card-btn_type_hover-save news-card-btn_type_focus-save"
         ariaLabel="Сохранить статью."
         popupText="Войдите, чтобы сохранять статьи"
         date="2&nbsp;августа, 2019"
@@ -24,7 +20,7 @@ function NewsCardList(props) {
       />
       <NewsCard
         photo={newsCardPhotoSecond}
-        btnClass="news-card__save-btn news-card__save-btn_state_normal news-card__save-btn_state_marked"
+        btnClass="news-card-btn news-card-btn_type_normal-save news-card-btn_type_marked-save news-card-btn_type_hover-save news-card-btn_type_focus-save"
         ariaLabel="Сохранить статью."
         popupText="Войдите, чтобы сохранять статьи"
         date="2&nbsp;августа, 2019"
@@ -34,7 +30,7 @@ function NewsCardList(props) {
       />
       <NewsCard
         photo={newsCardPhotoThird}
-        btnClass="news-card__save-btn news-card__save-btn_state_normal news-card__save-btn_state_marked"
+        btnClass="news-card-btn news-card-btn_type_normal-save news-card-btn_type_marked-save news-card-btn_type_hover-save news-card-btn_type_focus-save"
         ariaLabel="Сохранить статью."
         popupText="Войдите, чтобы сохранять статьи"
         date="2&nbsp;августа, 2019"

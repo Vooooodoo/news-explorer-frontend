@@ -13,70 +13,6 @@
   border-radius: 16px 16px 0 0;
 }
 
-.news-card__save-btn {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  border: 0;
-  padding: 0;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: .2s linear;
-  outline: none;
-}
-
-.news-card__save-btn:hover {
-  background-image: url(../../images/news-card__save-btn_state_hover.svg);
-}
-
-.news-card__save-btn:focus {
-  background-image: url(../../images/news-card__save-btn_state_hover.svg);
-  transition: none;
-}
-
-.news-card__save-btn_state_normal {
-  background-image: url(../../images/news-card__save-btn_state_normal.svg);
-}
-
-.news-card__save-btn_state_marked {
-  background-image: url(../../images/news-card__save-btn_state_marked.svg);
-}
-
-.news-card__popup {
-  display: flex;
-  position: absolute;
-  top: 24px;
-  right: 69px;
-  height: 40px;
-  background-color: white;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 12px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 0 11px;
-}
-
-.news-card__popup_hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility .3s, opacity .3s linear;
-}
-
-.news-card__popup_shown {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s, opacity .3s linear;
-}
-
 .news-card__container {
   display: flex;
   flex-direction: column;
@@ -126,16 +62,6 @@
     height: calc(272 / 400 * (100vw - 240px) / 3);
   }
 
-  .news-card__save-btn {
-    top: 16px;
-    right: 16px;
-  }
-
-  .news-card__popup {
-    top: 16px;
-    right: 61px;
-  }
-
   .news-card__title {
     font-size: 22px;
     line-height: 24px;
@@ -154,35 +80,15 @@
   }
 }
 
-@media all and (max-width: 879px) {
-  .news-card__popup {
-    width: 110px;
-  }
-}
-
 @media all and (max-width: 767px) {
   .news-card__photo {
     height: calc(272 / 400 * (100vw - 88px) / 2);
-  }
-
-  .news-card__popup {
-    width: auto;
-  }
-}
-
-@media all and (max-width: 609px) {
-  .news-card__popup {
-    width: 110px;
   }
 }
 
 @media all and (max-width: 499px) {
   .news-card__photo {
     height: calc(272 / 400 * (100vw - 32px));
-  }
-
-  .news-card__popup {
-    width: auto;
   }
 
   .news-card__container {

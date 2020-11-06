@@ -33,6 +33,19 @@
   transition: none;
 }
 
+.news-card-btn_type_normal-delete {
+  background-image: url(../../images/news-card-btn_type_normal-delete.svg);
+}
+
+.news-card-btn_type_hover-delete:hover {
+  background-image: url(../../images/news-card-btn_type_hover-delete.svg);
+}
+
+.news-card-btn_type_focus-delete:focus {
+  background-image: url(../../images/news-card-btn_type_hover-delete.svg);
+  transition: none;
+}
+
 .news-card-btn__popup {
   display: flex;
   position: absolute;

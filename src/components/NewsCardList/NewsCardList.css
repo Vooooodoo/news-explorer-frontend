@@ -4,7 +4,6 @@
   margin: 0;
   line-height: 0;
   width: 100%;
-  margin: 0 0 64px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
@@ -13,7 +12,6 @@
 @media all and (max-width: 1023px) {
   .news-card-list {
     gap: 8px;
-    margin-bottom: 32px;
   }
 }
 
@@ -27,6 +25,5 @@
   .news-card-list {
     grid-template-columns: 1fr;
     gap: 10px;
-    margin-bottom: 15px;
   }
 }

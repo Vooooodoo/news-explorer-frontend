@@ -8,7 +8,7 @@
   border-radius: 80px;
   background-color: #FFFFFF;
   border: none;
-  margin: 0 auto;
+  margin: 64px auto 0;
   padding: 0;
   cursor: pointer;
   transition: .2s linear;
@@ -28,11 +28,13 @@
   .show-more {
     width: 240px;
     height: 56px;
+    margin-top: 32px;
   }
 }
 
 @media all and (max-width: 499px) {
   .show-more {
     width: 288px;
+    margin-top: 15px;
   }
 }

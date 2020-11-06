@@ -6,12 +6,13 @@ import {
   useHistory,
 } from 'react-router-dom';
 import Header from '../Header/Header';
+import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import Main from '../Main/Main';
 import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
 
 function App() {
-  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState(true);
 
   const history = useHistory();
 
@@ -32,7 +33,7 @@ function App() {
         </Route>
 
         <Route path="/saved-news">
-          <Header
+          <SavedNewsHeader
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
           />

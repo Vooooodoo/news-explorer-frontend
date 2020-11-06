@@ -21,11 +21,22 @@ function App() {
 
   return (
     <>
-      <Header
-        loggedIn={loggedIn}
-        onSignOut={handleSignOut}
-      />
-      <Main />
+      <Switch>
+        <Route exact path="/">
+          <Header
+            loggedIn={loggedIn}
+            onSignOut={handleSignOut}
+          />
+          <Main />
+        </Route>
+
+        <Route path="/saved-news">
+          <Header
+            loggedIn={loggedIn}
+            onSignOut={handleSignOut}
+          />
+        </Route>
+      </Switch>
       <Footer />
     </>
   );

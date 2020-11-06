@@ -1,16 +1,16 @@
 import React from 'react';
 import NewsCardList from '../NewsCardList/NewsCardList';
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
-import './NewsCards.css';
+import './SearchResult.css';
 
-function NewsCards() {
+function SearchResult() {
   return (
-    <section className="news-cards">
-      <h3 className="news-cards__title">Результаты поиска</h3>
+    <section className="search-result">
+      <h3 className="search-result__title">Результаты поиска</h3>
       <NewsCardList />
       <ShowMoreBtn />
     </section>
   );
 }
 
-export default NewsCards;
+export default SearchResult;

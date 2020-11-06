@@ -1,6 +1,6 @@
 import React from 'react';
 import About from '../About/About';
-import NewsCards from '../NewsCards/NewsCards';
+import SearchResult from '../SearchResult/SearchResult';
 import Spinner from '../Spinner/Spinner';
 import NotFound from '../NotFound/NotFound';
 
@@ -8,7 +8,7 @@ function Main(props) {
   return (
     <main>
       <Spinner />
-      <NewsCards />
+      <SearchResult />
       <NotFound />
       <About />
     </main>

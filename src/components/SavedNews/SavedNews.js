@@ -4,9 +4,11 @@ import './SavedNews.css';
 
 function SavedNews() {
   return (
-    <section className="saved-news">
-      <NewsCardList />
-    </section>
+    <main>
+      <section className="saved-news">
+        <NewsCardList />
+      </section>
+    </main>
   );
 }
 

@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
+import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
           />
+          <SavedNews />
         </Route>
       </Switch>
       <Footer />

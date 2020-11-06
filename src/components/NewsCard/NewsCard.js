@@ -6,6 +6,7 @@ function NewsCard(props) {
   return (
     <li className="news-card tap-highlight">
       <img className="news-card__photo" src={props.photo} alt={`${props.title}.`} />
+      <span className={props.tagClass}>{props.tagText}</span>
       <NewsCardBtn
         btnClass={props.btnClass}
         ariaLabel={props.ariaLabel}

@@ -10,6 +10,8 @@ function NewsCardList(props) {
     <ul className="news-card-list">
       <NewsCard
         photo={newsCardPhotoFirst}
+        tagClass="news-card__tag news-card__tag_hidden news-card__tag_shown"
+        tagText="Природа"
         btnClass="news-card-btn news-card-btn_type_normal-save news-card-btn_type_marked-save news-card-btn_type_hover-save news-card-btn_type_focus-save"
         ariaLabel="Сохранить статью."
         popupText="Войдите, чтобы сохранять статьи"
@@ -20,6 +22,8 @@ function NewsCardList(props) {
       />
       <NewsCard
         photo={newsCardPhotoSecond}
+        tagClass="news-card__tag news-card__tag_hidden news-card__tag_shown"
+        tagText="Природа"
         btnClass="news-card-btn news-card-btn_type_normal-save news-card-btn_type_marked-save news-card-btn_type_hover-save news-card-btn_type_focus-save"
         ariaLabel="Сохранить статью."
         popupText="Войдите, чтобы сохранять статьи"
@@ -30,6 +34,8 @@ function NewsCardList(props) {
       />
       <NewsCard
         photo={newsCardPhotoThird}
+        tagClass="news-card__tag news-card__tag_hidden news-card__tag_shown"
+        tagText="Природа"
         btnClass="news-card-btn news-card-btn_type_normal-save news-card-btn_type_marked-save news-card-btn_type_hover-save news-card-btn_type_focus-save"
         ariaLabel="Сохранить статью."
         popupText="Войдите, чтобы сохранять статьи"

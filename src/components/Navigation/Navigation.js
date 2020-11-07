@@ -12,16 +12,19 @@ function Navigation(props) {
       ? BlackHeaderLogo
       : WhiteHeaderLogo
   }`;
+
   const navigationClass = `${
     pathname === '/saved-news'
-      ? 'navigation_color_black'
-      : 'navigation_color_white'
+      ? 'navigation_location_saved-news navigation_color_black'
+      : 'navigation_location_main navigation_color_white'
   }`;
+
   const linkClass = `${
     pathname === '/saved-news'
       ? 'navigation__link navigation__link_color_black navigation__text navigation__text_color_black opacity tap-highlight'
       : 'navigation__link navigation__link_color_white navigation__text navigation__text_color_white opacity tap-highlight'
   }`;
+
   const btnClass = `${
     pathname === '/saved-news'
       ? 'navigation__text_color_black navigation__desktop-button_color_black'

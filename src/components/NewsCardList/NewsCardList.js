@@ -10,7 +10,6 @@ function NewsCardList(props) {
     <ul className="news-card-list">
       <NewsCard
         photo={newsCardPhotoFirst}
-        tagClass="news-card__tag news-card__tag_hidden"
         tagText="Природа"
         date="2&nbsp;августа, 2019"
         title="Национальное достояние&nbsp;&mdash; парки"
@@ -19,7 +18,6 @@ function NewsCardList(props) {
       />
       <NewsCard
         photo={newsCardPhotoSecond}
-        tagClass="news-card__tag news-card__tag_hidden"
         tagText="Природа"
         date="2&nbsp;августа, 2019"
         title="Лесные огоньки: история одной фотографии"
@@ -28,7 +26,6 @@ function NewsCardList(props) {
       />
       <NewsCard
         photo={newsCardPhotoThird}
-        tagClass="news-card__tag news-card__tag_hidden"
         tagText="Природа"
         date="2&nbsp;августа, 2019"
         title="&laquo;Первозданная тайга&raquo;: новый фотопроект Игоря Шпиленка"

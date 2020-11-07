@@ -47,12 +47,20 @@
   padding-bottom: 25px;
 }
 
-.navigation__link_color_white {
+.navigation__link_state_active-white {
   border-bottom: 3px solid white;
 }
 
-.navigation__link_color_black {
+.navigation__link_state_inactive-white {
+  border-bottom: none;
+}
+
+.navigation__link_state_ative-black {
   border-bottom: 3px solid #1A1B22;
+}
+
+.navigation__link_state_inactive-black {
+  border-bottom: none;
 }
 
 .navigation__desktop-button {

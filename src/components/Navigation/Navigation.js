@@ -21,8 +21,20 @@ function Navigation(props) {
 
   const linkClass = `${
     pathname === '/saved-news'
-      ? 'navigation__link_color_black navigation__text_color_black'
-      : 'navigation__link_color_white navigation__text_color_white'
+      ? 'navigation__text_color_black'
+      : 'navigation__text_color_white'
+  }`;
+
+  const activeWhiteLinkClass = `${
+    pathname === '/saved-news'
+      ? 'navigation__link_state_inactive-white'
+      : 'navigation__link_state_active-white'
+  }`;
+
+  const activeBlackLinkClass = `${
+    pathname === '/saved-news'
+      ? 'navigation__link_state_ative-black'
+      : 'navigation__link_state_inactive-black'
   }`;
 
   const desktopBtnClass = `${
@@ -44,10 +56,10 @@ function Navigation(props) {
       </Link>
 
       <nav className="navigation__menu">
-        <Link to="/" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Главная</Link>
+        <Link to="/" className={`navigation__link navigation__text opacity tap-highlight ${linkClass} ${activeWhiteLinkClass}`}>Главная</Link>
         {props.loggedIn
           ? (<>
-              <Link to="/saved-news" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Сохранённые статьи</Link>
+              <Link to="/saved-news" className={`navigation__link navigation__text opacity tap-highlight ${linkClass} ${activeBlackLinkClass}`}>Сохранённые статьи</Link>
               <button className={`navigation__desktop-button navigation__desktop-button_signout navigation__text opacity tab tap-highlight ${desktopBtnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
             </>)
 

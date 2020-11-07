@@ -27,14 +27,14 @@ function Navigation(props) {
 
   const activeWhiteLinkClass = `${
     pathname === '/saved-news'
-      ? 'navigation__link_state_inactive-white'
+      ? 'navigation__link_state_inactive'
       : 'navigation__link_state_active-white'
   }`;
 
   const activeBlackLinkClass = `${
     pathname === '/saved-news'
       ? 'navigation__link_state_ative-black'
-      : 'navigation__link_state_inactive-black'
+      : 'navigation__link_state_inactive'
   }`;
 
   const desktopBtnClass = `${

@@ -36,22 +36,20 @@ function Navigation(props) {
       <Link to="/" className="navigation__logo-link tap-highlight">
         <img className="navigation__logo" src={logo} alt="Логотип в виде текста NewsExplorer." />
       </Link>
-      {props.loggedIn
-        ? (<>
-            <nav className="navigation__menu">
-              <Link to="/" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Главная</Link>
+
+      <nav className="navigation__menu">
+        <Link to="/" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Главная</Link>
+        {props.loggedIn
+          ? (<>
               <Link to="/saved-news" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Сохранённые статьи</Link>
               <button className={`navigation__desktop-button navigation__desktop-button_signout navigation__text opacity tab tap-highlight ${btnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
-            </nav>
-          </>)
+            </>)
 
-        : (<>
-            <nav className="navigation__menu">
-              <Link to="/" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Главная</Link>
+          : (<>
               <button className={`navigation__desktop-button navigation__desktop-button_signin navigation__text opacity tab tap-highlight ${btnClass}`} type="button">Авторизоваться</button>
-            </nav>
-          </>)
-      }
+            </>)
+        }
+      </nav>
       <button className="navigation__mobile-button tap-highlight" type="button" aria-label="Открыть меню."></button>
     </div>
   );

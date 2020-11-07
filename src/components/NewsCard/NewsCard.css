@@ -14,6 +14,7 @@
 }
 
 .news-card__tag {
+  display: flex;
   position: absolute;
   top: 24px;
   left: 24px;
@@ -28,14 +29,6 @@
   align-items: center;
   box-sizing: border-box;
   padding: 0 15px;
-}
-
-.news-card__tag_hidden {
-  display: none;
-}
-
-.news-card__tag_shown {
-  display: flex;
 }
 
 .news-card__container {

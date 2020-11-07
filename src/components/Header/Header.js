@@ -9,9 +9,6 @@ function Header(props) {
       <Navigation
         loggedIn={props.loggedIn}
         onSignOut={props.onSignOut}
-        logo={props.logo}
-        linkClass={props.linkClass}
-        btnClass={props.btnClass}
       />
       <h1 className="header__title">Что творится в&nbsp;мире?</h1>
       <p className="header__subtitle">

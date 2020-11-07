@@ -64,7 +64,6 @@
   outline: none;
 }
 
-
 .navigation__desktop-button_color_white {
   border: 1px solid white;
 }
@@ -102,7 +101,6 @@
   cursor: pointer;
   outline: none;
 }
-
 
 @media all and (max-width: 1023px) {
   .navigation {

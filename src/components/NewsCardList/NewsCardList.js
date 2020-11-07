@@ -5,7 +5,7 @@ import newsCardPhotoSecond from '../../images/news-card__photo_name_2.jpg';
 import newsCardPhotoThird from '../../images/news-card__photo_name_3.jpg';
 import './NewsCardList.css';
 
-function NewsCardList(props) {
+function NewsCardList() {
   return (
     <ul className="news-card-list">
       <NewsCard

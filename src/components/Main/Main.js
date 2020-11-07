@@ -4,7 +4,7 @@ import SearchResult from '../SearchResult/SearchResult';
 import Spinner from '../Spinner/Spinner';
 import NotFound from '../NotFound/NotFound';
 
-function Main(props) {
+function Main() {
   return (
     <main>
       <Spinner />

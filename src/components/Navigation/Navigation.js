@@ -4,7 +4,7 @@ import WhiteHeaderLogo from '../../images/header__logo_color_white.svg';
 import BlackHeaderLogo from '../../images/header__logo_color_black.svg';
 import './Navigation.css';
 
-function Navigation(props) {
+function Navigation(props) { //! цветовые отличия выноси в пропсы и опрокидывай до App, а версии авторизации в условии оставляй
   return (
     <div className="navigation">
       {props.loggedIn

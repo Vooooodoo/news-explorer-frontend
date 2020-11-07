@@ -3,9 +3,16 @@
   justify-content: space-between;
   align-items: center;
   min-height: 78px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin: 0 -104px 80px;
+}
+
+.navigation_color_white {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0 104px;
+}
+
+.navigation_color_black {
+  border-bottom: 1px solid #D1D2D6;
 }
 
 .navigation__logo-link {

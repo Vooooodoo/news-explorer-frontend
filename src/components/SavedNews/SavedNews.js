@@ -1,13 +1,11 @@
 import React from 'react';
-import NewsCardList from '../NewsCardList/NewsCardList';
-import './SavedNews.css';
+import SavedResult from '../SavedResult/SavedResult';
+
 
 function SavedNews() {
   return (
     <main>
-      <section className="saved-news">
-        <NewsCardList />
-      </section>
+      <SavedResult />
     </main>
   );
 }

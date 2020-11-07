@@ -21,8 +21,8 @@ function Navigation(props) {
 
   const linkClass = `${
     pathname === '/saved-news'
-      ? 'navigation__link navigation__link_color_black navigation__text navigation__text_color_black opacity tap-highlight'
-      : 'navigation__link navigation__link_color_white navigation__text navigation__text_color_white opacity tap-highlight'
+      ? 'navigation__link_color_black navigation__text_color_black'
+      : 'navigation__link_color_white navigation__text_color_white'
   }`;
 
   const btnClass = `${
@@ -40,8 +40,8 @@ function Navigation(props) {
             </Link>
 
             <nav className="navigation__menu">
-              <Link to="/" className={linkClass}>Главная</Link>
-              <Link to="/saved-news" className={linkClass}>Сохранённые статьи</Link>
+              <Link to="/" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Главная</Link>
+              <Link to="/saved-news" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Сохранённые статьи</Link>
               <button className={`navigation__desktop-button navigation__desktop-button_signout navigation__text opacity tab tap-highlight ${btnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
             </nav>
           </>)
@@ -52,7 +52,7 @@ function Navigation(props) {
             </Link>
 
             <nav className="navigation__menu">
-              <Link to="/" className={linkClass}>Главная</Link>
+              <Link to="/" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Главная</Link>
               <button className={`navigation__desktop-button navigation__desktop-button_signin navigation__text opacity tab tap-highlight ${btnClass}`} type="button">Авторизоваться</button>
             </nav>
           </>)

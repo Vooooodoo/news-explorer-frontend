@@ -97,9 +97,16 @@
   border: 0;
   padding: 0;
   background-color: transparent;
-  background-image: url(../../images/navigation__mobile-button.svg);
   cursor: pointer;
   outline: none;
+}
+
+.navigation__mobile-button_color_white {
+  background-image: url(../../images/navigation__mobile-button_color_white.svg);
+}
+
+.navigation__mobile-button_color_black {
+  background-image: url(../../images/navigation__mobile-button_color_black.svg);
 }
 
 @media all and (max-width: 1023px) {

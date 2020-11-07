@@ -25,10 +25,16 @@ function Navigation(props) {
       : 'navigation__link_color_white navigation__text_color_white'
   }`;
 
-  const btnClass = `${
+  const desktopBtnClass = `${
     pathname === '/saved-news'
       ? 'navigation__text_color_black navigation__desktop-button_color_black'
       : 'navigation__text_color_white navigation__desktop-button_color_white'
+  }`;
+
+  const mobileBtnClass = `${
+    pathname === '/saved-news'
+      ? 'navigation__mobile-button_color_black'
+      : 'navigation__mobile-button_color_white'
   }`;
 
   return (
@@ -42,15 +48,15 @@ function Navigation(props) {
         {props.loggedIn
           ? (<>
               <Link to="/saved-news" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Сохранённые статьи</Link>
-              <button className={`navigation__desktop-button navigation__desktop-button_signout navigation__text opacity tab tap-highlight ${btnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
+              <button className={`navigation__desktop-button navigation__desktop-button_signout navigation__text opacity tab tap-highlight ${desktopBtnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
             </>)
 
           : (<>
-              <button className={`navigation__desktop-button navigation__desktop-button_signin navigation__text opacity tab tap-highlight ${btnClass}`} type="button">Авторизоваться</button>
+              <button className={`navigation__desktop-button navigation__desktop-button_signin navigation__text opacity tab tap-highlight ${desktopBtnClass}`} type="button">Авторизоваться</button>
             </>)
         }
       </nav>
-      <button className="navigation__mobile-button tap-highlight" type="button" aria-label="Открыть меню."></button>
+      <button className={`navigation__mobile-button tap-highlight ${mobileBtnClass}`} type="button" aria-label="Открыть меню."></button>
     </div>
   );
 }

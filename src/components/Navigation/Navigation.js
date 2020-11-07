@@ -33,12 +33,11 @@ function Navigation(props) {
 
   return (
     <div className={`navigation ${navigationClass}`}>
+      <Link to="/" className="navigation__logo-link tap-highlight">
+        <img className="navigation__logo" src={logo} alt="Логотип в виде текста NewsExplorer." />
+      </Link>
       {props.loggedIn
         ? (<>
-            <Link to="/" className="navigation__logo-link tap-highlight">
-              <img className="navigation__logo" src={logo} alt="Логотип в виде текста NewsExplorer." />
-            </Link>
-
             <nav className="navigation__menu">
               <Link to="/" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Главная</Link>
               <Link to="/saved-news" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Сохранённые статьи</Link>
@@ -47,10 +46,6 @@ function Navigation(props) {
           </>)
 
         : (<>
-            <Link to="/" className="navigation__logo-link tap-highlight">
-              <img className="navigation__logo" src={logo} alt="Логотип в виде текста NewsExplorer." />
-            </Link>
-
             <nav className="navigation__menu">
               <Link to="/" className={`navigation__link navigation__text opacity tap-highlight ${linkClass}`}>Главная</Link>
               <button className={`navigation__desktop-button navigation__desktop-button_signin navigation__text opacity tab tap-highlight ${btnClass}`} type="button">Авторизоваться</button>

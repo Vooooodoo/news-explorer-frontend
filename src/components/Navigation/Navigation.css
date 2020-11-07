@@ -84,7 +84,7 @@
 }
 
 .navigation__desktop-button_signout::after {
-  content: url(../../images/navigation__desktop-button_signout.svg);
+  content: url(../../images/navigation__desktop-button_white-signout.svg);
   position: absolute;
   top: 13px;
   right: 15px;

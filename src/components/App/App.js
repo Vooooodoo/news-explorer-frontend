@@ -10,11 +10,9 @@ import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import Main from '../Main/Main';
 import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
-import WhiteHeaderLogo from '../../images/header__logo_color_white.svg';
-import BlackHeaderLogo from '../../images/header__logo_color_black.svg';
 
 function App() {
-  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState(true);
 
   const history = useHistory();
 
@@ -30,9 +28,6 @@ function App() {
           <Header
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
-            logo={WhiteHeaderLogo}
-            linkClass="navigation__link navigation__link_color_white navigation__text navigation__text_color_white opacity tap-highlight"
-            btnClass="navigation__desktop-button navigation__desktop-button_signout navigation__text navigation__text_color_white opacity tab tap-highlight"
           />
           <Main />
         </Route>
@@ -41,9 +36,6 @@ function App() {
           <SavedNewsHeader
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
-            logo={BlackHeaderLogo}
-            linkClass="navigation__link navigation__link_color_black navigation__text navigation__text_color_black opacity tap-highlight"
-            btnClass="navigation__desktop-button navigation__desktop-button_signout navigation__text navigation__text_color_black opacity tab tap-highlight"
           />
           <SavedNews />
         </Route>

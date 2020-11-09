@@ -30,7 +30,7 @@
   background-color: #FFFFFF;
   border-radius: 16px;
   padding: 35px;
-  margin: 0 55.3px;
+  box-sizing: border-box;
 }
 
 .popup__form-title {

@@ -143,12 +143,24 @@
   cursor: pointer;
 }
 
+.popup__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .popup__text {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
+  margin-right: 5px;
 }
 
 .popup__link {
+  border: none;
+  background-color: transparent;
   color: #2F71E5;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
 }

@@ -21,7 +21,7 @@ function PopupWithForm(props) {
         <button className="popup__close opacity tab tap-highlight" type="button" aria-label={props.ariaLabel} onClick={props.onClose}></button>
         <div className="popup__wrapper">
           <span className="popup__text">или</span>
-          <button className="popup__link opacity tap-highlight" onClick={props.onClick}>{props.linkText}</button>
+          <button className="popup__link opacity tap-highlight tab" onClick={props.onClick}>{props.linkText}</button>
       </div>
       </form>
     </div>

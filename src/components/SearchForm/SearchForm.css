@@ -35,6 +35,7 @@
   cursor: pointer;
   transition: .2s linear;
   outline: none;
+  box-shadow: 0 5px 15px rgba(14, 26, 57, .2);
 }
 
 .search-form__button:hover {

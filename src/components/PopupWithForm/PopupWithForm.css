@@ -49,22 +49,23 @@
 
 .popup__input {
   display: block;
-  padding: 10px 0;
+  padding: 12px 0 8px;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: 1px solid #B6BCBF;
+  outline: none;
 }
 
 .popup__input:last-of-type {
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .popup__input:focus {
-  outline-color: rgb(140, 0, 255);
+  border-bottom: 1px solid #1A1B22;;
 }
 
 .popup__input::placeholder {
@@ -80,7 +81,10 @@
 }
 
 .popup__input-label {
-  color: #2F71E5;;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #2F71E5;
 }
 
 .popup__submit {
@@ -93,10 +97,12 @@
   border: none;
   transition: .2s linear;
   outline: none;
+  padding: 0;
+  margin-bottom: 16px;
 }
 
 .popup__submit_valid {
-  background-color: #2F71E5;;
+  background-color: #2F71E5;
   color: white;
   box-shadow: 0 5px 15px rgba(14, 26, 57, .2);
 }
@@ -116,7 +122,7 @@
 }
 
 .popup__submit_invalid {
-  background-color: #E6E8EB;;
+  background-color: #E6E8EB;
   color: #B6BCBF;
   pointer-events: none;
 }

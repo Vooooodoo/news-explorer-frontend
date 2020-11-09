@@ -70,7 +70,7 @@ function Navigation(props) {
             </>)
 
           : (<>
-              <button className={`navigation__desktop-button navigation__desktop-button_type_signin navigation__text opacity tab tap-highlight ${desktopBtnClass}`} type="button">Авторизоваться</button>
+              <button className={`navigation__desktop-button navigation__desktop-button_type_signin navigation__text opacity tab tap-highlight ${desktopBtnClass}`} type="button" onClick={props.onSignIn}>Авторизоваться</button>
             </>)
         }
       </nav>

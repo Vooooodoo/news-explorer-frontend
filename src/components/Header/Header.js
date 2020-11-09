@@ -9,6 +9,7 @@ function Header(props) {
       <Navigation
         loggedIn={props.loggedIn}
         onSignOut={props.onSignOut}
+        onSignIn={props.onSignIn}
       />
       <h1 className="header__title">Что творится в&nbsp;мире?</h1>
       <p className="header__subtitle">

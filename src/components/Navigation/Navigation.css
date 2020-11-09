@@ -60,7 +60,6 @@
 }
 
 .navigation__desktop-button {
-  position: relative;
   background-color: transparent;
   border-radius: 100px;
   height: 48px;
@@ -76,22 +75,26 @@
   border: 1px solid #1A1B22;
 }
 
-.navigation__desktop-button_signin {
+.navigation__desktop-button_type_signin {
   padding: 0;
   width: 176px;
 }
 
-.navigation__desktop-button_signout {
+.navigation__desktop-button_type_signout {
   text-align: left;
   padding: 0 45px 0 20px;
   min-width: 112px;
+  background-image: url(../../images/navigation__desktop-button_white-signout.svg);
+  background-repeat: no-repeat;
+  background-position: 80px;
 }
 
-.navigation__desktop-button_signout::after {
-  content: url(../../images/navigation__desktop-button_white-signout.svg);
-  position: absolute;
-  top: 13px;
-  right: 15px;
+.navigation__desktop-button_type_white-signout {
+  background-image: url(../../images/navigation__desktop-button_white-signout.svg);
+}
+
+.navigation__desktop-button_type_black-signout {
+  background-image: url(../../images/navigation__desktop-button_black-signout.svg);
 }
 
 .navigation__mobile-button {

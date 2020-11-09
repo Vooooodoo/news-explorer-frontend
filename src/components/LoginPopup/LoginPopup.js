@@ -8,8 +8,10 @@ function LoginPopup(props) {
       title="Вход"
       btnText="Войти"
       ariaLabel="Закрыть форму входа."
+      linkText="Зарегистрироваться"
       isOpen={props.isOpen}
       onClose={props.onClose}
+      onClick={props.onClick}
     />
   );
 }

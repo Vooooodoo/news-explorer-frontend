@@ -91,6 +91,7 @@
   background-position: center;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 .popup__text {

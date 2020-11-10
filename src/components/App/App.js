@@ -11,6 +11,7 @@ import Main from '../Main/Main';
 import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
 import LoginPopup from '../LoginPopup/LoginPopup';
+import RegistrationPopup from '../RegistrationPopup/RegistrationPopup';
 
 function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
@@ -53,7 +54,7 @@ function App() {
       document.removeEventListener('keydown', handleEsc);
     };
   },
-  [isLoginPopupOpen]);
+  [isLoginPopupOpen, isRegistrationPopupOpen]);
 
   React.useEffect(() => {
     function handleOverlayClick(evt) {
@@ -68,7 +69,7 @@ function App() {
       document.removeEventListener('click', handleOverlayClick);
     };
   },
-  [isLoginPopupOpen]);
+  [isLoginPopupOpen, isRegistrationPopupOpen]);
 
   return (
     <>
@@ -96,6 +97,11 @@ function App() {
         isOpen={isLoginPopupOpen}
         onClose={closeAllPopups}
         onClick={openRegistrationPopup}
+      />
+      <RegistrationPopup
+        isOpen={isRegistrationPopupOpen}
+        onClose={closeAllPopups}
+        onClick={openLoginPopup}
       />
     </>
   );

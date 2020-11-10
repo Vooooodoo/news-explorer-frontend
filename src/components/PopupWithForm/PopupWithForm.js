@@ -4,7 +4,7 @@ import './PopupWithForm.css';
 function PopupWithForm(props) {
   return (
     <div id={props.id} className={props.isOpen ? 'popup popup_opened' : 'popup popup_closed'}>
-      <form name={props.id.slice(0, props.id.indexOf('-'))} className="popup__form-container" onSubmit={props.onSubmit}>
+      <form name={props.id.slice(0, props.id.indexOf('-'))} className="popup__form-container" onSubmit={props.onSubmit} noValidate>
         <h3 className="popup__form-title">{props.title}</h3>
         <fieldset className="popup__fieldset">
           <label for="popup-email-input" className="popup__input-label">Email</label>
@@ -21,7 +21,7 @@ function PopupWithForm(props) {
         <button className="popup__close opacity tab tap-highlight" type="button" aria-label={props.ariaLabel} onClick={props.onClose}></button>
         <div className="popup__wrapper">
           <span className="popup__text">или</span>
-          <button className="popup__link opacity tap-highlight tab" onClick={props.onClick}>{props.linkText}</button>
+          <button className="popup__link opacity tap-highlight tab" type="button" onClick={props.onClick}>{props.linkText}</button>
       </div>
       </form>
     </div>

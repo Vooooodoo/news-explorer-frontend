@@ -2,11 +2,11 @@ import React from 'react';
 import './PopupWithForm.css';
 
 function PopupWithForm(props) {
-  const [emailInputErr, setEmailInputErr] = React.useState({
+  const [emailInputError, setEmailInputError] = React.useState({
     errClass: '',
     errMessage: ''
   });
-  const [passwordInputErr, setPasswordInputErr] = React.useState({
+  const [passwordInputError, setPasswordInputError] = React.useState({
     errClass: '',
     errMessage: ''
   });
@@ -26,11 +26,11 @@ function PopupWithForm(props) {
 
 
   React.useEffect(() => {
-    setEmailInputErr({
+    setEmailInputError({
       errClass: '',
       errMessage: ''
     });
-    setPasswordInputErr({
+    setPasswordInputError({
       errClass: '',
       errMessage: ''
     });
@@ -39,12 +39,12 @@ function PopupWithForm(props) {
 
   function handleEmailChange(evt) {
     if (!evt.target.validity.valid) {
-      setEmailInputErr({
+      setEmailInputError({
         errClass: 'popup__input-error_shown',
         errMessage: evt.target.validationMessage
       });
     } else {
-      setEmailInputErr({
+      setEmailInputError({
         errClass: '',
         errMessage: ''
       });
@@ -53,12 +53,12 @@ function PopupWithForm(props) {
 
   function handlePasswordChange(evt) {
     if (!evt.target.validity.valid) {
-      setPasswordInputErr({
+      setPasswordInputError({
         errClass: 'popup__input-error_shown',
         errMessage: evt.target.validationMessage
       });
     } else {
-      setPasswordInputErr({
+      setPasswordInputError({
         errClass: '',
         errMessage: ''
       });
@@ -72,11 +72,11 @@ function PopupWithForm(props) {
         <fieldset className="popup__fieldset">
           <label for="popup-email-input" className="popup__input-label">Email</label>
           <input id="popup-email-input" name="email" className="popup__input" onChange={handleEmailChange} type="email" placeholder="Введите почту" minLength="2" maxLength="40" required />
-          <span id="popup-email-input-error" className={`popup__input-error popup__input-error_hidden ${emailInputErr.errClass}`}>{emailInputErr.errMessage}</span>
+          <span id="popup-email-input-error" className={`popup__input-error popup__input-error_hidden ${emailInputError.errClass}`}>{emailInputError.errMessage}</span>
 
           <label for="popup-password-input" className="popup__input-label">Пароль</label>
           <input id="popup-password-input" name="password" className="popup__input" onChange={handlePasswordChange} type="password" placeholder="Введите пароль" minLength="8" maxLength="40" required />
-          <span id="popup-password-input-error" className={`popup__input-error popup__input-error_hidden ${passwordInputErr.errClass}`}>{passwordInputErr.errMessage}</span>
+          <span id="popup-password-input-error" className={`popup__input-error popup__input-error_hidden ${passwordInputError.errClass}`}>{passwordInputError.errMessage}</span>
 
           {props.children}
         </fieldset>

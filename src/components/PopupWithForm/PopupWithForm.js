@@ -2,61 +2,68 @@ import React from 'react';
 import './PopupWithForm.css';
 
 function PopupWithForm(props) {
-  const formName = props.id.slice(0, props.id.indexOf('-'))
-  // const form = document.getElementsByName(props.id.slice(0, props.id.indexOf('-')));
-  // const inputList = form.querySelectorAll('.popup__input');
-  // const submitBtn = form.querySelector('.popup__submit');
-  console.log(formName);
+  const [emailInputErr, setEmailInputErr] = React.useState({
+    errClass: '',
+    errMessage: ''
+  });
+  const [passwordInputErr, setPasswordInputErr] = React.useState({
+    errClass: '',
+    errMessage: ''
+  });
+
+  // const [isNameValid, setIsNameValid] = React.useState(false);
+  // const [isLinkValid, setIsLinkValid] = React.useState(false);
+  // const [isFormValid, setIsFormValid] = React.useState(false);
 
 
+  // React.useEffect(() => {
+  //   if (isNameValid && isLinkValid) setIsFormValid(true);
 
-  function showInputError(evt) {
-    const inputErrorElement = document.querySelector(`#${evt.target.id}-error`);
+  //   return () => {
+  //     setIsFormValid(false);
+  //   };
+  // }, [isNameValid, isLinkValid]);
 
-    inputErrorElement.classList.add('popup__input-error_shown');
-    inputErrorElement.textContent = evt.target.validationMessage;
-  }
 
-  function hideInputError(evt) {
-    const inputErrorElement = document.querySelector(`#${evt.target.id}-error`);
+  React.useEffect(() => {
+    setEmailInputErr({
+      errClass: '',
+      errMessage: ''
+    });
+    setPasswordInputErr({
+      errClass: '',
+      errMessage: ''
+    });
+  }, [props.isOpen]);
 
-    inputErrorElement.classList.remove('popup__input-error_shown');
-    inputErrorElement.textContent = '';
-  }
 
-  function isValid(evt) {
+  function handleEmailChange(evt) {
     if (!evt.target.validity.valid) {
-      showInputError(evt);
+      setEmailInputErr({
+        errClass: 'popup__input-error_shown',
+        errMessage: evt.target.validationMessage
+      });
     } else {
-      hideInputError(evt);
+      setEmailInputErr({
+        errClass: '',
+        errMessage: ''
+      });
     }
   }
 
-  // function hasInvalidInput() {
-  //   return this._inputList.some((item) => {
-  //     return !item.validity.valid;
-  //   }); //*прошлись по массиву инпутов внутри формы и проверили каждый на валидность, если найдется хоть один невалидный - метод вернет true
-  // }
-
-  // _toggleButtonState() {
-  //   if (this._hasInvalidInput()) {
-  //     this.disableSubmitButton();
-  //   } else {
-  //     this._submitButtonElement.classList.remove(this._invalidButtonClass);
-  //     this._submitButtonElement.disabled = false;
-  //   }
-  // }
-
-  // resetInputErrors() {
-  //   this._inputList.forEach(item => {
-  //     this._hideInputError(item);
-  //   }); //*прошлись по массиву и для каждого инпута скрыли ошибки
-  // }
-
-  // disableSubmitButton() {
-  //   this._submitButtonElement.classList.add(this._invalidButtonClass);
-  //   this._submitButtonElement.disabled = true;
-  // }
+  function handlePasswordChange(evt) {
+    if (!evt.target.validity.valid) {
+      setPasswordInputErr({
+        errClass: 'popup__input-error_shown',
+        errMessage: evt.target.validationMessage
+      });
+    } else {
+      setPasswordInputErr({
+        errClass: '',
+        errMessage: ''
+      });
+    }
+  }
 
   return (
     <div id={props.id} className={props.isOpen ? 'popup popup_opened' : 'popup popup_closed'}>
@@ -64,12 +71,12 @@ function PopupWithForm(props) {
         <h3 className="popup__form-title">{props.title}</h3>
         <fieldset className="popup__fieldset">
           <label for="popup-email-input" className="popup__input-label">Email</label>
-          <input id="popup-email-input" name="email" className="popup__input" onChange={isValid} type="email" placeholder="Введите почту" minLength="2" maxLength="40" required />
-          <span id="popup-email-input-error" className="popup__input-error popup__input-error_hidden"></span>
+          <input id="popup-email-input" name="email" className="popup__input" onChange={handleEmailChange} type="email" placeholder="Введите почту" minLength="2" maxLength="40" required />
+          <span id="popup-email-input-error" className={`popup__input-error popup__input-error_hidden ${emailInputErr.errClass}`}>{emailInputErr.errMessage}</span>
 
           <label for="popup-password-input" className="popup__input-label">Пароль</label>
-          <input id="popup-password-input" name="password" className="popup__input" onChange={isValid} type="password" placeholder="Введите пароль" minLength="8" maxLength="40" required />
-          <span id="popup-password-input-error" className="popup__input-error popup__input-error_hidden"></span>
+          <input id="popup-password-input" name="password" className="popup__input" onChange={handlePasswordChange} type="password" placeholder="Введите пароль" minLength="8" maxLength="40" required />
+          <span id="popup-password-input-error" className={`popup__input-error popup__input-error_hidden ${passwordInputErr.errClass}`}>{passwordInputErr.errMessage}</span>
 
           {props.children}
         </fieldset>

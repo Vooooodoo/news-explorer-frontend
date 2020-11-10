@@ -12,19 +12,10 @@ function PopupWithForm(props) {
   const [passwordInputError, setPasswordInputError] = React.useState(errorsDefaultState);
   const [nameInputError, setNameInputError] = React.useState(errorsDefaultState);
 
-  // const [isNameValid, setIsNameValid] = React.useState(false);
-  // const [isLinkValid, setIsLinkValid] = React.useState(false);
-  // const [isFormValid, setIsFormValid] = React.useState(false);
-
-
-  // React.useEffect(() => {
-  //   if (isNameValid && isLinkValid) setIsFormValid(true);
-
-  //   return () => {
-  //     setIsFormValid(false);
-  //   };
-  // }, [isNameValid, isLinkValid]);
-
+  const [isEmailValid, setIsEmailValid] = React.useState(false);
+  const [isPasswordValid, setIsPasswordValid] = React.useState(false);
+  const [isNameValid, setIsNameValid] = React.useState(false);
+  const [isFormValid, setIsFormValid] = React.useState(false);
 
   React.useEffect(() => {
     setEmailInputError(errorsDefaultState);
@@ -32,6 +23,13 @@ function PopupWithForm(props) {
     setNameInputError(errorsDefaultState);
   }, [props.isOpen]);
 
+  React.useEffect(() => {
+    if (isEmailValid && isPasswordValid && isNameValid) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  }, [isEmailValid, isPasswordValid, isNameValid]);
 
   function handleEmailChange(evt) {
     if (!evt.target.validity.valid) {
@@ -39,8 +37,10 @@ function PopupWithForm(props) {
         errorClass: shownErrorClass,
         errorMessage: evt.target.validationMessage,
       });
+      setIsEmailValid(false);
     } else {
       setEmailInputError(errorsDefaultState);
+      setIsEmailValid(true);
     }
   }
 
@@ -50,8 +50,10 @@ function PopupWithForm(props) {
         errorClass: shownErrorClass,
         errorMessage: evt.target.validationMessage,
       });
+      setIsPasswordValid(false);
     } else {
       setPasswordInputError(errorsDefaultState);
+      setIsPasswordValid(true);
     }
   }
 
@@ -61,8 +63,10 @@ function PopupWithForm(props) {
         errorClass: shownErrorClass,
         errorMessage: evt.target.validationMessage,
       });
+      setIsNameValid(false);
     } else {
       setNameInputError(errorsDefaultState);
+      setIsNameValid(true);
     }
   }
 
@@ -88,7 +92,7 @@ function PopupWithForm(props) {
             : (<></>)
           }
         </fieldset>
-        <button className="popup__submit popup__submit_valid tap-highlight" type="submit">{props.btnText}</button>
+        <button className={`popup__submit tap-highlight ${isFormValid ? 'popup__submit_valid' : 'popup__submit_invalid'}`} type="submit">{props.btnText}</button>
         <button className="popup__close opacity tab tap-highlight" type="button" aria-label={props.ariaLabel} onClick={props.onClose}></button>
         <div className="popup__wrapper">
           <span className="popup__text">или</span>

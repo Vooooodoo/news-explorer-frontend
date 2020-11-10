@@ -94,17 +94,17 @@ function PopupWithForm(props) {
         <fieldset className="popup__fieldset">
           <label for="popup-email-input" className="popup__input-label">Email</label>
           <input id="popup-email-input" name="email" className="popup__input" onChange={handleEmailChange} type="email" placeholder="Введите почту" minLength="2" maxLength="40" required />
-          <span id="popup-email-input-error" className={`popup__input-error popup__input-error_hidden ${emailInputError.errorClass}`}>{emailInputError.errorMessage}</span>
+          <span className={`popup__input-error popup__input-error_hidden ${emailInputError.errorClass}`}>{emailInputError.errorMessage}</span>
 
           <label for="popup-password-input" className="popup__input-label">Пароль</label>
           <input id="popup-password-input" name="password" className="popup__input" onChange={handlePasswordChange} type="password" placeholder="Введите пароль" minLength="8" maxLength="40" required />
-          <span id="popup-password-input-error" className={`popup__input-error popup__input-error_hidden ${passwordInputError.errorClass}`}>{passwordInputError.errorMessage}</span>
+          <span className={`popup__input-error popup__input-error_hidden ${passwordInputError.errorClass}`}>{passwordInputError.errorMessage}</span>
 
           {props.id === 'registration-popup'
             ? (<>
                 <label for="popup-name-input" className="popup__input-label">Имя</label>
                 <input id="popup-name-input" name="name" className="popup__input" onChange={handleNameChange} type="text" placeholder="Введите своё имя" minLength="2" maxLength="40" pattern="^[А-Яа-яЁёa-zA-Z\s\-]+$" required />
-                <span id="popup-name-input-error" className={`popup__input-error popup__input-error_hidden ${nameInputError.errorClass}`}>{nameInputError.errorMessage}</span>
+                <span className={`popup__input-error popup__input-error_hidden ${nameInputError.errorClass}`}>{nameInputError.errorMessage}</span>
               </>)
             : (<></>)
           }

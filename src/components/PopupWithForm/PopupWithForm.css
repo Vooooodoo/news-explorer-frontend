@@ -102,6 +102,10 @@
   top: 55px;
 }
 
+.popup__input-error:last-of-type {
+  top: 221px;
+}
+
 .popup__input-error_hidden {
   display: none;
 }

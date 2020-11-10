@@ -14,6 +14,7 @@ import LoginPopup from '../LoginPopup/LoginPopup';
 
 function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
+  const [isRegistrationPopupOpen, setIsRegistrationPopupOpen] = React.useState(false);
 
   const [loggedIn, setLoggedIn] = React.useState(true);
 
@@ -26,10 +27,17 @@ function App() {
 
   function closeAllPopups() {
     setIsLoginPopupOpen(false);
+    setIsRegistrationPopupOpen(false);
   }
 
-  function handleSignIn() {
+  function openLoginPopup() {
+    closeAllPopups();
     setIsLoginPopupOpen(true);
+  }
+
+  function openRegistrationPopup() {
+    closeAllPopups();
+    setIsRegistrationPopupOpen(true);
   }
 
   React.useEffect(() => {
@@ -69,7 +77,7 @@ function App() {
           <Header
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
-            onSignIn={handleSignIn}
+            onSignIn={openLoginPopup}
           />
           <Main />
         </Route>
@@ -87,6 +95,7 @@ function App() {
       <LoginPopup
         isOpen={isLoginPopupOpen}
         onClose={closeAllPopups}
+        onClick={openRegistrationPopup}
       />
     </>
   );

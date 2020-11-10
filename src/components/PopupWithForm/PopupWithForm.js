@@ -4,11 +4,11 @@ import './PopupWithForm.css';
 function PopupWithForm(props) {
   const [emailInputError, setEmailInputError] = React.useState({
     errClass: '',
-    errMessage: ''
+    errMessage: '',
   });
   const [passwordInputError, setPasswordInputError] = React.useState({
     errClass: '',
-    errMessage: ''
+    errMessage: '',
   });
 
   // const [isNameValid, setIsNameValid] = React.useState(false);
@@ -28,11 +28,11 @@ function PopupWithForm(props) {
   React.useEffect(() => {
     setEmailInputError({
       errClass: '',
-      errMessage: ''
+      errMessage: '',
     });
     setPasswordInputError({
       errClass: '',
-      errMessage: ''
+      errMessage: '',
     });
   }, [props.isOpen]);
 
@@ -41,12 +41,12 @@ function PopupWithForm(props) {
     if (!evt.target.validity.valid) {
       setEmailInputError({
         errClass: 'popup__input-error_shown',
-        errMessage: evt.target.validationMessage
+        errMessage: evt.target.validationMessage,
       });
     } else {
       setEmailInputError({
         errClass: '',
-        errMessage: ''
+        errMessage: '',
       });
     }
   }
@@ -55,12 +55,12 @@ function PopupWithForm(props) {
     if (!evt.target.validity.valid) {
       setPasswordInputError({
         errClass: 'popup__input-error_shown',
-        errMessage: evt.target.validationMessage
+        errMessage: evt.target.validationMessage,
       });
     } else {
       setPasswordInputError({
         errClass: '',
-        errMessage: ''
+        errMessage: '',
       });
     }
   }

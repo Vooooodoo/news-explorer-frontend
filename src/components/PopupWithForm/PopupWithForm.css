@@ -186,5 +186,6 @@
     right: 16px;
     width: 24px;
     height: 24px;
+    background-color: rgba(0, 0, 0, .7);
   }
 }

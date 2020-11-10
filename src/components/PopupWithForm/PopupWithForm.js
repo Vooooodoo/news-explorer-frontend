@@ -5,7 +5,8 @@ function PopupWithForm(props) {
   const errorsDefaultState = {
     errorClass: '',
     errorMessage: '',
-  }
+  };
+  const shownErrorClass = 'popup__input-error_shown';
 
   const [emailInputError, setEmailInputError] = React.useState(errorsDefaultState);
   const [passwordInputError, setPasswordInputError] = React.useState(errorsDefaultState);
@@ -35,7 +36,7 @@ function PopupWithForm(props) {
   function handleEmailChange(evt) {
     if (!evt.target.validity.valid) {
       setEmailInputError({
-        errorClass: 'popup__input-error_shown',
+        errorClass: shownErrorClass,
         errorMessage: evt.target.validationMessage,
       });
     } else {
@@ -46,7 +47,7 @@ function PopupWithForm(props) {
   function handlePasswordChange(evt) {
     if (!evt.target.validity.valid) {
       setPasswordInputError({
-        errorClass: 'popup__input-error_shown',
+        errorClass: shownErrorClass,
         errorMessage: evt.target.validationMessage,
       });
     } else {
@@ -57,7 +58,7 @@ function PopupWithForm(props) {
   function handleNameChange(evt) {
     if (!evt.target.validity.valid) {
       setNameInputError({
-        errorClass: 'popup__input-error_shown',
+        errorClass: shownErrorClass,
         errorMessage: evt.target.validationMessage,
       });
     } else {

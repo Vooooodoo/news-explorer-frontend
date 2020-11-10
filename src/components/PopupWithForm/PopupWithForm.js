@@ -66,7 +66,7 @@ function PopupWithForm(props) {
   }
 
   return (
-    <div id={props.id} className={props.isOpen ? 'popup popup_opened' : 'popup popup_closed'}>
+    <div id={props.id} className={`popup ${props.isOpen ? 'popup_opened' : 'popup_closed'}`}>
       <form name={props.id.slice(0, props.id.indexOf('-'))} className="popup__form-container" onSubmit={props.onSubmit} noValidate>
         <h3 className="popup__form-title">{props.title}</h3>
         <fieldset className="popup__fieldset">

@@ -4,7 +4,7 @@ import PopupWithForm from '../PopupWithForm/PopupWithForm';
 function RegistrationPopup(props) {
   return (
     <PopupWithForm
-      id="registrtion-popup"
+      id="registration-popup"
       title="Регистрация"
       btnText="Зарегистрироваться"
       ariaLabel="Закрыть форму регистрации."

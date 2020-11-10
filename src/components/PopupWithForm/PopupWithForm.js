@@ -2,18 +2,14 @@ import React from 'react';
 import './PopupWithForm.css';
 
 function PopupWithForm(props) {
-  const [emailInputError, setEmailInputError] = React.useState({
+  const errorsDefaultState = {
     errorClass: '',
     errorMessage: '',
-  });
-  const [passwordInputError, setPasswordInputError] = React.useState({
-    errorClass: '',
-    errorMessage: '',
-  });
-  const [nameInputError, setNameInputError] = React.useState({
-    errorClass: '',
-    errorMessage: '',
-  });
+  }
+
+  const [emailInputError, setEmailInputError] = React.useState(errorsDefaultState);
+  const [passwordInputError, setPasswordInputError] = React.useState(errorsDefaultState);
+  const [nameInputError, setNameInputError] = React.useState(errorsDefaultState);
 
   // const [isNameValid, setIsNameValid] = React.useState(false);
   // const [isLinkValid, setIsLinkValid] = React.useState(false);
@@ -30,18 +26,9 @@ function PopupWithForm(props) {
 
 
   React.useEffect(() => {
-    setEmailInputError({
-      errorClass: '',
-      errorMessage: '',
-    });
-    setPasswordInputError({
-      errorClass: '',
-      errorMessage: '',
-    });
-    setNameInputError({
-      errorClass: '',
-      errorMessage: '',
-    });
+    setEmailInputError(errorsDefaultState);
+    setPasswordInputError(errorsDefaultState);
+    setNameInputError(errorsDefaultState);
   }, [props.isOpen]);
 
 
@@ -52,10 +39,7 @@ function PopupWithForm(props) {
         errorMessage: evt.target.validationMessage,
       });
     } else {
-      setEmailInputError({
-        errorClass: '',
-        errorMessage: '',
-      });
+      setEmailInputError(errorsDefaultState);
     }
   }
 
@@ -66,10 +50,7 @@ function PopupWithForm(props) {
         errorMessage: evt.target.validationMessage,
       });
     } else {
-      setPasswordInputError({
-        errorClass: '',
-        errorMessage: '',
-      });
+      setPasswordInputError(errorsDefaultState);
     }
   }
 
@@ -80,10 +61,7 @@ function PopupWithForm(props) {
         errorMessage: evt.target.validationMessage,
       });
     } else {
-      setNameInputError({
-        errorClass: '',
-        errorMessage: '',
-      });
+      setNameInputError(errorsDefaultState);
     }
   }
 

@@ -61,6 +61,10 @@ function Navigation(props) {
     setIsMobileMenuOpen(true);
   }
 
+  function closeMobileMenu() {
+    setIsMobileMenuOpen(false);
+  }
+
   return (
     <div className={`navigation ${navigationClass}`}>
       <Link to="/" className="navigation__logo-link tap-highlight">
@@ -83,17 +87,21 @@ function Navigation(props) {
       <button className={`navigation__burger-button tap-highlight ${burgerBtnClass}`} onClick={openMobileMenu} type="button" aria-label="Открыть меню."></button>
       {isMobileMenuOpen
         &&  (<nav className="navigation__mobile-menu">
-              <Link to="/" className={`navigation__mobile-link tap-highlight ${linkClass}`}>Главная</Link>
+              <Link to="/" className="navigation__mobile-link tap-highlight">Главная</Link>
               {props.loggedIn
                 ? (<>
-                    <Link to="/saved-news" className={`navigation__mobile-link tap-highlight ${linkClass}`}>Сохранённые статьи</Link>
-                    <button className={`navigation__mobile-button navigation__mobile-button_type_signout navigation__text tab tap-highlight ${desktopBtnClass} ${signoutBtnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
+                    <Link to="/saved-news" className="navigation__mobile-link tap-highlight">Сохранённые статьи</Link>
+                    <button className="navigation__mobile-button navigation__mobile-button_type_signout tab tap-highlight" type="button" onClick={props.onSignOut}>Грета</button>
                   </>)
 
                 : (<>
-                    <button className={`navigation__mobile-button navigation__mobile-button_type_signin navigation__text tab tap-highlight ${desktopBtnClass}`} type="button" onClick={props.onSignIn}>Авторизоваться</button>
+                    <button className="navigation__mobile-button tab tap-highlight" type="button" onClick={props.onSignIn}>Авторизоваться</button>
                   </>)
               }
+              <Link to="/" className="navigation__mobile-logo tap-highlight">
+                <img src={WhiteHeaderLogo} alt="Логотип в виде текста NewsExplorer." />
+              </Link>
+              <button className="navigation__mobile-close tap-highlight" onClick={closeMobileMenu} type="button" aria-label="Закрыть меню."></button>
             </nav>)
       }
     </div>

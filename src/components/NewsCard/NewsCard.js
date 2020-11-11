@@ -10,8 +10,7 @@ function NewsCard(props) {
     <li className="news-card tap-highlight">
       <img className="news-card__photo" src={props.photo} alt={`${props.title}.`} />
       {pathname === '/saved-news'
-        ? (<span className="news-card__tag">{props.tagText}</span>)
-        : (<></>)
+        && (<span className="news-card__tag">{props.tagText}</span>)
       }
       <NewsCardBtn />
       <div className="news-card__container">

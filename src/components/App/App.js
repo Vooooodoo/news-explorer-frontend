@@ -17,7 +17,7 @@ import TooltipPopup from '../TooltipPopup/TooltipPopup';
 function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegistrationPopupOpen, setIsRegistrationPopupOpen] = React.useState(false);
-  const [isTooltipPopupOpen, setIsTooltipPopupOpen] = React.useState(false);
+  const [isTooltipPopupOpen, setIsTooltipPopupOpen] = React.useState(true);
 
   const [loggedIn, setLoggedIn] = React.useState(true);
 
@@ -111,11 +111,11 @@ function App() {
         onClose={closeAllPopups}
         onClick={openLoginPopup}
       />
-      {/* <TooltipPopup
+      <TooltipPopup
         isOpen={isTooltipPopupOpen}
         onClose={closeAllPopups}
         onClick={openLoginPopup}
-      /> */}
+      />
     </>
   );
 }

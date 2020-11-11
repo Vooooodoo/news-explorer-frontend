@@ -18,13 +18,9 @@ function PopupWithForm(props) {
   const [isFormValid, setIsFormValid] = React.useState(false);
 
   React.useEffect(() => {
-    setEmailInputError(errorsDefaultState);
-    setPasswordInputError(errorsDefaultState);
-    setNameInputError(errorsDefaultState);
+    resetInputErrors();
     resetFormFields();
-    setIsEmailValid(false);
-    setIsPasswordValid(false);
-    setIsNameValid(false);
+    resetValidationState();
   }, [props.isOpen]);
 
   React.useEffect(() => {
@@ -74,12 +70,24 @@ function PopupWithForm(props) {
     }
   }
 
+  function resetInputErrors() {
+    setEmailInputError(errorsDefaultState);
+    setPasswordInputError(errorsDefaultState);
+    setNameInputError(errorsDefaultState);
+  }
+
   function resetFormFields() {
     const forms = document.querySelectorAll('.popup__form-container');
 
     forms.forEach(item => {
       item.reset();
     });
+  }
+
+  function resetValidationState() {
+    setIsEmailValid(false);
+    setIsPasswordValid(false);
+    setIsNameValid(false);
   }
 
   return (

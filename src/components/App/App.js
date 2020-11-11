@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Route,
   Switch,
-  Redirect,
   useHistory,
 } from 'react-router-dom';
 import Header from '../Header/Header';

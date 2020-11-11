@@ -17,7 +17,7 @@ import TooltipPopup from '../TooltipPopup/TooltipPopup';
 function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegistrationPopupOpen, setIsRegistrationPopupOpen] = React.useState(false);
-  const [isTooltipPopupOpen, setIsTooltipPopupOpen] = React.useState(true);
+  const [isTooltipPopupOpen, setIsTooltipPopupOpen] = React.useState(false);
 
   const [loggedIn, setLoggedIn] = React.useState(true);
 

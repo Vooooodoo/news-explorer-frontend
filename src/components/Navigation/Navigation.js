@@ -49,11 +49,17 @@ function Navigation(props) {
       : 'navigation__desktop-button_type_white-signout'
   }`;
 
-  const mobileBtnClass = `${
+  const burgerBtnClass = `${
     pathname === '/saved-news'
-      ? 'navigation__mobile-button_color_black'
-      : 'navigation__mobile-button_color_white'
+      ? 'navigation__burger-button_color_black'
+      : 'navigation__burger-button_color_white'
   }`;
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+  function openMobileMenu() {
+    setIsMobileMenuOpen(true);
+  }
 
   return (
     <div className={`navigation ${navigationClass}`}>
@@ -74,7 +80,22 @@ function Navigation(props) {
             </>)
         }
       </nav>
-      <button className={`navigation__mobile-button tap-highlight ${mobileBtnClass}`} onClick={props.onMobileBtnClick} type="button" aria-label="Открыть меню."></button>
+      <button className={`navigation__burger-button tap-highlight ${burgerBtnClass}`} onClick={openMobileMenu} type="button" aria-label="Открыть меню."></button>
+      {isMobileMenuOpen
+        &&  (<nav className="navigation__mobile-menu">
+              <Link to="/" className={`navigation__mobile-link navigation__text tap-highlight ${linkClass}`}>Главная</Link>
+              {props.loggedIn
+                ? (<>
+                    <Link to="/saved-news" className={`navigation__mobile-link navigation__text tap-highlight ${linkClass}`}>Сохранённые статьи</Link>
+                    <button className={`navigation__desktop-button navigation__desktop-button_type_signout navigation__text tab tap-highlight ${desktopBtnClass} ${signoutBtnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
+                  </>)
+
+                : (<>
+                    <button className={`navigation__desktop-button navigation__desktop-button_type_signin navigation__text tab tap-highlight ${desktopBtnClass}`} type="button" onClick={props.onSignIn}>Авторизоваться</button>
+                  </>)
+              }
+            </nav>)
+      }
     </div>
   );
 }

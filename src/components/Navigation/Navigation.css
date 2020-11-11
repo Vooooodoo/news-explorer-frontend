@@ -1,4 +1,5 @@
 .navigation {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,7 +98,7 @@
   background-image: url(../../images/navigation__desktop-button_black-signout.svg);
 }
 
-.navigation__mobile-button {
+.navigation__burger-button {
   display: none;
   width: 24px;
   height: 24px;
@@ -108,12 +109,24 @@
   outline: none;
 }
 
-.navigation__mobile-button_color_white {
-  background-image: url(../../images/navigation__mobile-button_color_white.svg);
+.navigation__burger-button_color_white {
+  background-image: url(../../images/navigation__burger-button_color_white.svg);
 }
 
-.navigation__mobile-button_color_black {
-  background-image: url(../../images/navigation__mobile-button_color_black.svg);
+.navigation__burger-button_color_black {
+  background-image: url(../../images/navigation__burger-button_color_black.svg);
+}
+
+.navigation__mobile-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1A1B22;
+  padding: 72px 16px 24px;
+  border-radius: 16px;
 }
 
 @media all and (max-width: 1023px) {
@@ -164,7 +177,7 @@
     display: none;
   }
 
-  .navigation__mobile-button {
+  .navigation__burger-button {
     display: block;
   }
 }

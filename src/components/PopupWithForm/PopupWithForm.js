@@ -17,20 +17,6 @@ function PopupWithForm(props) {
   const [isNameValid, setIsNameValid] = React.useState(false);
   const [isFormValid, setIsFormValid] = React.useState(false);
 
-  React.useEffect(() => {
-    resetInputErrors();
-    resetFormFields();
-    resetValidationState();
-  }, [props.isOpen]);
-
-  React.useEffect(() => {
-    if (isEmailValid && isPasswordValid && isNameValid) {
-      setIsFormValid(true);
-    } else {
-      setIsFormValid(false);
-    }
-  }, [isEmailValid, isPasswordValid, isNameValid]);
-
   function handleEmailChange(evt) {
     if (!evt.target.validity.valid) {
       setEmailInputError({
@@ -89,6 +75,20 @@ function PopupWithForm(props) {
     setIsPasswordValid(false);
     setIsNameValid(false);
   }
+
+  React.useEffect(() => {
+    resetInputErrors();
+    resetFormFields();
+    resetValidationState();
+  }, [props.isOpen]);
+
+  React.useEffect(() => {
+    if (isEmailValid && isPasswordValid && isNameValid) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  }, [isEmailValid, isPasswordValid, isNameValid]);
 
   return (
     <div id={props.id} className={`popup ${props.isOpen ? 'popup_opened' : 'popup_closed'}`}>

@@ -22,6 +22,8 @@ function RegistrationPopup(props) {
   const [isFormValid, setIsFormValid] = React.useState(false);
 
   function handleEmailChange(evt) {
+    setEmail(evt.target.value);
+
     if (!evt.target.validity.valid) {
       setEmailInputError({
         errorClass: shownErrorClass,
@@ -35,6 +37,8 @@ function RegistrationPopup(props) {
   }
 
   function handlePasswordChange(evt) {
+    setPassword(evt.target.value);
+
     if (!evt.target.validity.valid) {
       setPasswordInputError({
         errorClass: shownErrorClass,
@@ -48,6 +52,8 @@ function RegistrationPopup(props) {
   }
 
   function handleNameChange(evt) {
+    setName(evt.target.value);
+
     if (!evt.target.validity.valid) {
       setNameInputError({
         errorClass: shownErrorClass,

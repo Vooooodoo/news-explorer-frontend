@@ -19,7 +19,7 @@ function PopupWithForm(props) {
             && (<>
                 <label for="popup-name-input" className="popup__input-label">Имя</label>
                 <input id="popup-name-input" name="name" className="popup__input" onChange={props.onNameChange} value={props.name} type="text" placeholder="Введите своё имя" minLength="2" maxLength="40" pattern="^[А-Яа-яЁёa-zA-Z\s\-]+$" required />
-                <span className={`popup__input-error popup__input-error_type_validation popup__input-error_hidden ${props.nameInputErrClass}`}>{props.nameInputErrorMessage}</span>
+                <span className={`popup__input-error popup__input-error_type_validation popup__input-error_hidden ${props.nameInputErrClass}`}>{props.nameInputErrMessage}</span>
               </>)
           }
           <span className="popup__input-error popup__input-error_type_registration popup__input-error_hidden">Такой пользователь уже есть</span>

@@ -83,15 +83,15 @@ function Navigation(props) {
       <button className={`navigation__burger-button tap-highlight ${burgerBtnClass}`} onClick={openMobileMenu} type="button" aria-label="Открыть меню."></button>
       {isMobileMenuOpen
         &&  (<nav className="navigation__mobile-menu">
-              <Link to="/" className={`navigation__mobile-link navigation__text tap-highlight ${linkClass}`}>Главная</Link>
+              <Link to="/" className={`navigation__mobile-link tap-highlight ${linkClass}`}>Главная</Link>
               {props.loggedIn
                 ? (<>
-                    <Link to="/saved-news" className={`navigation__mobile-link navigation__text tap-highlight ${linkClass}`}>Сохранённые статьи</Link>
-                    <button className={`navigation__desktop-button navigation__desktop-button_type_signout navigation__text tab tap-highlight ${desktopBtnClass} ${signoutBtnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
+                    <Link to="/saved-news" className={`navigation__mobile-link tap-highlight ${linkClass}`}>Сохранённые статьи</Link>
+                    <button className={`navigation__mobile-button navigation__mobile-button_type_signout navigation__text tab tap-highlight ${desktopBtnClass} ${signoutBtnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
                   </>)
 
                 : (<>
-                    <button className={`navigation__desktop-button navigation__desktop-button_type_signin navigation__text tab tap-highlight ${desktopBtnClass}`} type="button" onClick={props.onSignIn}>Авторизоваться</button>
+                    <button className={`navigation__mobile-button navigation__mobile-button_type_signin navigation__text tab tap-highlight ${desktopBtnClass}`} type="button" onClick={props.onSignIn}>Авторизоваться</button>
                   </>)
               }
             </nav>)

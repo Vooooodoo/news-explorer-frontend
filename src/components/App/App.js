@@ -12,10 +12,12 @@ import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
 import LoginPopup from '../LoginPopup/LoginPopup';
 import RegistrationPopup from '../RegistrationPopup/RegistrationPopup';
+import TooltipPopup from '../TooltipPopup/TooltipPopup';
 
 function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegistrationPopupOpen, setIsRegistrationPopupOpen] = React.useState(false);
+  const [isTooltipPopupOpen, setIsTooltipPopupOpen] = React.useState(false);
 
   const [loggedIn, setLoggedIn] = React.useState(true);
 
@@ -29,6 +31,7 @@ function App() {
   function closeAllPopups() {
     setIsLoginPopupOpen(false);
     setIsRegistrationPopupOpen(false);
+    setIsTooltipPopupOpen(false);
   }
 
   function openLoginPopup() {
@@ -39,6 +42,11 @@ function App() {
   function openRegistrationPopup() {
     closeAllPopups();
     setIsRegistrationPopupOpen(true);
+  }
+
+  function openTooltipPopup() {
+    closeAllPopups();
+    setIsTooltipPopupOpen(true);
   }
 
   React.useEffect(() => {
@@ -103,6 +111,11 @@ function App() {
         onClose={closeAllPopups}
         onClick={openLoginPopup}
       />
+      {/* <TooltipPopup
+        isOpen={isTooltipPopupOpen}
+        onClose={closeAllPopups}
+        onClick={openLoginPopup}
+      /> */}
     </>
   );
 }

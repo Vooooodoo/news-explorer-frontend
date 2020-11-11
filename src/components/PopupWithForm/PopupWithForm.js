@@ -8,6 +8,10 @@ function PopupWithForm(props) {
   };
   const shownErrorClass = 'popup__input-error_shown';
 
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [name, setName] = React.useState('');
+
   const [emailInputError, setEmailInputError] = React.useState(errorsDefaultState);
   const [passwordInputError, setPasswordInputError] = React.useState(errorsDefaultState);
   const [nameInputError, setNameInputError] = React.useState(errorsDefaultState);
@@ -63,11 +67,9 @@ function PopupWithForm(props) {
   }
 
   function resetFormFields() {
-    const forms = document.querySelectorAll('.popup__form-container');
-
-    forms.forEach(item => {
-      item.reset();
-    });
+    setEmail('');
+    setPassword('');
+    setName('');
   }
 
   function resetValidationState() {
@@ -96,17 +98,17 @@ function PopupWithForm(props) {
         <h3 className="popup__form-title">{props.title}</h3>
         <fieldset className="popup__fieldset">
           <label for="popup-email-input" className="popup__input-label">Email</label>
-          <input id="popup-email-input" name="email" className="popup__input" onChange={handleEmailChange} type="email" placeholder="Введите почту" minLength="2" maxLength="40" required />
+          <input id="popup-email-input" name="email" className="popup__input" onChange={handleEmailChange} defaultValue={email} type="email" placeholder="Введите почту" minLength="2" maxLength="40" required />
           <span className={`popup__input-error popup__input-error_type_validation popup__input-error_hidden ${emailInputError.errorClass}`}>{emailInputError.errorMessage}</span>
 
           <label for="popup-password-input" className="popup__input-label">Пароль</label>
-          <input id="popup-password-input" name="password" className="popup__input" onChange={handlePasswordChange} type="password" placeholder="Введите пароль" minLength="8" maxLength="40" required />
+          <input id="popup-password-input" name="password" className="popup__input" onChange={handlePasswordChange} defaultValue={password} type="password" placeholder="Введите пароль" minLength="8" maxLength="40" required />
           <span className={`popup__input-error popup__input-error_type_validation popup__input-error_hidden ${passwordInputError.errorClass}`}>{passwordInputError.errorMessage}</span>
 
           {props.id === 'registration-popup'
             && (<>
                 <label for="popup-name-input" className="popup__input-label">Имя</label>
-                <input id="popup-name-input" name="name" className="popup__input" onChange={handleNameChange} type="text" placeholder="Введите своё имя" minLength="2" maxLength="40" pattern="^[А-Яа-яЁёa-zA-Z\s\-]+$" required />
+                <input id="popup-name-input" name="name" className="popup__input" onChange={handleNameChange} defaultValue={name} type="text" placeholder="Введите своё имя" minLength="2" maxLength="40" pattern="^[А-Яа-яЁёa-zA-Z\s\-]+$" required />
                 <span className={`popup__input-error popup__input-error_type_validation popup__input-error_hidden ${nameInputError.errorClass}`}>{nameInputError.errorMessage}</span>
               </>)
           }

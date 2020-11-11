@@ -76,7 +76,7 @@ function PopupWithForm(props) {
 
     forms.forEach(item => {
       item.reset();
-    })
+    });
   }
 
   return (

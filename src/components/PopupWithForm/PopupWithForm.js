@@ -86,27 +86,28 @@ function PopupWithForm(props) {
         <fieldset className="popup__fieldset">
           <label for="popup-email-input" className="popup__input-label">Email</label>
           <input id="popup-email-input" name="email" className="popup__input" onChange={handleEmailChange} type="email" placeholder="Введите почту" minLength="2" maxLength="40" required />
-          <span className={`popup__input-error popup__input-error_hidden ${emailInputError.errorClass}`}>{emailInputError.errorMessage}</span>
+          <span className={`popup__input-error popup__input-error_type_validation popup__input-error_hidden ${emailInputError.errorClass}`}>{emailInputError.errorMessage}</span>
 
           <label for="popup-password-input" className="popup__input-label">Пароль</label>
           <input id="popup-password-input" name="password" className="popup__input" onChange={handlePasswordChange} type="password" placeholder="Введите пароль" minLength="8" maxLength="40" required />
-          <span className={`popup__input-error popup__input-error_hidden ${passwordInputError.errorClass}`}>{passwordInputError.errorMessage}</span>
+          <span className={`popup__input-error popup__input-error_type_validation popup__input-error_hidden ${passwordInputError.errorClass}`}>{passwordInputError.errorMessage}</span>
 
           {props.id === 'registration-popup'
             ? (<>
                 <label for="popup-name-input" className="popup__input-label">Имя</label>
                 <input id="popup-name-input" name="name" className="popup__input" onChange={handleNameChange} type="text" placeholder="Введите своё имя" minLength="2" maxLength="40" pattern="^[А-Яа-яЁёa-zA-Z\s\-]+$" required />
-                <span className={`popup__input-error popup__input-error_hidden ${nameInputError.errorClass}`}>{nameInputError.errorMessage}</span>
+                <span className={`popup__input-error popup__input-error_type_validation popup__input-error_hidden ${nameInputError.errorClass}`}>{nameInputError.errorMessage}</span>
               </>)
             : (<></>)
           }
+          <span className="popup__input-error popup__input-error_type_registration popup__input-error_hidden">Такой пользователь уже есть</span>
         </fieldset>
         <button className={`popup__submit tap-highlight ${isFormValid ? 'popup__submit_valid' : 'popup__submit_invalid'}`} type="submit">{props.btnText}</button>
         <button className="popup__close opacity tab tap-highlight" type="button" aria-label={props.ariaLabel} onClick={props.onClose}></button>
         <div className="popup__wrapper">
           <span className="popup__text">или</span>
           <button className="popup__link opacity tap-highlight tab" type="button" onClick={props.onClick}>{props.linkText}</button>
-      </div>
+        </div>
       </form>
     </div>
   );

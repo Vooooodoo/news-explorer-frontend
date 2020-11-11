@@ -74,7 +74,7 @@ function Navigation(props) {
             </>)
         }
       </nav>
-      <button className={`navigation__mobile-button tap-highlight ${mobileBtnClass}`} type="button" aria-label="Открыть меню."></button>
+      <button className={`navigation__mobile-button tap-highlight ${mobileBtnClass}`} onClick={props.onMobileBtnClick} type="button" aria-label="Открыть меню."></button>
     </div>
   );
 }

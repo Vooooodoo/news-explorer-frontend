@@ -22,6 +22,9 @@ function PopupWithForm(props) {
     setPasswordInputError(errorsDefaultState);
     setNameInputError(errorsDefaultState);
     resetFormFields();
+    setIsEmailValid(false);
+    setIsPasswordValid(false);
+    setIsNameValid(false);
   }, [props.isOpen]);
 
   React.useEffect(() => {

@@ -1,0 +1,112 @@
+.news-card-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s linear;
+  outline: none;
+}
+
+.news-card-btn_type_normal-save {
+  background-image: url(../../images/news-card-btn_type_normal-save.svg);
+}
+
+.news-card-btn_type_marked-save {
+  background-image: url(../../images/news-card-btn_type_marked-save.svg);
+}
+
+.news-card-btn_type_hover-save:hover {
+  background-image: url(../../images/news-card-btn_type_hover-save.svg);
+}
+
+.news-card-btn_type_focus-save:focus {
+  background-image: url(../../images/news-card-btn_type_hover-save.svg);
+  transition: none;
+}
+
+.news-card-btn_type_normal-delete {
+  background-image: url(../../images/news-card-btn_type_normal-delete.svg);
+}
+
+.news-card-btn_type_hover-delete:hover {
+  background-image: url(../../images/news-card-btn_type_hover-delete.svg);
+}
+
+.news-card-btn_type_focus-delete:focus {
+  background-image: url(../../images/news-card-btn_type_hover-delete.svg);
+  transition: none;
+}
+
+.news-card-btn__popup {
+  display: flex;
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  height: 40px;
+  background-color: white;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 11px;
+}
+
+.news-card-btn__popup_hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .3s, opacity .3s linear;
+}
+
+.news-card-btn__popup_shown {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity .3s linear;
+}
+
+@media all and (max-width: 1439px) {
+  .news-card-btn {
+    top: 16px;
+    right: 16px;
+  }
+
+  .news-card-btn__popup {
+    top: 16px;
+    right: 61px;
+  }
+}
+
+@media all and (max-width: 879px) {
+  .news-card-btn__popup {
+    width: 110px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .news-card-btn__popup {
+    width: auto;
+  }
+}
+
+@media all and (max-width: 609px) {
+  .news-card-btn__popup {
+    width: 110px;
+  }
+}
+
+@media all and (max-width: 499px) {
+  .news-card-btn__popup {
+    width: auto;
+  }
+}

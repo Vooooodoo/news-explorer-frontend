@@ -1,0 +1,37 @@
+.search-result {
+  background-color: #F5F6F7;
+  margin: 0 -104px;
+  padding: 80px 104px;
+}
+
+.search-result__title {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  margin: 0 0 64px;
+}
+
+@media all and (max-width: 1023px) {
+  .search-result {
+    margin: 0 -40px;
+    padding: 40px 40px;
+  }
+
+  .search-result__title {
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 32px;
+  }
+}
+
+@media all and (max-width: 499px) {
+  .search-result {
+    margin: 0 -16px;
+    padding: 32px 16px;
+  }
+
+  .search-result__title {
+    margin-bottom: 24px;
+  }
+}

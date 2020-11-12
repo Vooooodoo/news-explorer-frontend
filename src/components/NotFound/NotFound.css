@@ -1,0 +1,11 @@
+.preloader__logo {
+  margin-bottom: 24px;
+}
+
+.preloader__title {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 0 0 16px;
+}

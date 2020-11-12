@@ -1,0 +1,45 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+.root {
+  max-width: 1440px;
+  min-width: 250px;
+  margin: 0 auto;
+  padding: 0 104px;
+  box-sizing: border-box;
+  color: #1A1B22;
+  font-family: 'Roboto', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+}
+
+.opacity {
+  transition: .2s linear;
+}
+
+.opacity:hover {
+  opacity: .5;
+}
+
+.tab:focus {
+  opacity: .5;
+  transition: none;
+}
+
+.tap-highlight {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media all and (max-width: 1023px) {
+	.root {
+    padding: 0 40px;
+  }
+}
+
+@media all and (max-width: 499px) {
+	.root {
+    padding: 0 16px;
+  }
+}

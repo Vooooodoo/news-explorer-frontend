@@ -1,0 +1,19 @@
+.saved-result {
+  background-color: #F5F6F7;
+  margin: 0 -104px;
+  padding: 62px 104px;
+}
+
+@media all and (max-width: 1023px) {
+  .saved-result {
+    margin: 0 -40px;
+    padding: 32px 40px;
+  }
+}
+
+@media all and (max-width: 499px) {
+  .saved-result {
+    margin: 0 -16px;
+    padding: 24px 16px;
+  }
+}

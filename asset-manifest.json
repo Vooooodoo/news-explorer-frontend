@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dbe0b51b.chunk.css",
+    "main.js": "/static/js/main.6cbb0a4b.chunk.js",
+    "main.js.map": "/static/js/main.6cbb0a4b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.90b78732.js",
+    "runtime-main.js.map": "/static/js/runtime-main.90b78732.js.map",
+    "static/js/2.8760ffe0.chunk.js": "/static/js/2.8760ffe0.chunk.js",
+    "static/js/2.8760ffe0.chunk.js.map": "/static/js/2.8760ffe0.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.429d446aefd626cfb3f63d056f72c3cb.js": "/precache-manifest.429d446aefd626cfb3f63d056f72c3cb.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.dbe0b51b.chunk.css.map": "/static/css/main.dbe0b51b.chunk.css.map",
+    "static/js/2.8760ffe0.chunk.js.LICENSE.txt": "/static/js/2.8760ffe0.chunk.js.LICENSE.txt",
+    "static/media/about__avatar.jpg": "/static/media/about__avatar.203fd6ac.jpg",
+    "static/media/footer__logo_type_facebook.svg": "/static/media/footer__logo_type_facebook.4521f6ae.svg",
+    "static/media/footer__logo_type_github.svg": "/static/media/footer__logo_type_github.45fc9be3.svg",
+    "static/media/Header.css": "/static/media/header__background_size_tablet.76b8eb76.jpg",
+    "static/media/header__logo_color_black.svg": "/static/media/header__logo_color_black.38ba3366.svg",
+    "static/media/header__logo_color_white.svg": "/static/media/header__logo_color_white.99f8f1ba.svg",
+    "static/media/index.css": "/static/media/sourcesanspro-regular.49d8d828.woff",
+    "static/media/Navigation.css": "/static/media/navigation__mobile-close.320171f6.svg",
+    "static/media/NewsCardBtn.css": "/static/media/news-card-btn_type_normal-save.ecd5f051.svg",
+    "static/media/news-card__photo_name_1.jpg": "/static/media/news-card__photo_name_1.cdf491e3.jpg",
+    "static/media/news-card__photo_name_2.jpg": "/static/media/news-card__photo_name_2.6ea3725b.jpg",
+    "static/media/news-card__photo_name_3.jpg": "/static/media/news-card__photo_name_3.465f954f.jpg",
+    "static/media/PopupWithForm.css": "/static/media/popup__close.cef766ff.svg",
+    "static/media/preloader__logo.svg": "/static/media/preloader__logo.5bbc83be.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.90b78732.js",
+    "static/js/2.8760ffe0.chunk.js",
+    "static/css/main.dbe0b51b.chunk.css",
+    "static/js/main.6cbb0a4b.chunk.js"
+  ]
+}

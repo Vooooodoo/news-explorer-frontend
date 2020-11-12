@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.ab0e2f58.chunk.css",
+    "main.css": "./static/css/main.67969799.chunk.css",
     "main.js": "./static/js/main.585504e1.chunk.js",
     "main.js.map": "./static/js/main.585504e1.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.1cac9c41.js",
@@ -8,17 +8,17 @@
     "static/js/2.8760ffe0.chunk.js": "./static/js/2.8760ffe0.chunk.js",
     "static/js/2.8760ffe0.chunk.js.map": "./static/js/2.8760ffe0.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.e7d9ccb8e2987b2d8e83cf49c9b87c9c.js": "./precache-manifest.e7d9ccb8e2987b2d8e83cf49c9b87c9c.js",
+    "precache-manifest.606c5960d5583b6a784c73be25069431.js": "./precache-manifest.606c5960d5583b6a784c73be25069431.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.ab0e2f58.chunk.css.map": "./static/css/main.ab0e2f58.chunk.css.map",
+    "static/css/main.67969799.chunk.css.map": "./static/css/main.67969799.chunk.css.map",
     "static/js/2.8760ffe0.chunk.js.LICENSE.txt": "./static/js/2.8760ffe0.chunk.js.LICENSE.txt",
+    "static/media/index.css": "./static/media/sourcesanspro-regular.49d8d828.woff",
     "static/media/about__avatar.jpg": "./static/media/about__avatar.203fd6ac.jpg",
     "static/media/footer__logo_type_facebook.svg": "./static/media/footer__logo_type_facebook.4521f6ae.svg",
     "static/media/footer__logo_type_github.svg": "./static/media/footer__logo_type_github.45fc9be3.svg",
     "static/media/Header.css": "./static/media/header__background_size_tablet.76b8eb76.jpg",
     "static/media/header__logo_color_black.svg": "./static/media/header__logo_color_black.38ba3366.svg",
     "static/media/header__logo_color_white.svg": "./static/media/header__logo_color_white.99f8f1ba.svg",
-    "static/media/index.css": "./static/media/sourcesanspro-regular.49d8d828.woff",
     "static/media/Navigation.css": "./static/media/navigation__mobile-close.320171f6.svg",
     "static/media/NewsCardBtn.css": "./static/media/news-card-btn_type_normal-save.ecd5f051.svg",
     "static/media/news-card__photo_name_1.jpg": "./static/media/news-card__photo_name_1.cdf491e3.jpg",
@@ -30,7 +30,7 @@
   "entrypoints": [
     "static/js/runtime-main.1cac9c41.js",
     "static/js/2.8760ffe0.chunk.js",
-    "static/css/main.ab0e2f58.chunk.css",
+    "static/css/main.67969799.chunk.css",
     "static/js/main.585504e1.chunk.js"
   ]
 }

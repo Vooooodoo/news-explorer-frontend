@@ -98,6 +98,17 @@ function App() {
           <SavedNews />
         </Route>
       </Switch>
+      <Header
+            loggedIn={loggedIn}
+            onSignOut={handleSignOut}
+            onSignIn={openLoginPopup}
+          />
+          <Main />
+          <SavedNewsHeader
+            loggedIn={loggedIn}
+            onSignOut={handleSignOut}
+          />
+          <SavedNews />
       <Footer />
 
       <LoginPopup

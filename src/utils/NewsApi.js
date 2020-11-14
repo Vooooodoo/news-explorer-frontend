@@ -5,12 +5,6 @@ class NewsApi {
   }
 
   _fetch(options) {
-    //* если в опциях будет body, добавить свойство с преобразованием объекта JSON в строку,
-    //* для будущей передачи на сервер
-    if (options.body) {
-      options.body = JSON.stringify(options.body);
-    }
-
     options.headers = this._headers;
 
     //* метод fetch создаёт запрос на сервер и возвращает его ответ,
@@ -38,10 +32,6 @@ class NewsApi {
 // API INSTANCE
 const newsApi = new NewsApi({
   baseUrl: 'https://newsapi.org/v2/top-headlines?country=us&apiKey=70091bdd11724ad58795297088c46456',
-  headers: {
-    authorization: '70091bdd11724ad58795297088c46456',
-    'Content-Type': 'application/json'
-  },
 });
 
 export default newsApi;

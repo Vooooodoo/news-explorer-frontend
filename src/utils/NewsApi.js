@@ -1,12 +1,9 @@
 class NewsApi {
-  constructor({ baseUrl, headers }) {
+  constructor({ baseUrl }) {
     this._baseUrl = baseUrl;
-    this._headers = headers;
   }
 
   _fetch(options) {
-    options.headers = this._headers;
-
     //* метод fetch создаёт запрос на сервер и возвращает его ответ,
     //* вторым аргументом передадим объект опций
     return fetch(this._baseUrl, options)
@@ -22,7 +19,7 @@ class NewsApi {
   }
 
   //* метод для получения данных с сервера
-  get() {
+  get(theme) {
     return this._fetch({
       method: 'GET',
     });
@@ -31,7 +28,7 @@ class NewsApi {
 
 // API INSTANCE
 const newsApi = new NewsApi({
-  baseUrl: 'https://newsapi.org/v2/top-headlines?country=us&apiKey=70091bdd11724ad58795297088c46456',
+  baseUrl: 'https://newsapi.org/v2/everything?q=Путин&from=2020-11-05&to=2020-11-13&language=ru&pageSize=100&apiKey=70091bdd11724ad58795297088c46456',
 });
 
 export default newsApi;

@@ -1,12 +1,12 @@
 class NewsApi {
-  constructor({ baseUrl }) {
-    this._baseUrl = baseUrl;
+  constructor() {
+
   }
 
-  _fetch(options) {
+  _fetch(theme, options) {
     //* метод fetch создаёт запрос на сервер и возвращает его ответ,
     //* вторым аргументом передадим объект опций
-    return fetch(this._baseUrl, options)
+    return fetch(`https://newsapi.org/v2/everything?q=${theme}&from=2020-11-05&to=2020-11-13&language=ru&pageSize=100&apiKey=70091bdd11724ad58795297088c46456`, options)
       .then((res) => {
         if (res.ok) { //* если запрос прошёл успешно
           //* асинхронный метод json читает ответ от сервера в формате json и возвращает промис,
@@ -20,15 +20,13 @@ class NewsApi {
 
   //* метод для получения данных с сервера
   get(theme) {
-    return this._fetch({
+    return this._fetch(theme, {
       method: 'GET',
     });
   }
 }
 
 // API INSTANCE
-const newsApi = new NewsApi({
-  baseUrl: 'https://newsapi.org/v2/everything?q=Путин&from=2020-11-05&to=2020-11-13&language=ru&pageSize=100&apiKey=70091bdd11724ad58795297088c46456',
-});
+const newsApi = new NewsApi();
 
 export default newsApi;

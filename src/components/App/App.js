@@ -79,7 +79,7 @@ function App() {
   },
   [isLoginPopupOpen, isRegistrationPopupOpen]);
 
-  newsApi.get()
+  newsApi.get('Будда')
     .then((articles) => {
       console.log(articles)
     })

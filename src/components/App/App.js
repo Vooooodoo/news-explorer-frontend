@@ -12,6 +12,7 @@ import Footer from '../Footer/Footer';
 import LoginPopup from '../LoginPopup/LoginPopup';
 import RegistrationPopup from '../RegistrationPopup/RegistrationPopup';
 import TooltipPopup from '../TooltipPopup/TooltipPopup';
+import newsApi from '../../utils/NewsApi';
 
 function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
@@ -77,6 +78,15 @@ function App() {
     };
   },
   [isLoginPopupOpen, isRegistrationPopupOpen]);
+
+  newsApi.get()
+    .then((articles) => {
+      console.log(articles)
+    })
+
+    .catch((err) => {
+      console.log('Ошибка. Запрос не выполнен:', err);
+    });
 
   return (
     <>

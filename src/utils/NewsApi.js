@@ -16,7 +16,7 @@ class NewsApi {
 
   _getDate(date) {
     return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-  } //* метод для получения даты в формате параметров запроса сервиса NewsAPI
+  } //* метод для получения даты в формате сервиса NewsAPI
 
   _fetch(theme, options) {
     return fetch(`https://newsapi.org/v2/everything?q=${theme}&from=${this._daysAgo}&to=${this._today}&language=ru&pageSize=100&apiKey=70091bdd11724ad58795297088c46456`, options)

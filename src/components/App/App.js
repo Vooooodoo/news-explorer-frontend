@@ -49,6 +49,17 @@ function App() {
     setIsTooltipPopupOpen(true);
   }
 
+  function handleSearchArticle(articleTheme) {
+    newsApi.get(articleTheme)
+      .then((articles) => {
+        console.log(articles)
+      })
+
+      .catch((err) => {
+        console.log('Ошибка. Запрос не выполнен:', err);
+      });
+  }
+
   React.useEffect(() => {
     function handleEsc(evt) {
       if (evt.key === 'Escape') {
@@ -79,15 +90,6 @@ function App() {
   },
   [isLoginPopupOpen, isRegistrationPopupOpen]);
 
-  newsApi.get('Путин')
-    .then((articles) => {
-      console.log(articles)
-    })
-
-    .catch((err) => {
-      console.log('Ошибка. Запрос не выполнен:', err);
-    });
-
   return (
     <>
       <Switch>
@@ -96,6 +98,7 @@ function App() {
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
             onSignIn={openLoginPopup}
+            onSearchArticle={handleSearchArticle}
           />
           <Main />
         </Route>

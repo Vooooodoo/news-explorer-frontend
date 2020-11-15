@@ -21,6 +21,8 @@ function App() {
 
   const [loggedIn, setLoggedIn] = React.useState(true);
 
+  const [articles, setArticles] = React.useState([]);
+
   const history = useHistory();
 
   function handleSignOut() {
@@ -51,8 +53,8 @@ function App() {
 
   function handleSearchArticles(theme) {
     newsApi.get(theme)
-      .then((articles) => {
-        console.log(articles)
+      .then((res) => {
+        setArticles(res.articles.slice(0, 3))
       })
 
       .catch((err) => {
@@ -100,7 +102,9 @@ function App() {
             onSignIn={openLoginPopup}
             onSearchArticles={handleSearchArticles}
           />
-          <Main />
+          <Main
+            articles={articles}
+          />
         </Route>
 
         <Route path="/saved-news">

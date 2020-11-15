@@ -4,11 +4,13 @@ import SearchResult from '../SearchResult/SearchResult';
 import Spinner from '../Spinner/Spinner';
 import NotFound from '../NotFound/NotFound';
 
-function Main() {
+function Main(props) {
   return (
     <main>
       <Spinner />
-      <SearchResult />
+      <SearchResult
+        articles={props.articles}
+      />
       <NotFound />
       <About />
     </main>

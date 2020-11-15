@@ -8,6 +8,7 @@ function SearchForm(props) {
     evt.preventDefault();
 
     props.onSearchArticles(inputRef.current.value);
+    inputRef.current.value = '';
   }
 
   return (

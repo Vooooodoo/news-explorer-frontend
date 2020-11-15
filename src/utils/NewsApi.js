@@ -1,16 +1,17 @@
 class NewsApi {
-  constructor() {
+  constructor(dayAgo) {
     this._date = new Date();
-    this._today = `${this._date.getFullYear()}-${this._date.getMonth() + 1}-${this._date.getDate()}`;
-    this._weekAgoDate = new Date();
-    this._weekAgoDay = this._weekAgoDate.setDate(this._weekAgoDate.getDate() - 7);
-    this._weekAgo = `${this._weekAgoDate.getFullYear()}-${this._weekAgoDate.getMonth() + 1}-${this._weekAgoDate.getDate()}`
+    this._today = this._getDate(this._date);
+    this._weekAgoDate = this._setDate(dayAgo);
+    this._weekAgo = this._getDate(this._weekAgoDate);
   }
 
   _setDate(dayAgo) {
     const date = new Date();
 
     date.setDate(date.getDate() - dayAgo);
+
+    return date;
   }
 
   _getDate(date) {
@@ -37,6 +38,7 @@ class NewsApi {
 
 
 
-const newsApi = new NewsApi();
+const newsApi = new NewsApi(7);
+//* в качестве аргумента передали количество дней назад от текущей даты, за которые будет поиск статей
 
 export default newsApi;

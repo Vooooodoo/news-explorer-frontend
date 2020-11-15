@@ -16,7 +16,7 @@ function Header(props) {
         Находите самые свежие статьи на&nbsp;любую тему и&nbsp;сохраняйте в&nbsp;своём личном кабинете.
       </p>
       <SearchForm
-        onSearchArticle={props.onSearchArticle}
+        onSearchArticles={props.onSearchArticles}
       />
     </header>
   );

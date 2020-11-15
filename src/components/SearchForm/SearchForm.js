@@ -7,7 +7,7 @@ function SearchForm(props) {
   function handleSubmit(evt) {
     evt.preventDefault();
 
-    props.onSearchArticle(inputRef.current.value);
+    props.onSearchArticles(inputRef.current.value);
   }
 
   return (

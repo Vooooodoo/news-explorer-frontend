@@ -49,8 +49,8 @@ function App() {
     setIsTooltipPopupOpen(true);
   }
 
-  function handleSearchArticle(articleTheme) {
-    newsApi.get(articleTheme)
+  function handleSearchArticles(theme) {
+    newsApi.get(theme)
       .then((articles) => {
         console.log(articles)
       })
@@ -98,7 +98,7 @@ function App() {
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
             onSignIn={openLoginPopup}
-            onSearchArticle={handleSearchArticle}
+            onSearchArticles={handleSearchArticles}
           />
           <Main />
         </Route>

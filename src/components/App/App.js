@@ -79,7 +79,7 @@ function App() {
   },
   [isLoginPopupOpen, isRegistrationPopupOpen]);
 
-  newsApi.get('Будда')
+  newsApi.get('Путин')
     .then((articles) => {
       console.log(articles)
     })

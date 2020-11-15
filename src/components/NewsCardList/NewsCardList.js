@@ -1,11 +1,14 @@
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import './NewsCardList.css';
+import { ArticlesContext } from '../../contexts/ArticlesContext';
 
-function NewsCardList(props) {
+function NewsCardList() {
+  const articles = React.useContext(ArticlesContext);
+
   return (
     <ul className="news-card-list">
-      {props.articles.map((article) => (
+      {articles.map((article) => (
         (<NewsCard
           photo={article.urlToImage}
           tagText="Природа"

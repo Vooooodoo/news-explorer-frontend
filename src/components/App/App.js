@@ -13,6 +13,7 @@ import LoginPopup from '../LoginPopup/LoginPopup';
 import RegistrationPopup from '../RegistrationPopup/RegistrationPopup';
 import TooltipPopup from '../TooltipPopup/TooltipPopup';
 import newsApi from '../../utils/NewsApi';
+import { ArticlesContext } from '../../contexts/ArticlesContext';
 
 function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
@@ -102,9 +103,9 @@ function App() {
             onSignIn={openLoginPopup}
             onSearchArticles={handleSearchArticles}
           />
-          <Main
-            articles={articles}
-          />
+          <ArticlesContext.Provider value={articles}>
+            <Main />
+          </ArticlesContext.Provider>
         </Route>
 
         <Route path="/saved-news">

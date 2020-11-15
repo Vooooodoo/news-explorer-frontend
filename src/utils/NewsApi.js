@@ -1,15 +1,15 @@
 class NewsApi {
-  constructor(dayAgo) {
+  constructor(daysAgo) {
     this._date = new Date();
     this._today = this._getDate(this._date);
-    this._weekAgoDate = this._setDate(dayAgo);
-    this._weekAgo = this._getDate(this._weekAgoDate);
+    this._daysAgoDate = this._setDate(daysAgo);
+    this._daysAgo = this._getDate(this._daysAgoDate);
   }
 
-  _setDate(dayAgo) {
+  _setDate(daysAgo) {
     const date = new Date();
 
-    date.setDate(date.getDate() - dayAgo);
+    date.setDate(date.getDate() - daysAgo);
 
     return date;
   }
@@ -19,7 +19,7 @@ class NewsApi {
   }
 
   _fetch(theme, options) {
-    return fetch(`https://newsapi.org/v2/everything?q=${theme}&from=${this._weekAgo}&to=${this._today}&language=ru&pageSize=100&apiKey=70091bdd11724ad58795297088c46456`, options)
+    return fetch(`https://newsapi.org/v2/everything?q=${theme}&from=${this._daysAgo}&to=${this._today}&language=ru&pageSize=100&apiKey=70091bdd11724ad58795297088c46456`, options)
       .then((res) => {
         if (res.ok) {
           return res.json();

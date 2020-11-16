@@ -1,10 +1,11 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './NewsCardBtn.css';
+import { LoggedInContext } from '../../contexts/LoggedInContext';
 
 function NewsCardBtn(props) {
+  const loggedIn = React.useContext(LoggedInContext);
   const [isTooltipShown, setIsTooltipShown] = React.useState(false);
-
   const { pathname } = useLocation();
 
   const btnClass = `${
@@ -26,7 +27,7 @@ function NewsCardBtn(props) {
   }`;
 
   function handleMouseEnter() {
-    if (pathname === '/saved-news' || props.loggedIn) {
+    if (pathname === '/saved-news' || !loggedIn) {
       setIsTooltipShown(true);
     }
   }

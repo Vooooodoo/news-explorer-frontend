@@ -14,7 +14,7 @@ import LoginPopup from '../LoginPopup/LoginPopup';
 import RegistrationPopup from '../RegistrationPopup/RegistrationPopup';
 import TooltipPopup from '../TooltipPopup/TooltipPopup';
 import newsApi from '../../utils/NewsApi';
-import { LoggedInContext } from '../../contexts/CurrentUserContext';
+import { LoggedInContext } from '../../contexts/LoggedInContext';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { ArticlesContext } from '../../contexts/ArticlesContext';
 

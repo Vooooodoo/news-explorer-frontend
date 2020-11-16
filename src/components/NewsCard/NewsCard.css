@@ -4,11 +4,11 @@
 
 .news-card__photo {
   display: block;
-  background-color: #F5F6F7;
+  background-color: #B6BCBF;
   width: 100%;
   height: calc(272 / 400 * (100vw - (100vw - 1440px) - 240px) / 3);
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
+  object-position: bottom;
   border-radius: 16px 16px 0 0;
 }
 

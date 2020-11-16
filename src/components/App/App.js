@@ -23,6 +23,9 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(true);
 
   const [articles, setArticles] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [isNotFound, setIsNotFound] = React.useState(false);
 
   const history = useHistory();
 
@@ -53,13 +56,24 @@ function App() {
   }
 
   function handleSearchArticles(theme) {
+    setIsLoading(true);
+
     newsApi.get(theme)
       .then((res) => {
+        if (res.articles.length === 0) {
+          setIsNotFound(true);
+        }
+
         setArticles(res.articles.slice(0, 3))
       })
 
       .catch((err) => {
         console.log('Ошибка. Запрос не выполнен:', err);
+      })
+
+      .finally(() => {
+        setIsLoading(false);
+        setIsLoaded(true);
       });
   }
 
@@ -104,7 +118,11 @@ function App() {
             onSearchArticles={handleSearchArticles}
           />
           <ArticlesContext.Provider value={articles}>
-            <Main />
+            <Main
+              isLoading={isLoading}
+              isLoaded={isLoaded}
+              isNotFound={isNotFound}
+            />
           </ArticlesContext.Provider>
         </Route>
 

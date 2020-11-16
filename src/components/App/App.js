@@ -113,49 +113,52 @@ function App() {
   },
   [isLoginPopupOpen, isRegistrationPopupOpen]);
 
+  //! контекст статей можно потом вернуть конкретно на компонент Main
+  //! в остальных местах он вроде не нужен...
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <Switch>
-        <Route exact path="/">
-          <Header
-            loggedIn={loggedIn}
-            onSignOut={handleSignOut}
-            onSignIn={openLoginPopup}
-            onSearchArticles={handleSearchArticles}
-          />
-          <ArticlesContext.Provider value={articles}>
+      <ArticlesContext.Provider value={articles}>
+        <Switch>
+          <Route exact path="/">
+            <Header
+              loggedIn={loggedIn}
+              onSignOut={handleSignOut}
+              onSignIn={openLoginPopup}
+              onSearchArticles={handleSearchArticles}
+            />
             <Main
               isLoading={isLoading}
               isLoaded={isLoaded}
               isNotFound={isNotFound}
             />
-          </ArticlesContext.Provider>
-        </Route>
+          </Route>
 
-        <ProtectedRoute
-          path="/saved-news"
-          component={SavedNewsHeader, SavedNews}
-          loggedIn={loggedIn}
-          onSignOut={handleSignOut}
+          <ProtectedRoute
+            path="/saved-news"
+            firstComponent={SavedNewsHeader}
+            secondComponent={SavedNews}
+            loggedIn={loggedIn}
+            onSignOut={handleSignOut}
+          />
+        </Switch>
+        <Footer />
+
+        <LoginPopup
+          isOpen={isLoginPopupOpen}
+          onClose={closeAllPopups}
+          onClick={openRegistrationPopup}
+          />
+        <RegistrationPopup
+          isOpen={isRegistrationPopupOpen}
+          onClose={closeAllPopups}
+          onClick={openLoginPopup}
+          />
+        <TooltipPopup
+          isOpen={isTooltipPopupOpen}
+          onClose={closeAllPopups}
+          onClick={openLoginPopup}
         />
-      </Switch>
-      <Footer />
-
-      <LoginPopup
-        isOpen={isLoginPopupOpen}
-        onClose={closeAllPopups}
-        onClick={openRegistrationPopup}
-      />
-      <RegistrationPopup
-        isOpen={isRegistrationPopupOpen}
-        onClose={closeAllPopups}
-        onClick={openLoginPopup}
-      />
-      <TooltipPopup
-        isOpen={isTooltipPopupOpen}
-        onClose={closeAllPopups}
-        onClick={openLoginPopup}
-      />
+      </ArticlesContext.Provider>
     </CurrentUserContext.Provider>
   );
 }

@@ -62,6 +62,10 @@ function App() {
       .then((res) => {
         if (res.articles.length === 0) {
           setIsNotFound(true);
+          setIsLoaded(false);
+        } else {
+          setIsNotFound(false);
+          setIsLoaded(true);
         }
 
         setArticles(res.articles.slice(0, 3))
@@ -73,7 +77,6 @@ function App() {
 
       .finally(() => {
         setIsLoading(false);
-        setIsLoaded(true);
       });
   }
 

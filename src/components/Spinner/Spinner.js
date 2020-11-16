@@ -6,7 +6,7 @@ function Spinner() {
   return (
     <Preloader
       children={
-        <div className="preloader__spinner"></div>
+        (<div className="preloader__spinner"></div>)
       }
       subTitle="Идет поиск новостей..."
     />

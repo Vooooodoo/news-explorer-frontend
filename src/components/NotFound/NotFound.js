@@ -7,10 +7,10 @@ function NotFound() {
   return (
     <Preloader
       children={
-        <>
+        (<>
           <img className="preloader__logo" src={preloaderLogo} alt="Лупа с грустным смайликом внутри." />
           <h3 className="preloader__title">Ничего не&nbsp;найдено</h3>
-        </>
+        </>)
       }
       subTitle="К&nbsp;сожалению по&nbsp;вашему запросу ничего не&nbsp;найдено."
     />

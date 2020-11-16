@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import './NewsCardBtn.css';
 
 function NewsCardBtn(props) {
+  const [isTooltipShown, setIsTooltipShown] = React.useState(false);
+
   const { pathname } = useLocation();
 
   const btnClass = `${
@@ -23,10 +25,20 @@ function NewsCardBtn(props) {
       : 'Сохранить статью.'
   }`;
 
+  function handleMouseEnter() {
+    setIsTooltipShown(true);
+  }
+
+  function handleMouseLeave() {
+    setIsTooltipShown(false);
+  }
+
   return (
     <>
-      <button className={`news-card-btn ${btnClass}`} type="button" aria-label={ariaLabel} onClick={props.onClick}></button>
-      <span className="news-card-btn__popup news-card-btn__popup_hidden news-card-btn__popup_shown">{popupText}</span>
+      <button className={`news-card-btn ${btnClass}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={props.onClick} type="button" aria-label={ariaLabel}></button>
+      {isTooltipShown
+        && (<span className="news-card-btn__popup news-card-btn__popup_hidden news-card-btn__popup_shown">{popupText}</span>)
+      }
     </>
   );
 }

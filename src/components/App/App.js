@@ -13,6 +13,7 @@ import LoginPopup from '../LoginPopup/LoginPopup';
 import RegistrationPopup from '../RegistrationPopup/RegistrationPopup';
 import TooltipPopup from '../TooltipPopup/TooltipPopup';
 import newsApi from '../../utils/NewsApi';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { ArticlesContext } from '../../contexts/ArticlesContext';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
   const [loggedIn, setLoggedIn] = React.useState(true);
 
+  const [currentUser, setCurrentUser] = React.useState({});
   const [articles, setArticles] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [isLoaded, setIsLoaded] = React.useState(false);
@@ -111,7 +113,7 @@ function App() {
   [isLoginPopupOpen, isRegistrationPopupOpen]);
 
   return (
-    <>
+    <CurrentUserContext.Provider value={currentUser}>
       <Switch>
         <Route exact path="/">
           <Header
@@ -154,7 +156,7 @@ function App() {
         onClose={closeAllPopups}
         onClick={openLoginPopup}
       />
-    </>
+    </CurrentUserContext.Provider>
   );
 }
 

@@ -8,7 +8,7 @@
   width: 100%;
   height: calc(272 / 400 * (100vw - (100vw - 1440px) - 240px) / 3);
   object-fit: contain;
-  object-position: bottom;
+  object-position: center;
   border-radius: 16px 16px 0 0;
 }
 

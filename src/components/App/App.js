@@ -7,6 +7,7 @@ import {
 import Header from '../Header/Header';
 import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import Main from '../Main/Main';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
 import LoginPopup from '../LoginPopup/LoginPopup';
@@ -131,13 +132,12 @@ function App() {
           </ArticlesContext.Provider>
         </Route>
 
-        <Route path="/saved-news">
-          <SavedNewsHeader
-            loggedIn={loggedIn}
-            onSignOut={handleSignOut}
-          />
-          <SavedNews />
-        </Route>
+        <ProtectedRoute
+          path="/saved-news"
+          component={SavedNewsHeader, SavedNews}
+          loggedIn={loggedIn}
+          onSignOut={handleSignOut}
+        />
       </Switch>
       <Footer />
 

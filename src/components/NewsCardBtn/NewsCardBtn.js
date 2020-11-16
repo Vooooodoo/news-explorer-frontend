@@ -26,7 +26,9 @@ function NewsCardBtn(props) {
   }`;
 
   function handleMouseEnter() {
-    setIsTooltipShown(true);
+    if (pathname === '/saved-news' || props.loggedIn) {
+      setIsTooltipShown(true);
+    }
   }
 
   function handleMouseLeave() {

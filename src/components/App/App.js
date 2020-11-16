@@ -14,6 +14,7 @@ import LoginPopup from '../LoginPopup/LoginPopup';
 import RegistrationPopup from '../RegistrationPopup/RegistrationPopup';
 import TooltipPopup from '../TooltipPopup/TooltipPopup';
 import newsApi from '../../utils/NewsApi';
+import { LoggedInContext } from '../../contexts/CurrentUserContext';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { ArticlesContext } from '../../contexts/ArticlesContext';
 
@@ -121,6 +122,7 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <ArticlesContext.Provider value={articles}>
+      <LoggedInContext.Provider value={loggedIn}>
         <Switch>
           <Route exact path="/">
             <Header
@@ -162,6 +164,7 @@ function App() {
           onClose={closeAllPopups}
           onClick={openLoginPopup}
         />
+      </LoggedInContext.Provider>
       </ArticlesContext.Provider>
     </CurrentUserContext.Provider>
   );

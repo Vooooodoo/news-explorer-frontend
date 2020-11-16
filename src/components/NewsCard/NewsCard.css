@@ -1,6 +1,5 @@
 .news-card {
   position: relative;
-  cursor: pointer;
 }
 
 .news-card__photo {
@@ -30,6 +29,10 @@
   box-sizing: border-box;
   padding: 0 15px;
 }
+.news-card__link {
+  text-decoration: none;
+  color: #1A1B22;
+}
 
 .news-card__container {
   display: flex;
@@ -38,6 +41,7 @@
   background-color: white;
   border-radius: 0 0 16px 16px;
   height: 260px;
+  cursor: pointer;
 }
 
 .news-card__date {

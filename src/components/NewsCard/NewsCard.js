@@ -13,12 +13,14 @@ function NewsCard(props) {
         && (<span className="news-card__tag">{props.tagText}</span>)
       }
       <NewsCardBtn />
-      <div className="news-card__container">
-        <p className="news-card__date">{props.date}</p>
-        <h2 className="news-card__title">{props.title}</h2>
-        <p className="news-card__text">{props.text}</p>
-        <p className="news-card__src">{props.src}</p>
-      </div>
+      <a className="news-card__link" href={props.url} target="_blank">
+        <div className="news-card__container">
+          <p className="news-card__date">{props.date}</p>
+          <h2 className="news-card__title">{props.title}</h2>
+          <p className="news-card__text">{props.text}</p>
+          <p className="news-card__src">{props.src}</p>
+        </div>
+      </a>
     </li>
   );
 }

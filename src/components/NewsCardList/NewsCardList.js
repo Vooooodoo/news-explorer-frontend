@@ -18,6 +18,7 @@ function NewsCardList() {
           title={article.title}
           text={article.description}
           src={article.source.name}
+          url={article.url}
         />)
       ))}
     </ul>

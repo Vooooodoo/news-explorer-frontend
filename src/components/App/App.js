@@ -29,6 +29,7 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isNotFound, setIsNotFound] = React.useState(false);
+  const [isReqErr, setIsReqErr] = React.useState(false);
 
   const history = useHistory();
 
@@ -62,6 +63,7 @@ function App() {
     setIsLoading(true);
     setIsLoaded(false);
     setIsNotFound(false);
+    setIsReqErr(false);
 
     newsApi.get(theme)
       .then((res) => {
@@ -75,6 +77,7 @@ function App() {
       })
 
       .catch((err) => {
+        setIsReqErr(true);
         console.log('Ошибка. Запрос не выполнен:', err);
       })
 
@@ -130,6 +133,7 @@ function App() {
               isLoading={isLoading}
               isLoaded={isLoaded}
               isNotFound={isNotFound}
+              isReqErr={isReqErr}
             />
           </Route>
 

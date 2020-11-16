@@ -3,6 +3,7 @@ import About from '../About/About';
 import SearchResult from '../SearchResult/SearchResult';
 import Spinner from '../Spinner/Spinner';
 import NotFound from '../NotFound/NotFound';
+import ReqErr from '../ReqErr/ReqErr';
 
 function Main(props) {
   return (
@@ -10,6 +11,7 @@ function Main(props) {
       {props.isLoading && <Spinner />}
       {props.isLoaded && <SearchResult />}
       {props.isNotFound && <NotFound />}
+      {props.isReqErr && <ReqErr />}
       <About />
     </main>
   );

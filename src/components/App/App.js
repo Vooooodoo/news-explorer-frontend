@@ -57,14 +57,14 @@ function App() {
 
   function handleSearchArticles(theme) {
     setIsLoading(true);
+    setIsLoaded(false);
+    setIsNotFound(false);
 
     newsApi.get(theme)
       .then((res) => {
         if (res.articles.length === 0) {
           setIsNotFound(true);
-          setIsLoaded(false);
         } else {
-          setIsNotFound(false);
           setIsLoaded(true);
         }
 

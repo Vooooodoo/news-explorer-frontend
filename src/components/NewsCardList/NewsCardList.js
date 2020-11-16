@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
-import './NewsCardList.css';
 import { ArticlesContext } from '../../contexts/ArticlesContext';
+import './NewsCardList.css';
 
 function NewsCardList() {
   const articles = React.useContext(ArticlesContext);

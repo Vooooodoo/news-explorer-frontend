@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import './NewsCardBtn.css';
 import { LoggedInContext } from '../../contexts/LoggedInContext';
+import './NewsCardBtn.css';
 
 function NewsCardBtn(props) {
   const loggedIn = React.useContext(LoggedInContext);

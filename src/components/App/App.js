@@ -35,6 +35,8 @@ function App() {
   const [isShowMoreBtn, setIsShowMoreBtn] = React.useState(true);
 
   const history = useHistory();
+  //* массив с последними найденными статьями из локального хранилища
+  const localArticles = JSON.parse(localStorage.getItem('articles'));
 
   function handleSignOut() {
     setLoggedIn(false);
@@ -100,12 +102,10 @@ function App() {
   }
 
   function handleShowMore() {
-    const articles = JSON.parse(localStorage.getItem('articles'));
-
     setArticlesRenderCount(articlesRenderCount + 3);
-    setArticles(articles.slice(0, articlesRenderCount));
+    setArticles(localArticles.slice(0, articlesRenderCount));
 
-    if (articles.length <= articlesRenderCount) {
+    if (localArticles.length <= articlesRenderCount) {
       setIsShowMoreBtn(false);
     }
   }
@@ -139,6 +139,10 @@ function App() {
     };
   },
   [isLoginPopupOpen, isRegistrationPopupOpen]);
+
+  // React.useEffect(() => {
+
+  // }, []);
 
   //! контекст статей можно потом вернуть конкретно на компонент Main
   //! в остальных местах он вроде не нужен...

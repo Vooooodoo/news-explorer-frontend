@@ -75,6 +75,10 @@ function App() {
         }
 
         setArticles(res.articles.slice(0, 3));
+
+        //* вторым аргументом может быть только строка,
+        //* поэтому массив с сервера нужно обязательно перевести в JSON-строку
+        localStorage.setItem('articles', JSON.stringify(res.articles));
       })
 
       .catch((err) => {
@@ -86,6 +90,8 @@ function App() {
         setIsLoading(false);
       });
   }
+
+  console.log(JSON.parse(localStorage.getItem('articles')));
 
   React.useEffect(() => {
     function handleEsc(evt) {

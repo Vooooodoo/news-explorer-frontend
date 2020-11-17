@@ -40,10 +40,8 @@ function App() {
   const localArticles = JSON.parse(localStorage.getItem('articles'));
 
   function handleRegistration(email, password, name) {
-    //* в качестве аргументов передадим переменные состояния, в которых значения инпутов формы
     mainApi.register(email, password, name)
       .then((res) => {
-        //* если форма отправлена успешно, перенаправить пользователя на страницу авторизации
         if (res.data) {
           openTooltipPopup();
         } else {
@@ -234,16 +232,17 @@ function App() {
         </Switch>
         <Footer />
 
-        <LoginPopup
-          isOpen={isLoginPopupOpen}
-          onClose={closeAllPopups}
-          onClick={openRegistrationPopup}
-          />
         <RegistrationPopup
           isOpen={isRegistrationPopupOpen}
           onClose={closeAllPopups}
           onClick={openLoginPopup}
           onSubmit={handleRegistration}
+          />
+        <LoginPopup
+          isOpen={isLoginPopupOpen}
+          onClose={closeAllPopups}
+          onClick={openRegistrationPopup}
+          onSubmit={handleLogin}
           />
         <TooltipPopup
           isOpen={isTooltipPopupOpen}

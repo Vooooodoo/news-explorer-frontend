@@ -10,8 +10,8 @@ function NewsCardBtn(props) {
 
   const btnClass = `${
     pathname === '/saved-news'
-      ? 'news-card-btn_type_normal-delete news-card-btn_type_marked-delete news-card-btn_type_hover-delete news-card-btn_type_focus-delete'
-      : 'news-card-btn news-card-btn_type_normal-save news-card-btn_type_marked-save news-card-btn_type_hover-save news-card-btn_type_focus-save'
+      ? 'news-card-btn_type_normal-delete news-card-btn_type_hover-delete news-card-btn_type_focus-delete'
+      : 'news-card-btn news-card-btn_type_normal-save news-card-btn_type_hover-save news-card-btn_type_focus-save'
   }`;
 
   const popupText = `${

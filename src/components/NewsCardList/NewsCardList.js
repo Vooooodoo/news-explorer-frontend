@@ -10,7 +10,7 @@ function NewsCardList() {
   return (
     <ul className="news-card-list">
       {articles.map((article) => (
-        (<NewsCard
+        <NewsCard
           key={reactKey++}
           photo={article.urlToImage}
           tagText="Природа"
@@ -19,7 +19,7 @@ function NewsCardList() {
           text={article.description}
           src={article.source.name}
           url={article.url}
-        />)
+        />
       ))}
     </ul>
   );

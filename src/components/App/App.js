@@ -32,6 +32,7 @@ function App() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isNotFound, setIsNotFound] = React.useState(false);
   const [isReqErr, setIsReqErr] = React.useState(false);
+  const [isShowMoreBtn, setIsShowMoreBtn] = React.useState(true);
 
   const history = useHistory();
 
@@ -66,6 +67,8 @@ function App() {
     setIsLoaded(false);
     setIsNotFound(false);
     setIsReqErr(false);
+    setIsShowMoreBtn(true);
+    setArticlesRenderCount(6);
 
     newsApi.get(theme)
       .then((res) => {
@@ -73,6 +76,10 @@ function App() {
           setIsNotFound(true);
         } else {
           setIsLoaded(true);
+        }
+
+        if (res.articles.length > 0 && res.articles.length <= 3) {
+          setIsShowMoreBtn(false);
         }
 
         setArticles(res.articles.slice(0, 3));
@@ -97,6 +104,10 @@ function App() {
 
     setArticlesRenderCount(articlesRenderCount + 3);
     setArticles(articles.slice(0, articlesRenderCount));
+
+    if (articles.length <= articlesRenderCount) {
+      setIsShowMoreBtn(false);
+    }
   }
 
   React.useEffect(() => {
@@ -149,6 +160,7 @@ function App() {
               isNotFound={isNotFound}
               isReqErr={isReqErr}
               onShowMore={handleShowMore}
+              isShowMoreBtn={isShowMoreBtn}
             />
           </Route>
 

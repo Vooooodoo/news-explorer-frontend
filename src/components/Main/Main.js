@@ -9,7 +9,11 @@ function Main(props) {
   return (
     <main>
       {props.isLoading && <Spinner />}
-      {props.isLoaded && <SearchResult onShowMore={props.onShowMore} />}
+      {props.isLoaded
+        &&  <SearchResult
+              onShowMore={props.onShowMore}
+              isShowMoreBtn={props.isShowMoreBtn}
+            />}
       {props.isNotFound && <NotFound />}
       {props.isReqErr && <ReqErr />}
       <About />

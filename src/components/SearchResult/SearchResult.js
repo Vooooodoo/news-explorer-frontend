@@ -8,9 +8,11 @@ function SearchResult(props) {
     <section className="search-result">
       <h3 className="search-result__title">Результаты поиска</h3>
       <NewsCardList />
-      <ShowMoreBtn
-        onShowMore={props.onShowMore}
-      />
+      {props.isShowMoreBtn
+        &&  (<ShowMoreBtn
+              onShowMore={props.onShowMore}
+            />)
+      }
     </section>
   );
 }

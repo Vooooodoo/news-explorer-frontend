@@ -24,10 +24,10 @@ function App() {
   const [isTooltipPopupOpen, setIsTooltipPopupOpen] = React.useState(false);
 
   const [loggedIn, setLoggedIn] = React.useState(true);
-
   const [currentUser, setCurrentUser] = React.useState({});
+
   const [articles, setArticles] = React.useState([]);
-  const [articlesCount, setArticlesCount] = React.useState(3);
+  const [articlesRenderCount, setArticlesRenderCount] = React.useState(6);
   const [isLoading, setIsLoading] = React.useState(false);
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isNotFound, setIsNotFound] = React.useState(false);
@@ -75,7 +75,7 @@ function App() {
           setIsLoaded(true);
         }
 
-        setArticles(res.articles.slice(0, articlesCount));
+        setArticles(res.articles.slice(0, 3));
 
         //* вторым аргументом может быть только строка,
         //* поэтому массив с сервера нужно обязательно перевести в JSON-строку
@@ -95,9 +95,8 @@ function App() {
   function handleShowMore() {
     const articles = JSON.parse(localStorage.getItem('articles'));
 
-    setArticlesCount(articlesCount + 3);
-    console.log(articlesCount);
-    // setArticles(articles.slice(0, articlesCount));
+    setArticlesRenderCount(articlesRenderCount + 3);
+    setArticles(articles.slice(0, articlesRenderCount));
   }
 
   React.useEffect(() => {

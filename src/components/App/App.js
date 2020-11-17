@@ -111,6 +111,13 @@ function App() {
   }
 
   React.useEffect(() => {
+    if (localArticles) {
+      setIsLoaded(true);
+      setArticles(localArticles.slice(0, 3));
+    }
+  }, []);
+
+  React.useEffect(() => {
     function handleEsc(evt) {
       if (evt.key === 'Escape') {
         closeAllPopups();
@@ -139,10 +146,6 @@ function App() {
     };
   },
   [isLoginPopupOpen, isRegistrationPopupOpen]);
-
-  // React.useEffect(() => {
-
-  // }, []);
 
   //! контекст статей можно потом вернуть конкретно на компонент Main
   //! в остальных местах он вроде не нужен...

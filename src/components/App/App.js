@@ -27,6 +27,7 @@ function App() {
 
   const [currentUser, setCurrentUser] = React.useState({});
   const [articles, setArticles] = React.useState([]);
+  const [articlesCount, setArticlesCount] = React.useState(3);
   const [isLoading, setIsLoading] = React.useState(false);
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isNotFound, setIsNotFound] = React.useState(false);
@@ -74,7 +75,7 @@ function App() {
           setIsLoaded(true);
         }
 
-        setArticles(res.articles.slice(0, 3));
+        setArticles(res.articles.slice(0, articlesCount));
 
         //* вторым аргументом может быть только строка,
         //* поэтому массив с сервера нужно обязательно перевести в JSON-строку
@@ -91,7 +92,13 @@ function App() {
       });
   }
 
-  console.log(JSON.parse(localStorage.getItem('articles')));
+  function handleShowMore() {
+    const articles = JSON.parse(localStorage.getItem('articles'));
+
+    setArticlesCount(articlesCount + 3);
+    console.log(articlesCount);
+    // setArticles(articles.slice(0, articlesCount));
+  }
 
   React.useEffect(() => {
     function handleEsc(evt) {
@@ -142,6 +149,7 @@ function App() {
               isLoaded={isLoaded}
               isNotFound={isNotFound}
               isReqErr={isReqErr}
+              onShowMore={handleShowMore}
             />
           </Route>
 

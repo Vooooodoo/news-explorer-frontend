@@ -74,7 +74,7 @@ function App() {
           setIsLoaded(true);
         }
 
-        setArticles(res.articles.slice(0, 3))
+        setArticles(res.articles.slice(0, 3));
       })
 
       .catch((err) => {

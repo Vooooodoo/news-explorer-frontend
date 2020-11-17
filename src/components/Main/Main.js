@@ -8,14 +8,15 @@ import ReqErr from '../ReqErr/ReqErr';
 function Main(props) {
   return (
     <main>
-      {props.isLoading && <Spinner />}
+      {props.isLoading && (<Spinner />)}
       {props.isLoaded
-        &&  <SearchResult
+        &&  (<SearchResult
               onShowMore={props.onShowMore}
               isShowMoreBtn={props.isShowMoreBtn}
-            />}
-      {props.isNotFound && <NotFound />}
-      {props.isReqErr && <ReqErr />}
+            />)
+      }
+      {props.isNotFound && (<NotFound />)}
+      {props.isReqErr && (<ReqErr />)}
       <About />
     </main>
   );

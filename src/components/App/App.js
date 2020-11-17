@@ -86,8 +86,7 @@ function App() {
 
         setArticles(res.articles.slice(0, 3));
 
-        //* вторым аргументом может быть только строка,
-        //* поэтому массив с сервера нужно обязательно перевести в JSON-строку
+        //* перед помещением в local storage, массив с сервера нужно обязательно перевести в JSON-строку
         localStorage.setItem('articles', JSON.stringify(res.articles));
       })
 

@@ -14,6 +14,7 @@ import LoginPopup from '../LoginPopup/LoginPopup';
 import RegistrationPopup from '../RegistrationPopup/RegistrationPopup';
 import TooltipPopup from '../TooltipPopup/TooltipPopup';
 import newsApi from '../../utils/NewsApi';
+import * as mainApi from '../../utils/MainApi';
 import { LoggedInContext } from '../../contexts/LoggedInContext';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { ArticlesContext } from '../../contexts/ArticlesContext';
@@ -38,9 +39,62 @@ function App() {
   //* массив из локального хранилища с последними найденными статьями
   const localArticles = JSON.parse(localStorage.getItem('articles'));
 
+  function handleRegistration(email, password, name) {
+    //* в качестве аргументов передадим переменные состояния, в которых значения инпутов формы
+    mainApi.register(email, password, name)
+      .then((res) => {
+        //* если форма отправлена успешно, перенаправить пользователя на страницу авторизации
+        if (res.data) {
+          openTooltipPopup();
+        } else {
+          console.log('Прикрутить ошибку если надо, хотя она в кэтч есть, проверить!')
+        }
+      })
+
+      .catch((err) => {
+        console.log('Ошибка. Запрос не выполнен:', err);
+      });
+  }
+
+  function handleLogin(email, password) {
+    mainApi.authorize(email, password)
+      .then((data) => {
+        if (data.token) {
+          setLoggedIn(true);
+        } else {
+          console.log('Прикрутить ошибку если надо, опять дублируется кэтч!')
+        }
+      })
+
+      .catch((err) => {
+        console.log('Ошибка. Запрос не выполнен:', err);
+      });
+  }
+
+  //* если у пользователя есть токен в localStorage, эта функция проверит валидность токена
+  function checkToken() {
+    const jwt = localStorage.getItem('jwt');
+
+    if (jwt) {
+      mainApi.checkToken(jwt)
+        .then((res) => {
+          if (res) {
+            setLoggedIn(true);
+          } else {
+            localStorage.removeItem('jwt');
+          }
+        })
+
+        .catch((err) => {
+          console.log('Ошибка. Запрос не выполнен:', err);
+        });
+    }
+  }
+
   function handleSignOut() {
     setLoggedIn(false);
     history.push('/');
+    localStorage.removeItem('jwt');
   }
 
   function closeAllPopups() {
@@ -189,6 +243,7 @@ function App() {
           isOpen={isRegistrationPopupOpen}
           onClose={closeAllPopups}
           onClick={openLoginPopup}
+          onSubmit={handleRegistration}
           />
         <TooltipPopup
           isOpen={isTooltipPopupOpen}

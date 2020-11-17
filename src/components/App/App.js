@@ -35,7 +35,7 @@ function App() {
   const [isShowMoreBtn, setIsShowMoreBtn] = React.useState(true);
 
   const history = useHistory();
-  //* массив с последними найденными статьями из локального хранилища
+  //* массив из локального хранилища с последними найденными статьями
   const localArticles = JSON.parse(localStorage.getItem('articles'));
 
   function handleSignOut() {

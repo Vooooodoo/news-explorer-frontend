@@ -74,7 +74,6 @@ function App() {
       });
   }
 
-  //* если у пользователя есть токен в localStorage, эта функция проверит валидность токена
   function checkToken() {
     const jwt = localStorage.getItem('jwt');
 
@@ -203,6 +202,10 @@ function App() {
     };
   },
   [isLoginPopupOpen, isRegistrationPopupOpen]);
+
+  React.useEffect(() => {
+    checkToken();
+  }, [loggedIn]);
 
   //! контекст статей можно потом вернуть конкретно на компонент Main
   //! в остальных местах он вроде не нужен...

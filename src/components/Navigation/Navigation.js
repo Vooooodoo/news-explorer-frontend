@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import WhiteHeaderLogo from '../../images/header__logo_color_white.svg';
 import BlackHeaderLogo from '../../images/header__logo_color_black.svg';
 import './Navigation.css';
 
 function Navigation(props) {
   const { pathname } = useLocation();
+  const currentUser = React.useContext(CurrentUserContext);
 
   const logo = `${
     pathname === '/saved-news'
@@ -76,7 +78,7 @@ function Navigation(props) {
         {props.loggedIn
           ? (<>
               <Link to="/saved-news" className={`navigation__link navigation__text opacity tap-highlight ${linkClass} ${activeBlackLinkClass}`}>Сохранённые статьи</Link>
-              <button className={`navigation__desktop-button navigation__desktop-button_type_signout navigation__text opacity tab tap-highlight ${desktopBtnClass} ${signoutBtnClass}`} type="button" onClick={props.onSignOut}>Грета</button>
+              <button className={`navigation__desktop-button navigation__desktop-button_type_signout navigation__text opacity tab tap-highlight ${desktopBtnClass} ${signoutBtnClass}`} type="button" onClick={props.onSignOut}>{currentUser.name}</button>
             </>)
 
           : (<>
@@ -91,7 +93,7 @@ function Navigation(props) {
               {props.loggedIn
                 ? (<>
                     <Link to="/saved-news" className="navigation__mobile-link tap-highlight">Сохранённые статьи</Link>
-                    <button className="navigation__mobile-button navigation__mobile-button_type_signout tab tap-highlight" type="button" onClick={props.onSignOut}>Грета</button>
+                    <button className="navigation__mobile-button navigation__mobile-button_type_signout tab tap-highlight" type="button" onClick={props.onSignOut}>{currentUser.name}</button>
                   </>)
 
                 : (<>

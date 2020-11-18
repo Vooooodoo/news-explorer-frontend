@@ -82,6 +82,7 @@ function App() {
         .then((res) => {
           if (res) {
             setLoggedIn(true);
+            setCurrentUser(res);
           } else {
             localStorage.removeItem('jwt');
           }

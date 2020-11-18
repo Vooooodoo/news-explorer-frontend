@@ -62,8 +62,9 @@ function App() {
       .then((data) => {
         if (data.token) {
           setLoggedIn(true);
+          closeAllPopups();
         } else {
-          console.log('Прикрутить ошибку если надо, опять дублируется кэтч!')
+          console.log(data.message);
         }
       })
 

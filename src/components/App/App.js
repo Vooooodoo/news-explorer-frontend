@@ -44,7 +44,7 @@ function App() {
   function handleRegistration(email, password, name) {
     mainApi.register(email, password, name)
       .then((res) => {
-        if (res.data) {
+        if (res._id) {
           openTooltipPopup();
         } else {
           setIsSubmitErr(true);

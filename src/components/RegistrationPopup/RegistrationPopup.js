@@ -128,6 +128,8 @@ function RegistrationPopup(props) {
       onPassChange={handlePasswordChange}
       onNameChange={handleNameChange}
       onSubmit={handleSubmit}
+      isSubmitErr={props.isSubmitErr}
+      submitErrMessage={props.submitErrMessage}
     />
   );
 }

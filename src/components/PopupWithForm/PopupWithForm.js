@@ -22,7 +22,7 @@ function PopupWithForm(props) {
                 <span className={`popup__input-error popup__input-error_type_validation popup__input-error_hidden ${props.nameInputErrClass}`}>{props.nameInputErrMessage}</span>
               </>)
           }
-          <span className="popup__input-error popup__input-error_type_registration popup__input-error_hidden">Такой пользователь уже есть</span>
+          <span className={`popup__input-error popup__input-error_type_registration ${props.isSubmitErr ? 'popup__input-error_shown' : 'popup__input-error_hidden'}`}>{props.submitErrMessage}</span>
         </fieldset>
         <button className={`popup__submit tap-highlight ${props.isFormValid ? 'popup__submit_valid' : 'popup__submit_invalid'}`} type="submit">{props.btnText}</button>
         <button className="popup__close opacity tab tap-highlight" type="button" aria-label={props.ariaLabel} onClick={props.onClose}></button>

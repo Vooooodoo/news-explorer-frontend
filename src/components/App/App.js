@@ -23,8 +23,10 @@ function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isRegistrationPopupOpen, setIsRegistrationPopupOpen] = React.useState(false);
   const [isTooltipPopupOpen, setIsTooltipPopupOpen] = React.useState(false);
+  const [isSubmitErr, setIsSubmitErr] = React.useState(false);
+  const [submitErrMessage, setSubmitErrMessage] = React.useState('');
 
-  const [loggedIn, setLoggedIn] = React.useState(true);
+  const [loggedIn, setLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
 
   const [articles, setArticles] = React.useState([]);
@@ -45,7 +47,8 @@ function App() {
         if (res.data) {
           openTooltipPopup();
         } else {
-          console.log('Прикрутить ошибку если надо, хотя она в кэтч есть, проверить!')
+          setIsSubmitErr(true);
+          setSubmitErrMessage(res.message);
         }
       })
 
@@ -99,6 +102,7 @@ function App() {
     setIsLoginPopupOpen(false);
     setIsRegistrationPopupOpen(false);
     setIsTooltipPopupOpen(false);
+    setIsSubmitErr(false);
   }
 
   function openLoginPopup() {
@@ -237,13 +241,15 @@ function App() {
           onClose={closeAllPopups}
           onClick={openLoginPopup}
           onSubmit={handleRegistration}
-          />
+          isSubmitErr={isSubmitErr}
+          submitErrMessage={submitErrMessage}
+        />
         <LoginPopup
           isOpen={isLoginPopupOpen}
           onClose={closeAllPopups}
           onClick={openRegistrationPopup}
           onSubmit={handleLogin}
-          />
+        />
         <TooltipPopup
           isOpen={isTooltipPopupOpen}
           onClose={closeAllPopups}

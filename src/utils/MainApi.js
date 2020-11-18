@@ -1,66 +1,68 @@
-export const BASE_URL = 'https://api.vdnews.students.nomoreparties.co';
+class MainApi {
+  constructor({ baseUrl, headers }) {
+    this._baseUrl = baseUrl;
+    this._headers = headers;
+  }
 
-export function register(email, password, name) {
-  return fetch(`${BASE_URL}/signup`, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password, name }),
-  })
+  _fetch(endPoint, options) {
+    //* если в опциях будет body, добавить свойство с преобразованием объекта JSON в строку,
+    //* для будущей передачи на сервер
+    if (options.body) {
+      options.body = JSON.stringify(options.body);
+    }
 
-    .then((res) => res.json())
+    options.headers = this._headers;
 
-    .then((res) => res);
-}
-
-export function authorize(email, password) {
-  return fetch(`${BASE_URL}/signin`, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password }),
-  })
-
-    .then((res) => res.json())
-
-    .then((data) => {
-      if (data.token) {
-        localStorage.setItem('jwt', data.token);
-        return data;
-      }
-    });
-}
-
-//* функция для проверки токенов авторизованных пользователей, которые вернулись в приложение
-export function checkToken(token) {
-  return fetch(`${BASE_URL}/users/me`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-    },
-  })
-
-    .then((res) => {
-      try {
-        if (res.status === 200) {
+    //* метод fetch создаёт запрос на сервер и возвращает его ответ,
+    //* вторым аргументом передадим объект опций
+    return fetch(this._baseUrl + endPoint, options)
+      .then((res) => {
+        if (res.ok) { //* если запрос прошёл успешно
+          //* асинхронный метод json читает ответ от сервера в формате json и возвращает промис,
+          //* из которого можно достать нужные данные через обработчик then
           return res.json();
         }
-        if (res.status === 400) {
-          throw new Error('Токен не передан или передан не в том формате');
-        }
-        if (res.status === 401) {
-          throw new Error('Переданный токен некорректен');
-        }
-      } catch (error) {
-        return error;
-      }
-    })
 
-    .then((data) => data);
+        return Promise.reject(`${res.status}`); //* если сервер вернул ошибку, отклонили промис, чтобы перейти в блок catch
+      });
+  }
+
+  //* метод для получения данных с сервера
+  get(endPoint) {
+    return this._fetch(endPoint, {
+      method: 'GET',
+    });
+  }
+
+  //* метод для для отправки данных на сервер
+  post(endPoint, body) {
+    return this._fetch(endPoint, {
+      method: 'POST',
+      body,
+    });
+  }
+
+  //* метод для удаления ресурса с сервера
+  delete(endPoint) {
+    return this._fetch(endPoint, {
+      method: 'DELETE',
+    });
+  }
+
+  changeCardLikeStatus(cardId, isLiked) {
+    return this._fetch(`/cards/likes/${cardId}`, {
+      method: isLiked ? 'DELETE' : 'PUT',
+    });
+  }
 }
+
+const jwt = localStorage.getItem('jwt');
+const mainApi = new MainApi({
+  baseUrl: 'https://api.vdnews.students.nomoreparties.co',
+  headers: {
+    Authorization: `Bearer ${jwt}`,
+    'Content-Type': 'application/json'
+  },
+});
+
+export default mainApi;

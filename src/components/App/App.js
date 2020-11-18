@@ -14,7 +14,8 @@ import LoginPopup from '../LoginPopup/LoginPopup';
 import RegistrationPopup from '../RegistrationPopup/RegistrationPopup';
 import TooltipPopup from '../TooltipPopup/TooltipPopup';
 import newsApi from '../../utils/NewsApi';
-import * as mainApi from '../../utils/MainApi';
+import mainApi from '../../utils/MainApi';
+import * as newsExplorerAuth from '../../utils/NewsExplorerAuth';
 import { LoggedInContext } from '../../contexts/LoggedInContext';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { ArticlesContext } from '../../contexts/ArticlesContext';
@@ -42,7 +43,7 @@ function App() {
   const localArticles = JSON.parse(localStorage.getItem('articles'));
 
   function handleRegistration(email, password, name) {
-    mainApi.register(email, password, name)
+    newsExplorerAuth.register(email, password, name)
       .then((res) => {
         if (res._id) {
           openTooltipPopup();
@@ -58,7 +59,7 @@ function App() {
   }
 
   function handleLogin(email, password) {
-    mainApi.authorize(email, password)
+    newsExplorerAuth.authorize(email, password)
       .then((data) => {
         if (data.token) {
           setLoggedIn(true);
@@ -77,7 +78,7 @@ function App() {
     const jwt = localStorage.getItem('jwt');
 
     if (jwt) {
-      mainApi.checkToken(jwt)
+      newsExplorerAuth.checkToken(jwt)
         .then((res) => {
           if (res) {
             setLoggedIn(true);
@@ -171,6 +172,15 @@ function App() {
       setIsLoaded(true);
       setArticles(localArticles.slice(0, 3));
     }
+
+    mainApi.get('/users/me')
+      .then((data) => {
+        console.log(data)
+      })
+
+      .catch((err) => {
+        console.log('Ошибка. Запрос не выполнен:', err);
+      });
   }, []);
 
   React.useEffect(() => {

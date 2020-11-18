@@ -63,7 +63,6 @@ function App() {
         if (data.token) {
           setLoggedIn(true);
           closeAllPopups();
-          setCurrentUser({ name: data.name })
         } else {
           console.log(data.message);
         }

@@ -30,8 +30,8 @@ function SavedNewsHeader(props) {
     return item.keyword;
   });
 
-  // const articleName = declOfNum(savedNews.length, ['статья', 'статьи', 'статей']);
-  // const savedName = declOfNum(savedNews.length, ['сохраненная', 'сохраненных', 'сохраненных']);
+  const articleName = declOfNum(savedArticles.length, ['статья', 'статьи', 'статей']);
+  const savedName = declOfNum(savedArticles.length, ['сохраненная', 'сохраненных', 'сохраненных']);
   const otherTags = sortedKeywords.slice(3).length === 0 ? '' : declOfNum(sortedKeywords.slice(3).length, ['другому', 'другим', 'другим']);
   const topThreeKeywords = sortedKeywords.slice(0, 3).join(', ');
   const topTwoKeywords = sortedKeywords.slice(0, 2).join(', ');
@@ -46,7 +46,7 @@ function SavedNewsHeader(props) {
         onSignOut={props.onSignOut}
       />
       <h1 className="saved-news-header__title">Сохранённые статьи</h1>
-      <p className="saved-news-header__subtitle">{`${currentUser.name}, у вас ${props.articles.length} сохранённых статей`}</p>
+      <p className="saved-news-header__subtitle">{`${currentUser.name}, у вас ${props.articles.length} ${savedName} ${articleName}`}</p>
       <p className="saved-news-header__text">По&nbsp;ключевым словам: <b>{`${allKeywords}${keywordPostfix} ${otherTags}`}</b></p>
     </header>
   );

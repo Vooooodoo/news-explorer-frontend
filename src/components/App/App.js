@@ -123,7 +123,7 @@ function App() {
     setIsTooltipPopupOpen(true);
   }
 
-  function handleSearchArticles(theme) {
+  function handleSearchArticles(keyword) {
     setIsLoading(true);
     setIsLoaded(false);
     setIsNotFound(false);
@@ -131,8 +131,10 @@ function App() {
     setIsShowMoreBtn(true);
     setArticlesRenderCount(6);
 
-    newsApi.get(theme)
+    newsApi.get(keyword)
       .then((res) => {
+        const articlesWithKeyword = res.articles.map((item) => ({ ...item, keyword }));
+
         if (res.articles.length === 0) {
           setIsNotFound(true);
         } else {
@@ -143,10 +145,10 @@ function App() {
           setIsShowMoreBtn(false);
         }
 
-        setArticles(res.articles.slice(0, 3));
+        setArticles(articlesWithKeyword.slice(0, 3));
 
         //* перед помещением в local storage, массив с сервера нужно обязательно перевести в JSON-строку
-        localStorage.setItem('articles', JSON.stringify(res.articles));
+        localStorage.setItem('articles', JSON.stringify(articlesWithKeyword));
       })
 
       .catch((err) => {

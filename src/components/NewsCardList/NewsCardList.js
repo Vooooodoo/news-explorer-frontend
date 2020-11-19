@@ -13,7 +13,6 @@ function NewsCardList(props) {
         <NewsCard
           key={index}
           article={article}
-          id={isSavedNews && article._id}
           photo={isSavedNews ? article.image : article.urlToImage}
           tagText={isSavedNews && article.keyword}
           date={isSavedNews ? article.date : article.publishedAt }

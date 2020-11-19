@@ -12,16 +12,22 @@ function SavedNewsHeader(props) {
     return item.keyword;
   });
 
-  const sortedKeywords = [...new Set(keywords)]
+  //* создадим массив объектов
+  const keywordsObjectsArray = [...new Set(keywords)]
     .map(keyword => {
       const object = {};
 
-      object.keyword = keyword;
-      object.quantity = keywords.filter(str => str === keyword).length;
+      object.keyword = keyword; //* поле с ключевым словом
+      object.quantity = keywords.filter((item) => (item === keyword)).length; //* поле с количеством ключевых слов
+
       return object;
-    })
-    .sort((a, b) => b.quantity - a.quantity)
-    .map(item => item.keyword);
+    });
+  //* отсортируем объекты по количеству ключевых слов, от большего к меньшему
+  const other = keywordsObjectsArray.sort((a, b) => (b.quantity - a.quantity));
+  //* создади массив только из отсортированных ключевых слов
+  const sortedKeywords = other.map((item) => {
+    return item.keyword;
+  });
 
   console.log(sortedKeywords);
 

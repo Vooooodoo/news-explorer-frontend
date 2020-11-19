@@ -163,7 +163,7 @@ function App() {
       });
   }
 
-  function saveCard(article) {
+  function saveArticle(article) {
     if (loggedIn) {
       const keyword = articles[0].keyword;
       const reqBody = {
@@ -187,7 +187,7 @@ function App() {
     }
   }
 
-  function deleteCard(article) {
+  function deleteArticle(article) {
     mainApi.delete(`/articles/${article._id}`)
       .then(() => {
         const newArticlesArray = savedArticles.filter((item) => (item._id !== article._id));
@@ -199,18 +199,14 @@ function App() {
       });
   }
 
-  function changeIsMarked(evt) {
-    const card = evt.target.parentElement;
+  function changeIsArticleSaved(article) {
+    const isArticleSaved = savedArticles.find((item) => {
+      return item.title === article.title && item.text === article.description;
+    });
 
-    if (evt.target.classList.contains('news-card-btn_type_marked-save')) {
-
+    if (!isArticleSaved) {
+      saveArticle(article);
     }
-  }
-
-  function checkIsMarked() {
-    articles.forEach((item) => {
-
-    })
   }
 
   function handleShowMore() {
@@ -289,7 +285,7 @@ function App() {
               isLoaded={isLoaded}
               isNotFound={isNotFound}
               isReqErr={isReqErr}
-              onCardBtnClick={saveCard}
+              onCardBtnClick={changeIsArticleSaved}
               onShowMore={handleShowMore}
               isShowMoreBtn={isShowMoreBtn}
             />
@@ -302,7 +298,7 @@ function App() {
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
             articles={savedArticles}
-            onCardBtnClick={deleteCard}
+            onCardBtnClick={deleteArticle}
           />
         </Switch>
         <Footer />

@@ -211,6 +211,20 @@ function App() {
       });
   }
 
+  function changeIsMarked(evt) {
+    const card = evt.target.parentElement;
+
+    if (evt.target.classList.contains('news-card-btn_type_marked-save')) {
+
+    }
+  }
+
+  function checkIsMarked() {
+    articles.forEach((item) => {
+
+    })
+  }
+
   function handleShowMore() {
     setArticlesRenderCount(articlesRenderCount + 3);
     setArticles(localArticles.slice(0, articlesRenderCount));
@@ -290,7 +304,6 @@ function App() {
               onCardBtnClick={saveCard}
               onShowMore={handleShowMore}
               isShowMoreBtn={isShowMoreBtn}
-              isArticleMarked={isArticleMarked}
             />
           </Route>
 

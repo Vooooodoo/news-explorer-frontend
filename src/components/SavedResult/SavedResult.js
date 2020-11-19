@@ -7,6 +7,7 @@ function SavedResult(props) {
     <section className="saved-result">
       <NewsCardList
         articles={props.articles}
+        onCardBtnClick={props.onCardBtnClick}
       />
     </section>
   );

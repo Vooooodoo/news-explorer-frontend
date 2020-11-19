@@ -12,8 +12,9 @@ function NewsCardList(props) {
       {props.articles.map((article, index) => (
         <NewsCard
           key={index}
-          photo={isSavedNews ? article.image : article.urlToImage }
-          tagText={isSavedNews && article.keyword }
+          id={isSavedNews && article._id}
+          photo={isSavedNews ? article.image : article.urlToImage}
+          tagText={isSavedNews && article.keyword}
           date={isSavedNews ? article.date : article.publishedAt }
           title={article.title}
           text={isSavedNews ? article.text : article.description }

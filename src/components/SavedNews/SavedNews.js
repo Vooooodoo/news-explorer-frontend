@@ -6,6 +6,7 @@ function SavedNews(props) {
     <main>
       <SavedResult
         articles={props.articles}
+        onCardBtnClick={props.onCardBtnClick}
       />
     </main>
   );

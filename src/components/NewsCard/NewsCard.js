@@ -21,7 +21,7 @@ function NewsCard(props) {
   const date = `${dateArray[0]} ${dateArray[1]}, ${dateArray[2]}`;
 
   return (
-    <li className="news-card tap-highlight">
+    <li id={props.id} className="news-card tap-highlight">
       <img className="news-card__photo" src={props.photo} alt={`${props.title}.`} />
       {isSavedNews
         && (<span className="news-card__tag">{props.tagText}</span>)

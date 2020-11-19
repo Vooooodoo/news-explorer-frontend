@@ -162,7 +162,7 @@ function App() {
       });
   }
 
-  function handleCardBtnClick(evt) {
+  function saveCard(evt) {
     if (loggedIn) {
       const card = evt.target.parentElement;
       const keyword = articles[0].keyword;
@@ -192,6 +192,13 @@ function App() {
         console.log('Ошибка. Запрос не выполнен:', err);
       });
     }
+  }
+
+  function deleteCard(evt) {
+    const card = evt.target.parentElement;
+    const cardTitle = card.querySelector('.news-card__title').textContent;
+
+
   }
 
   function handleShowMore() {
@@ -270,7 +277,7 @@ function App() {
               isLoaded={isLoaded}
               isNotFound={isNotFound}
               isReqErr={isReqErr}
-              onCardBtnClick={handleCardBtnClick}
+              onCardBtnClick={saveCard}
               onShowMore={handleShowMore}
               isShowMoreBtn={isShowMoreBtn}
             />
@@ -283,6 +290,7 @@ function App() {
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
             articles={savedArticles}
+            onCardBtnClick={deleteCard}
           />
         </Switch>
         <Footer />

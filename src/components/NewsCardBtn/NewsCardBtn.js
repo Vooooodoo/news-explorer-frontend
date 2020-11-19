@@ -5,10 +5,10 @@ import { ArticlesContext } from '../../contexts/ArticlesContext';
 import './NewsCardBtn.css';
 
 function NewsCardBtn(props) {
+  const { pathname } = useLocation();
   const loggedIn = React.useContext(LoggedInContext);
   const { savedArticles } = React.useContext(ArticlesContext);
   const [isTooltipShown, setIsTooltipShown] = React.useState(false);
-  const { pathname } = useLocation();
 
   const savedArticleBtnClass = `${
     savedArticles.some((item) => item.title === props.article.title)

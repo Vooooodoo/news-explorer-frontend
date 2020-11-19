@@ -13,7 +13,7 @@ function NewsCardList(props) {
         <NewsCard
           key={index}
           photo={isSavedNews ? article.image : article.urlToImage }
-          tagText={isSavedNews ? article.keyword : "Природа" }
+          tagText={isSavedNews && article.keyword }
           date={isSavedNews ? article.date : article.publishedAt }
           title={article.title}
           text={isSavedNews ? article.text : article.description }

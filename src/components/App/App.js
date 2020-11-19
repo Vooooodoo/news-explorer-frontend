@@ -164,6 +164,7 @@ function App() {
 
   function handleCardBtnClick(evt) {
     const card = evt.target.parentElement;
+    const keyword = articles[0].keyword;
     const cardTitle = card.querySelector('.news-card__title').textContent;
     const cardText = card.querySelector('.news-card__text').textContent;
     const cardDate = card.querySelector('.news-card__date').textContent;
@@ -172,7 +173,7 @@ function App() {
     const cardPhoto = card.querySelector('.news-card__photo').src;
 
     const reqBody = {
-      keyword: 'Путин',
+      keyword: keyword,
       title: cardTitle,
       text: cardText,
       date: cardDate,
@@ -183,8 +184,7 @@ function App() {
 
     mainApi.post('/articles', reqBody)
       .then((data) => {
-        console.log(data);
-        // setSavedArticles(data);
+        setSavedArticles([...savedArticles, data]);
       })
 
       .catch((err) => {

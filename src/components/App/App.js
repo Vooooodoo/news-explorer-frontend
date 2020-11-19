@@ -205,7 +205,7 @@ function App() {
     });
 
     if (savedArticle) {
-      deleteArticle(savedArticle)
+      deleteArticle(savedArticle);
     } else {
       saveArticle(article);
     }

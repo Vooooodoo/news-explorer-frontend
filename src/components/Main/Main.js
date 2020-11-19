@@ -14,7 +14,6 @@ function Main(props) {
               onCardBtnClick={props.onCardBtnClick}
               onShowMore={props.onShowMore}
               isShowMoreBtn={props.isShowMoreBtn}
-              isArticleMarked={props.isArticleMarked}
             />
       }
       {props.isNotFound && <NotFound />}

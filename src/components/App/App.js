@@ -163,38 +163,39 @@ function App() {
       });
   }
 
-  function saveCard(evt) {
-    if (loggedIn) {
-      const card = evt.target.parentElement;
-      const keyword = articles[0].keyword;
-      const cardTitle = card.querySelector('.news-card__title').textContent;
-      const cardText = card.querySelector('.news-card__text').textContent;
-      const cardDate = card.querySelector('.news-card__date').textContent;
-      const cardSrc = card.querySelector('.news-card__src').textContent;
-      const cardLink = card.querySelector('.news-card__link').href;
-      const cardPhoto = card.querySelector('.news-card__photo').src;
+  function saveCard(article) {
+    // if (loggedIn) {
+    //   const card = evt.target.parentElement;
+    //   const keyword = articles[0].keyword;
+    //   const cardTitle = card.querySelector('.news-card__title').textContent;
+    //   const cardText = card.querySelector('.news-card__text').textContent;
+    //   const cardDate = card.querySelector('.news-card__date').textContent;
+    //   const cardSrc = card.querySelector('.news-card__src').textContent;
+    //   const cardLink = card.querySelector('.news-card__link').href;
+    //   const cardPhoto = card.querySelector('.news-card__photo').src;
 
-      const reqBody = {
-        keyword: keyword,
-        title: cardTitle,
-        text: cardText,
-        date: cardDate,
-        source: cardSrc,
-        link: cardLink,
-        image: cardPhoto,
-      }
+    //   const reqBody = {
+    //     keyword: keyword,
+    //     title: cardTitle,
+    //     text: cardText,
+    //     date: cardDate,
+    //     source: cardSrc,
+    //     link: cardLink,
+    //     image: cardPhoto,
+    //   }
 
-      mainApi.post('/articles', reqBody)
-        .then((data) => {
-          setSavedArticles([...savedArticles, data]);
-        })
+    //   mainApi.post('/articles', reqBody)
+    //     .then((data) => {
+    //       setSavedArticles([...savedArticles, data]);
+    //     })
 
-        .catch((err) => {
-          console.log('Ошибка. Запрос не выполнен:', err);
-        });
+    //     .catch((err) => {
+    //       console.log('Ошибка. Запрос не выполнен:', err);
+    //     });
 
-      evt.target.classList.add('news-card-btn_type_marked-save');
-    }
+    //   evt.target.classList.add('news-card-btn_type_marked-save');
+    // }
+    console.log(article);
   }
 
   function deleteCard(evt) {

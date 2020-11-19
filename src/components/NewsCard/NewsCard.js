@@ -28,7 +28,7 @@ function NewsCard(props) {
       }
       <NewsCardBtn
         onCardBtnClick={props.onCardBtnClick}
-        isArticleMarked={props.isArticleMarked}
+        article={props.article}
       />
       <a className="news-card__link" href={props.url} target="_blank">
         <div className="news-card__container">

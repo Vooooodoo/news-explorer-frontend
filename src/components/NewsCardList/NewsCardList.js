@@ -12,6 +12,7 @@ function NewsCardList(props) {
       {props.articles.map((article, index) => (
         <NewsCard
           key={index}
+          article={article}
           id={isSavedNews && article._id}
           photo={isSavedNews ? article.image : article.urlToImage}
           tagText={isSavedNews && article.keyword}
@@ -21,7 +22,6 @@ function NewsCardList(props) {
           src={isSavedNews ? article.source : article.source.name}
           url={isSavedNews ? article.link : article.url}
           onCardBtnClick={props.onCardBtnClick}
-          isArticleMarked={props.isArticleMarked}
         />
       ))}
     </ul>

@@ -36,9 +36,13 @@ function NewsCardBtn(props) {
     setIsTooltipShown(false);
   }
 
+  function handleCardBtnClick() {
+    props.onCardBtnClick(props.article);
+  }
+
   return (
     <>
-      <button className={`news-card-btn ${btnClass}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={props.onCardBtnClick} type="button" aria-label={ariaLabel}></button>
+      <button className={`news-card-btn ${btnClass}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleCardBtnClick} type="button" aria-label={ariaLabel}></button>
       {isTooltipShown
         && (<span className="news-card-btn__popup news-card-btn__popup_hidden news-card-btn__popup_shown">{popupText}</span>)
       }

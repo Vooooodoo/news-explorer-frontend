@@ -13,7 +13,6 @@ function SearchResult(props) {
       <NewsCardList
         articles={articles}
         onCardBtnClick={props.onCardBtnClick}
-        isArticleMarked={props.isArticleMarked}
       />
       {props.isShowMoreBtn
         &&  <ShowMoreBtn

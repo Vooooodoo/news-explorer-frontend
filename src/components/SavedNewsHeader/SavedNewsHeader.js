@@ -1,10 +1,18 @@
 import React from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { ArticlesContext } from '../../contexts/ArticlesContext';
 import Navigation from '../Navigation/Navigation';
 import './SavedNewsHeader.css';
 
 function SavedNewsHeader(props) {
   const currentUser = React.useContext(CurrentUserContext);
+  const { savedArticles } = React.useContext(ArticlesContext);
+
+  const keywords = savedArticles.map(item => {
+    return item.keyword;
+  });
+
+  console.log(keywords);
 
   return (
     <header className="saved-news-header">

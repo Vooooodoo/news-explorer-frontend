@@ -31,6 +31,7 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState({});
 
   const [articles, setArticles] = React.useState([]);
+  const [savedArticles, setSavedArticles] = React.useState([]);
   const [articlesRenderCount, setArticlesRenderCount] = React.useState(6);
   const [isLoading, setIsLoading] = React.useState(false);
   const [isLoaded, setIsLoaded] = React.useState(false);
@@ -173,7 +174,7 @@ function App() {
       setArticles(localArticles.slice(0, 3));
     }
 
-    mainApi.get('/users/me')
+    mainApi.get('/articles')
       .then((data) => {
         console.log(data)
       })
@@ -217,8 +218,6 @@ function App() {
     checkToken();
   }, [loggedIn]);
 
-  //! контекст статей можно потом вернуть конкретно на компонент Main
-  //! в остальных местах он вроде не нужен...
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <ArticlesContext.Provider value={articles}>
@@ -247,6 +246,7 @@ function App() {
             secondComponent={SavedNews}
             loggedIn={loggedIn}
             onSignOut={handleSignOut}
+            articles={savedArticles}
           />
         </Switch>
         <Footer />

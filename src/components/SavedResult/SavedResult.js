@@ -2,10 +2,12 @@ import React from 'react';
 import NewsCardList from '../NewsCardList/NewsCardList';
 import './SavedResult.css';
 
-function SavedResult() {
+function SavedResult(props) {
   return (
     <section className="saved-result">
-      <NewsCardList />
+      <NewsCardList
+        articles={props.articles}
+      />
     </section>
   );
 }

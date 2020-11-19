@@ -29,8 +29,6 @@ function SavedNewsHeader(props) {
     return item.keyword;
   });
 
-  console.log(sortedKeywords);
-
   return (
     <header className="saved-news-header">
       <Navigation
@@ -39,7 +37,7 @@ function SavedNewsHeader(props) {
       />
       <h1 className="saved-news-header__title">Сохранённые статьи</h1>
       <p className="saved-news-header__subtitle">{`${currentUser.name}, у вас ${props.articles.length} сохранённых статей`}</p>
-      <p className="saved-news-header__text">По&nbsp;ключевым словам: <b>Природа</b>, <b>Тайга</b> и&nbsp;<b>2-м другим</b></p>
+      <p className="saved-news-header__text">По&nbsp;ключевым словам: <b>{sortedKeywords[0]}</b>, <b>{sortedKeywords[1]}</b> и&nbsp;<b>2-м другим</b></p>
     </header>
   );
 }

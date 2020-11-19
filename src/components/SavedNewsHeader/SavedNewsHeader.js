@@ -13,7 +13,7 @@ function SavedNewsHeader(props) {
   });
 
   //* создадим массив объектов
-  const keywordsObjectsArray = [...new Set(keywords)]
+  const keywordsObjects = [...new Set(keywords)]
     .map(keyword => {
       const object = {};
 
@@ -23,9 +23,9 @@ function SavedNewsHeader(props) {
       return object;
     });
   //* отсортируем объекты по количеству ключевых слов, от большего к меньшему
-  const other = keywordsObjectsArray.sort((a, b) => (b.quantity - a.quantity));
-  //* создади массив только из отсортированных ключевых слов
-  const sortedKeywords = other.map((item) => {
+  const sortedKeywordsObjects = keywordsObjects.sort((a, b) => (b.quantity - a.quantity));
+  //* создадим массив только из отсортированных ключевых слов
+  const sortedKeywords = sortedKeywordsObjects.map(item => {
     return item.keyword;
   });
 

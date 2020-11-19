@@ -3,13 +3,11 @@ import NewsCard from '../NewsCard/NewsCard';
 import './NewsCardList.css';
 
 function NewsCardList(props) {
-  let reactKey = 0;
-
   return (
     <ul className="news-card-list">
-      {props.articles.map((article) => (
+      {props.articles.map((article, index) => (
         <NewsCard
-          key={reactKey++}
+          key={index}
           photo={article.urlToImage}
           tagText="Природа"
           date={article.publishedAt}

@@ -36,16 +36,17 @@ function SavedNewsHeader(props) {
     sortedKeywords.slice(3).length === 0
     ? ''
     : declOfNum(sortedKeywords.slice(3).length, ['другому', 'другим', 'другим']);
+  const quantityReducer =
+    sortedKeywords.slice(3).length > 4 || sortedKeywords.slice(3).length < 2
+    ? ''
+    : '-м';
+
   const topThreeKeywords = sortedKeywords.slice(0, 3).join(', ');
   const topTwoKeywords = sortedKeywords.slice(0, 2).join(', ');
   const allKeywords =
     sortedKeywords.length <= 3
     ? topThreeKeywords
     : `${topTwoKeywords} и ${sortedKeywords.slice(3).length}`;
-  const quantityReducer =
-    sortedKeywords.slice(3).length > 4 || sortedKeywords.slice(3).length < 2
-    ? ''
-    : '-м';
 
   return (
     <header className="saved-news-header">

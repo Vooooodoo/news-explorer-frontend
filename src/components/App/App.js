@@ -176,7 +176,7 @@ function App() {
 
     mainApi.get('/articles')
       .then((data) => {
-        console.log(data)
+        setSavedArticles(data);
       })
 
       .catch((err) => {

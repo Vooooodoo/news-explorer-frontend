@@ -200,11 +200,13 @@ function App() {
   }
 
   function changeIsArticleSaved(article) {
-    const isArticleSaved = savedArticles.find((item) => {
+    const savedArticle = savedArticles.find((item) => {
       return item.title === article.title && item.text === article.description;
     });
 
-    if (!isArticleSaved) {
+    if (savedArticle) {
+      deleteArticle(savedArticle)
+    } else {
       saveArticle(article);
     }
   }

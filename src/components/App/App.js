@@ -33,6 +33,7 @@ function App() {
   const [articles, setArticles] = React.useState([]);
   const [savedArticles, setSavedArticles] = React.useState([]);
   const [articlesRenderCount, setArticlesRenderCount] = React.useState(6);
+  const [isArticleMarked, setIsArticleMarked] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isNotFound, setIsNotFound] = React.useState(false);
@@ -191,6 +192,8 @@ function App() {
         .catch((err) => {
           console.log('Ошибка. Запрос не выполнен:', err);
         });
+
+      evt.target.classList.add('news-card-btn_type_marked-save');
     }
   }
 
@@ -199,7 +202,7 @@ function App() {
 
     mainApi.delete(`/articles/${card.id}`)
       .then(() => {
-        const newArticlesArray = savedArticles.filter(item => item._id !== card.id);
+        const newArticlesArray = savedArticles.filter((item) => (item._id !== card.id));
         setSavedArticles(newArticlesArray);
       })
 
@@ -287,6 +290,7 @@ function App() {
               onCardBtnClick={saveCard}
               onShowMore={handleShowMore}
               isShowMoreBtn={isShowMoreBtn}
+              isArticleMarked={isArticleMarked}
             />
           </Route>
 

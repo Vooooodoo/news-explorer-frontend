@@ -49,9 +49,9 @@ class MainApi {
     });
   }
 
-  changeCardLikeStatus(cardId, isLiked) {
-    return this._fetch(`/cards/likes/${cardId}`, {
-      method: isLiked ? 'DELETE' : 'PUT',
+  changeArticleMarkStatus(endPoint, isArticleMarked) {
+    return this._fetch(endPoint, {
+      method: isArticleMarked ? 'DELETE' : 'POST',
     });
   }
 }

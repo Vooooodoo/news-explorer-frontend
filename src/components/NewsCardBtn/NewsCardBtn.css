@@ -28,7 +28,7 @@
 }
 
 .news-card-btn_type_focus-save:focus {
-  background-image: url(../../images/news-card-btn_type_hover-save.svg);
+  border: 2px solid #1A1B22;
   transition: none;
 }
 

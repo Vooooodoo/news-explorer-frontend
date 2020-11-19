@@ -21,6 +21,7 @@ function NewsCardList(props) {
           src={isSavedNews ? article.source : article.source.name}
           url={isSavedNews ? article.link : article.url}
           onCardBtnClick={props.onCardBtnClick}
+          isArticleMarked={props.isArticleMarked}
         />
       ))}
     </ul>

@@ -33,7 +33,7 @@ function App() {
   const [articles, setArticles] = React.useState([]);
   const [savedArticles, setSavedArticles] = React.useState([]);
   const [articlesRenderCount, setArticlesRenderCount] = React.useState(6);
-  const [isArticleMarked, setIsArticleMarked] = React.useState(false);
+  const [isArticleSaved, setIsArticleSaved] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [isNotFound, setIsNotFound] = React.useState(false);

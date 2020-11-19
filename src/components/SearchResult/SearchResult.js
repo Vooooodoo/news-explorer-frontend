@@ -5,7 +5,7 @@ import { ArticlesContext } from '../../contexts/ArticlesContext';
 import './SearchResult.css';
 
 function SearchResult(props) {
-  const articles = React.useContext(ArticlesContext);
+  const { articles } = React.useContext(ArticlesContext);
 
   return (
     <section className="search-result">

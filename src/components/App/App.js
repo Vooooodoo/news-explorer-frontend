@@ -272,7 +272,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <ArticlesContext.Provider value={articles}>
+      <ArticlesContext.Provider value={{articles, savedArticles}}>
       <LoggedInContext.Provider value={loggedIn}>
         <Switch>
           <Route exact path="/">

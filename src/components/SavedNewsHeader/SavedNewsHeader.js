@@ -29,6 +29,9 @@ function SavedNewsHeader(props) {
     return item.keyword;
   });
 
+  const topThreeKeywords = sortedKeywords.slice(0, 3).join(', ');
+  console.log(topThreeKeywords);
+
   return (
     <header className="saved-news-header">
       <Navigation

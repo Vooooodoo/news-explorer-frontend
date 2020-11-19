@@ -25,7 +25,9 @@ function NewsCard(props) {
       {pathname === '/saved-news'
         && (<span className="news-card__tag">{props.tagText}</span>)
       }
-      <NewsCardBtn />
+      <NewsCardBtn
+        onCardBtnClick={props.onCardBtnClick}
+      />
       <a className="news-card__link" href={props.url} target="_blank">
         <div className="news-card__container">
           <p className="news-card__date">{date}</p>

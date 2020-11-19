@@ -11,6 +11,7 @@ function Main(props) {
       {props.isLoading && <Spinner />}
       {props.isLoaded
         &&  <SearchResult
+              onCardBtnClick={props.onCardBtnClick}
               onShowMore={props.onShowMore}
               isShowMoreBtn={props.isShowMoreBtn}
             />

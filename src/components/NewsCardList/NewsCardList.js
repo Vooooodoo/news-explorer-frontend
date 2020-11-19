@@ -17,6 +17,7 @@ function NewsCardList(props) {
           text={article.description}
           src={article.source.name}
           url={article.url}
+          onCardBtnClick={props.onCardBtnClick}
         />
       ))}
     </ul>

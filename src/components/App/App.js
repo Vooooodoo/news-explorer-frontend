@@ -159,6 +159,36 @@ function App() {
       });
   }
 
+  function handleCardBtnClick(evt) {
+    const card = evt.target.parentElement;
+    const cardTitle = card.querySelector('.news-card__title').textContent;
+    const cardText = card.querySelector('.news-card__text').textContent;
+    const cardDate = card.querySelector('.news-card__date').textContent;
+    const cardSrc = card.querySelector('.news-card__src').textContent;
+    const cardLink = card.querySelector('.news-card__link').href;
+    const cardPhoto = card.querySelector('.news-card__photo').src;
+
+    const reqBody = {
+      keyword: 'Путин',
+      title: cardTitle,
+      text: cardText,
+      date: cardDate,
+      source: cardSrc,
+      link: cardLink,
+      image: cardPhoto,
+    }
+
+    mainApi.post('/articles', reqBody)
+      .then((data) => {
+        console.log(data);
+        // setSavedArticles(data);
+      })
+
+      .catch((err) => {
+        console.log('Ошибка. Запрос не выполнен:', err);
+      });
+  }
+
   function handleShowMore() {
     setArticlesRenderCount(articlesRenderCount + 3);
     setArticles(localArticles.slice(0, articlesRenderCount));
@@ -235,6 +265,7 @@ function App() {
               isLoaded={isLoaded}
               isNotFound={isNotFound}
               isReqErr={isReqErr}
+              onCardBtnClick={handleCardBtnClick}
               onShowMore={handleShowMore}
               isShowMoreBtn={isShowMoreBtn}
             />

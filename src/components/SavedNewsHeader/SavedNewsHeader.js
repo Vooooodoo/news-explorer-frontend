@@ -12,7 +12,18 @@ function SavedNewsHeader(props) {
     return item.keyword;
   });
 
-  console.log(keywords);
+  const sortedKeywords = [...new Set(keywords)]
+    .map(keyword => {
+      const object = {};
+
+      object.keyword = keyword;
+      object.quantity = keywords.filter(str => str === keyword).length;
+      return object;
+    })
+    .sort((a, b) => b.quantity - a.quantity)
+    .map(item => item.keyword);
+
+  console.log(sortedKeywords);
 
   return (
     <header className="saved-news-header">

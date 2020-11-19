@@ -205,8 +205,8 @@ function App() {
     }
 
     mainApi.get('/articles')
-      .then((data) => {
-        setSavedArticles(data);
+      .then((articles) => {
+        setSavedArticles(articles);
       })
 
       .catch((err) => {

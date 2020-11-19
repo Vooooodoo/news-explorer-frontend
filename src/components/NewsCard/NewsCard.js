@@ -5,6 +5,7 @@ import './NewsCard.css';
 
 function NewsCard(props) {
   const { pathname } = useLocation();
+  const isSavedNews = pathname === '/saved-news';
 
   //* преобразуем дату в формат, подходящий для объекта Date
   const formattedDate = props.date.slice(0, props.date.indexOf('T'));
@@ -22,7 +23,7 @@ function NewsCard(props) {
   return (
     <li className="news-card tap-highlight">
       <img className="news-card__photo" src={props.photo} alt={`${props.title}.`} />
-      {pathname === '/saved-news'
+      {isSavedNews
         && (<span className="news-card__tag">{props.tagText}</span>)
       }
       <NewsCardBtn
@@ -30,7 +31,7 @@ function NewsCard(props) {
       />
       <a className="news-card__link" href={props.url} target="_blank">
         <div className="news-card__container">
-          <p className="news-card__date">{date}</p>
+          <p className="news-card__date">{isSavedNews ? props.date : date}</p>
           <h2 className="news-card__title">{props.title}</h2>
           <p className="news-card__text">{props.text}</p>
           <p className="news-card__src">{props.src}</p>

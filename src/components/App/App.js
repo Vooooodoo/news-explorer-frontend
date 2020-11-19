@@ -184,21 +184,28 @@ function App() {
       }
 
       mainApi.post('/articles', reqBody)
-      .then((data) => {
-        setSavedArticles([...savedArticles, data]);
-      })
+        .then((data) => {
+          setSavedArticles([...savedArticles, data]);
+        })
 
-      .catch((err) => {
-        console.log('Ошибка. Запрос не выполнен:', err);
-      });
+        .catch((err) => {
+          console.log('Ошибка. Запрос не выполнен:', err);
+        });
     }
   }
 
   function deleteCard(evt) {
     const card = evt.target.parentElement;
-    const cardTitle = card.querySelector('.news-card__title').textContent;
 
+    mainApi.delete(`/articles/${card.id}`)
+      .then(() => {
+        const newArticlesArray = savedArticles.filter(item => item._id !== card.id);
+        setSavedArticles(newArticlesArray);
+      })
 
+      .catch((err) => {
+        console.log('Ошибка. Запрос не выполнен:', err);
+      });
   }
 
   function handleShowMore() {

@@ -133,6 +133,7 @@ function App() {
 
     newsApi.get(keyword)
       .then((res) => {
+        //* добавим в объект статьи поле с ключевым словом из запроса пользователя
         const articlesWithKeyword = res.articles.map((item) => ({ ...item, keyword }));
 
         if (res.articles.length === 0) {

@@ -42,7 +42,7 @@ function SavedNewsHeader(props) {
     sortedKeywords.length <= 3
     ? topThreeKeywords
     : `${topTwoKeywords} и ${sortedKeywords.slice(3).length}`;
-  const keywordPostfix =
+  const quantityReducer =
     sortedKeywords.slice(3).length > 4 || sortedKeywords.slice(3).length < 2
     ? ''
     : '-м';
@@ -55,7 +55,7 @@ function SavedNewsHeader(props) {
       />
       <h1 className="saved-news-header__title">Сохранённые статьи</h1>
       <p className="saved-news-header__subtitle">{`${currentUser.name}, у вас ${props.articles.length} ${savedDecl} ${articleDecl}`}</p>
-      <p className="saved-news-header__text">По&nbsp;ключевым словам: <b>{`${allKeywords}${keywordPostfix} ${otherDecl}`}</b></p>
+      <p className="saved-news-header__text">По&nbsp;ключевым словам: <b>{`${allKeywords}${quantityReducer} ${otherDecl}`}</b></p>
     </header>
   );
 }

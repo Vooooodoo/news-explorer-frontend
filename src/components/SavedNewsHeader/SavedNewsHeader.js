@@ -1,4 +1,5 @@
 import React from 'react';
+import { declOfNum } from '../../utils/helpers';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { ArticlesContext } from '../../contexts/ArticlesContext';
 import Navigation from '../Navigation/Navigation';
@@ -29,8 +30,14 @@ function SavedNewsHeader(props) {
     return item.keyword;
   });
 
+  // const articleName = declOfNum(savedNews.length, ['статья', 'статьи', 'статей']);
+  // const savedName = declOfNum(savedNews.length, ['сохраненная', 'сохраненных', 'сохраненных']);
+  const otherTags = sortedKeywords.slice(3).length === 0 ? '' : declOfNum(sortedKeywords.slice(3).length, ['другому', 'другим', 'другим']);
   const topThreeKeywords = sortedKeywords.slice(0, 3).join(', ');
-  console.log(topThreeKeywords);
+  const topTwoKeywords = sortedKeywords.slice(0, 2).join(', ');
+  const allKeywords = sortedKeywords.length <= 3 ? topThreeKeywords : `${topTwoKeywords} и ${sortedKeywords.slice(3).length}`;
+  const keywordPostfix = sortedKeywords.slice(3).length > 4 || sortedKeywords.slice(3).length < 2 ? '' : '-м';
+  console.log(topTwoKeywords);
 
   return (
     <header className="saved-news-header">
@@ -40,7 +47,7 @@ function SavedNewsHeader(props) {
       />
       <h1 className="saved-news-header__title">Сохранённые статьи</h1>
       <p className="saved-news-header__subtitle">{`${currentUser.name}, у вас ${props.articles.length} сохранённых статей`}</p>
-      <p className="saved-news-header__text">По&nbsp;ключевым словам: <b>{sortedKeywords[0]}</b>, <b>{sortedKeywords[1]}</b> и&nbsp;<b>2-м другим</b></p>
+      <p className="saved-news-header__text">По&nbsp;ключевым словам: <b>{`${allKeywords}${keywordPostfix} ${otherTags}`}</b></p>
     </header>
   );
 }

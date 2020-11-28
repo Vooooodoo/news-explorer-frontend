@@ -123,7 +123,7 @@ function App() {
     setIsTooltipPopupOpen(true);
   }
 
-  function handleSearchArticles(keyword) {
+  function handleArticlesSearch(keyword) {
     setIsLoading(true);
     setIsLoaded(false);
     setIsNotFound(false);
@@ -279,7 +279,7 @@ function App() {
               loggedIn={loggedIn}
               onSignOut={handleSignOut}
               onSignIn={openLoginPopup}
-              onSearchArticles={handleSearchArticles}
+              onSearchArticles={handleArticlesSearch}
             />
             <Main
               isLoading={isLoading}

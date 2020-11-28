@@ -7,6 +7,7 @@
 .about__avatar {
   width: 464px;
   margin-right: 56px;
+  border-radius: 50%;
 }
 
 .about__title {
@@ -43,6 +44,7 @@
   .about__avatar {
     width: 33.72%;
     margin-right: 32px;
+    align-self: flex-start;
   }
 
   .about__title {

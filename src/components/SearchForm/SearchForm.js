@@ -1,10 +1,19 @@
 import React from 'react';
 import './SearchForm.css';
 
-function SearchForm() {
+function SearchForm(props) {
+  const inputRef = React.useRef();
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+
+    props.onSearchArticles(inputRef.current.value);
+    inputRef.current.value = '';
+  }
+
   return (
-    <form className="search-form">
-      <input className="search-form__input" placeholder="Введите тему новости" required />
+    <form className="search-form" onSubmit={handleSubmit}>
+      <input className="search-form__input" ref={inputRef} placeholder="Введите тему новости" required />
       <button className="search-form__button search-form__text tap-highlight" type="submit">Искать</button>
     </form>
   );

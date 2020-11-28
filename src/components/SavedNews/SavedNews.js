@@ -1,10 +1,13 @@
 import React from 'react';
 import SavedResult from '../SavedResult/SavedResult';
 
-function SavedNews() {
+function SavedNews(props) {
   return (
     <main>
-      <SavedResult />
+      <SavedResult
+        articles={props.articles}
+        onCardBtnClick={props.onCardBtnClick}
+      />
     </main>
   );
 }

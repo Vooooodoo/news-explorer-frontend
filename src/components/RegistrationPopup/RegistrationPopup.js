@@ -84,6 +84,12 @@ function RegistrationPopup(props) {
     setIsNameValid(false);
   }
 
+  function handleSubmit(evt) {
+    evt.preventDefault();
+
+    props.onSubmit(email, password, name);
+  }
+
   React.useEffect(() => {
     resetInputErrors();
     resetFormFields();
@@ -121,6 +127,9 @@ function RegistrationPopup(props) {
       onEmailChange={handleEmailChange}
       onPassChange={handlePasswordChange}
       onNameChange={handleNameChange}
+      onSubmit={handleSubmit}
+      isSubmitErr={props.isSubmitErr}
+      submitErrMessage={props.submitErrMessage}
     />
   );
 }

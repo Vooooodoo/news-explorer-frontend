@@ -3,13 +3,21 @@ import About from '../About/About';
 import SearchResult from '../SearchResult/SearchResult';
 import Spinner from '../Spinner/Spinner';
 import NotFound from '../NotFound/NotFound';
+import ReqErr from '../ReqErr/ReqErr';
 
-function Main() {
+function Main(props) {
   return (
     <main>
-      <Spinner />
-      <SearchResult />
-      <NotFound />
+      {props.isLoading && <Spinner />}
+      {props.isLoaded
+        &&  <SearchResult
+              onCardBtnClick={props.onCardBtnClick}
+              onShowMore={props.onShowMore}
+              isShowMoreBtn={props.isShowMoreBtn}
+            />
+      }
+      {props.isNotFound && <NotFound />}
+      {props.isReqErr && <ReqErr />}
       <About />
     </main>
   );

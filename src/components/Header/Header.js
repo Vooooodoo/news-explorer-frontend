@@ -15,7 +15,9 @@ function Header(props) {
       <p className="header__subtitle">
         Находите самые свежие статьи на&nbsp;любую тему и&nbsp;сохраняйте в&nbsp;своём личном кабинете.
       </p>
-      <SearchForm />
+      <SearchForm
+        onSearchArticles={props.onSearchArticles}
+      />
     </header>
   );
 }

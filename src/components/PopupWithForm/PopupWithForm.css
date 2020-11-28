@@ -103,7 +103,8 @@
 
 .popup__input-error_type_registration {
   bottom: 3px;
-  right: 100px;
+  right: 55px;
+
 }
 
 .popup__input-error:first-of-type {

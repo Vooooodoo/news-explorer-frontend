@@ -1,16 +1,18 @@
 .news-card {
   position: relative;
-  cursor: pointer;
 }
 
 .news-card__photo {
   display: block;
-  background-color: #F5F6F7;
+  background-color: #B6BCBF;
   width: 100%;
   height: calc(272 / 400 * (100vw - (100vw - 1440px) - 240px) / 3);
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
+  object-position: center;
   border-radius: 16px 16px 0 0;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .news-card__tag {
@@ -30,6 +32,10 @@
   box-sizing: border-box;
   padding: 0 15px;
 }
+.news-card__link {
+  text-decoration: none;
+  color: #1A1B22;
+}
 
 .news-card__container {
   display: flex;
@@ -38,6 +44,7 @@
   background-color: white;
   border-radius: 0 0 16px 16px;
   height: 260px;
+  cursor: pointer;
 }
 
 .news-card__date {

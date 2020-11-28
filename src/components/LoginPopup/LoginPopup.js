@@ -63,6 +63,12 @@ function LoginPopup(props) {
     setIsPasswordValid(false);
   }
 
+  function handleSubmit(evt) {
+    evt.preventDefault();
+
+    props.onSubmit(email, password);
+  }
+
   React.useEffect(() => {
     resetInputErrors();
     resetFormFields();
@@ -96,6 +102,7 @@ function LoginPopup(props) {
       onClick={props.onClick}
       onEmailChange={handleEmailChange}
       onPassChange={handlePasswordChange}
+      onSubmit={handleSubmit}
     />
   );
 }

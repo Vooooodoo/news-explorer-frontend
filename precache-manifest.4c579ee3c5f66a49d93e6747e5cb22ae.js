@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a1430ae5605cc1bcd9d4cf93b973deec",
+    "revision": "0d72f52b77d5f3784d13974eea3f19ed",
     "url": "./index.html"
   },
   {
-    "revision": "194ec60f2dcc8fee486b",
-    "url": "./static/css/main.67969799.chunk.css"
+    "revision": "d695bcffab566b4ee7e1",
+    "url": "./static/css/main.0032347d.chunk.css"
   },
   {
-    "revision": "72c664be6a8ce06c2e5d",
-    "url": "./static/js/2.8760ffe0.chunk.js"
+    "revision": "4278a3317aad6b86151a",
+    "url": "./static/js/2.7007ba8a.chunk.js"
   },
   {
     "revision": "8d190e2d02f8e768921a63f56a741895",
-    "url": "./static/js/2.8760ffe0.chunk.js.LICENSE.txt"
+    "url": "./static/js/2.7007ba8a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "194ec60f2dcc8fee486b",
-    "url": "./static/js/main.585504e1.chunk.js"
+    "revision": "d695bcffab566b4ee7e1",
+    "url": "./static/js/main.4ceedff3.chunk.js"
   },
   {
     "revision": "da153df23278d46de5d2",
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Inter-Regular.3ae6a7d3.woff"
   },
   {
-    "revision": "203fd6acd1439b46d2cb505c06dd4eef",
-    "url": "./static/media/about__avatar.203fd6ac.jpg"
+    "revision": "3963cc9163e3ff4ed6b7675126aea6ab",
+    "url": "./static/media/about__avatar.3963cc91.jpg"
   },
   {
     "revision": "4521f6ae7ea044e9089e044d0cbb6ea7",
@@ -98,18 +98,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ecd5f05199c85d31dba25a52eed583d7",
     "url": "./static/media/news-card-btn_type_normal-save.ecd5f051.svg"
-  },
-  {
-    "revision": "cdf491e392095ec6599c6110bac9a236",
-    "url": "./static/media/news-card__photo_name_1.cdf491e3.jpg"
-  },
-  {
-    "revision": "6ea3725bfe11d2f77cd490a317b9fdd0",
-    "url": "./static/media/news-card__photo_name_2.6ea3725b.jpg"
-  },
-  {
-    "revision": "465f954ff424518ca7ce6bac220b0793",
-    "url": "./static/media/news-card__photo_name_3.465f954f.jpg"
   },
   {
     "revision": "cef766fff8da98fb3c23dfd5a3a3dec1",

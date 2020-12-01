@@ -18,7 +18,7 @@ function Footer() {
           <a className="footer__logo-link opacity tap-highlight" href="https://github.com/Vooooodoo" target="_blank">
             <img className="footer__logo footer__logo_type_github" src={githubLogo} alt="Логотип Гитхаб." />
           </a>
-          <a className="footer__logo-link opacity tap-highlight" href="https://www.facebook.com/" target="_blank">
+          <a className="footer__logo-link opacity tap-highlight" href="https://www.facebook.com/yandex.praktikum" target="_blank">
             <img className="footer__logo footer__logo_type_facebook" src={facebookLogo} alt="Логотип Фэйсбук." />
           </a>
         </div>
